@@ -5,3 +5,95 @@
     --cor-destaque: #e74c3c;
     --cor-ui: #34495e;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.ui-topo {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--cor-ui);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+#game-container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.cenario {
+    display: none;
+    width: 80%;
+    height: 80%;
+    background-color: var(--cor-parede);
+    border: 2px solid #555;
+    position: relative;
+}
+
+.cenario.ativa {
+    display: block;
+}
+
+.elemento-interativo {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px dashed #ccc;
+    cursor: pointer;
+    padding: 10px;
+}
+.elemento-interativo:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.porta-blindada { top: 20%; left: 35%; width: 30%; height: 60%; }
+.mesa-blueprint { bottom: 10%; right: 10%; width: 20%; height: 20%; }
+.teto-duto { top: 40%; left: 40%; width: 20%; height: 20%; }
+
+.seta {
+    position: absolute;
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.seta:hover { color: white; transform: scale(1.2); }
+
+.seta-esq { left: 5%; top: 50%; transform: translateY(-50%); }
+.seta-dir { right: 5%; top: 50%; transform: translateY(-50%); }
+.seta-cima { top: 5%; left: 50%; transform: translateX(-50%); }
+.seta-baixo { bottom: 5%; left: 50%; transform: translateX(-50%); }
+.escondida { display: none; }
+
+#inventario {
+    height: 100px;
+    background-color: var(--cor-ui);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.slots { display: flex; gap: 10px; }
+.slot {
+    width: 60px; height: 60px;
+    background-color: #222;
+    border: 1px solid #555;
+}
