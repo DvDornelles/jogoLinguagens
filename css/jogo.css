@@ -7,19 +7,25 @@
 }
 
 body {
+    /* resetCSS */
     margin: 0;
     padding: 0;
+
+    /* Cores e fonte */
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: 'Courier New', Courier, monospace;
+
+    /* Flexbox e tamanho */
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; /* Corta o excedente fora do padding */
 }
 
 
-.ui-topo {
+.ui-topo { /* header */
+    /* flexbox, posicionamento e texto */
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -29,7 +35,8 @@ body {
 }
 
 
-#game-container {
+#game-container { /* main */
+    /*posicionamento e flexbox*/
     position: relative;
     flex-grow: 1;
     display: flex;
@@ -38,7 +45,7 @@ body {
     background-color: #000;
 }
 
-.cenario {
+.cenario { /*As paredes que o usuário não está olhando*/
     display: none;
     width: 80%;
     height: 80%;
@@ -47,26 +54,27 @@ body {
     position: relative;
 }
 
-.cenario.ativa {
+.cenario.ativa { /* a parede atual */
     display: block;
 }
 
-.elemento-interativo {
-    position: absolute;
+.elemento-interativo { /* elemento clicável */
+    position: absolute; /*flutua*/
     background: rgba(255, 255, 255, 0.1);
     border: 1px dashed #ccc;
-    cursor: pointer;
+    cursor: pointer; /*mãozinha*/
     padding: 10px;
 }
 .elemento-interativo:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
-.porta-blindada { top: 20%; left: 35%; width: 30%; height: 60%; }
+/*Posicionamento de position: absolute*/
+.porta-blindada { top: 20%; left: 35%; width: 30%; height: 60%; } /*é necessário as 4 coordenadas?*/
 .mesa-blueprint { bottom: 10%; right: 10%; width: 20%; height: 20%; }
 .teto-duto { top: 40%; left: 40%; width: 20%; height: 20%; }
 
-.seta {
+.seta { /*seta para olhar pro lado*/
     position: absolute;
     background: transparent;
     color: rgba(255,255,255,0.5);
@@ -75,9 +83,9 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
-.seta:hover { color: white; transform: scale(1.2); }
+.seta:hover { color: white; transform: scale(1.2); } /*setinha fica mais clara com o mouse encima, hover é "se mouse estiver encima" */
 
-.seta-esq { left: 5%; top: 50%; transform: translateY(-50%); }
+.seta-esq { left: 5%; top: 50%; transform: translateY(-50%); } /*translateY ==> põe a seta metade do seu tamanho mais pra cima*/
 .seta-dir { right: 5%; top: 50%; transform: translateY(-50%); }
 .seta-cima { top: 5%; left: 50%; transform: translateX(-50%); }
 .seta-baixo { bottom: 5%; left: 50%; transform: translateX(-50%); }
@@ -92,7 +100,7 @@ body {
     gap: 20px;
 }
 .slots { display: flex; gap: 10px; }
-.slot {
+.slot { /*bloquinho*/
     width: 60px; height: 60px;
     background-color: #222;
     border: 1px solid #555;
