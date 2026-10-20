@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O cubo do Eliot Muskito</title>
+    <link rel="stylesheet" href="jogo.css">
+</head>
+<body>
+    <header class="ui-topo">
+        <div id="timer-universal">05:00</div>
+        //colocar o botão de diário de pistas
+    </header>
+    <main id="game-container">
+        <section id="parede-norte" class="cenario-ativa">
+            <div class="elemento-interativo porta-blindada">porta blindada</div>
+            <div class="elemento-interativo mesa-blueprint">Blueprint</div>
+        </section>
+        <section id="parede-leste" class="cenario">
+            <div class="elemento-interativo quadro-forca">Quadro de Força</div>
+        </section>
+        <section id="parede-oeste" class="cenario">
+            <div class="elemento-interativo estante">Estante de Livros</div>
+        </section>
+        <section id="parede-sul" class="cenario">
+            <div class="elemento-interativo maquina">Máquina Estranha</div>
+        </section>
+        <section id="teto" class="cenario">
+            <div class="elemento-interativo duto">Duto de Ventilação</div>
+        </section>
+
+        <div id="navegacao">
+            <button class="seta seta-esq" onclick="mudarCenario('esq')">&#9664;</button>
+            <button class="seta seta-dir" onclick="mudarCenario('dir')">&#9654;</button>
+            <button class="seta seta-cima" onclick="mudarCenario('cima')">&#9650;</button>
+            <button class="seta seta-baixo escondida" onclick="mudarCenario('baixo')">&#9660;</button>
+        </div>
+    </main>
+
+    <footer id="inventario">
+        <h3>Inventário</h3>
+        <div class="slots">
+            <div class="slot vazio"></div>
+            <div class="slot vazio"></div>
+            <div class="slot vazio"></div>
+            <div class="slot vazio"></div>
+            <div class="slot vazio"></div>
+        </div>
+    </footer>
+
+    <script src="js/jogo.js"></script>
+</body>
+</html>
