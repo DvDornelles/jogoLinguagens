@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O cubo do Eliot Muskito</title>
-    <link rel="stylesheet" href="jogo.css">
+    <link rel="stylesheet" href="../css/jogo.css">
 </head>
 <body>
     <header class="ui-topo">
@@ -12,7 +12,7 @@
         <!--colocar o botão de diário de pistas-->
     </header>
     <main id="game-container">
-        <section id="parede-norte" class="cenario-ativa">
+        <section id="parede-norte" class="cenario ativa">
             <div class="elemento-interativo porta-blindada">porta blindada</div>
             <div class="elemento-interativo mesa-blueprint">Blueprint</div>
         </section>
@@ -30,10 +30,10 @@
         </section>
 
         <div id="navegacao">
-            <button class="seta seta-esq" onclick="mudarCenario('esq')">&#9664;</button>
-            <button class="seta seta-dir" onclick="mudarCenario('dir')">&#9654;</button>
-            <button class="seta seta-cima" onclick="mudarCenario('cima')">&#9650;</button>
-            <button class="seta seta-baixo escondida" onclick="mudarCenario('baixo')">&#9660;</button>
+            <button class="seta seta-esq" onclick="trocarCenario('esq')">&#9664;</button>
+            <button class="seta seta-dir" onclick="trocarCenario('dir')">&#9654;</button>
+            <button class="seta seta-cima" onclick="trocarCenario('cima')">&#9650;</button>
+            <button class="seta seta-baixo escondida" onclick="trocarCenario('baixo')">&#9660;</button>
         </div>
     </main>
 
@@ -48,6 +48,6 @@
         </div>
     </footer>
 
-    <script src="js/jogo.js"></script>
+    <script src="../js/jogo.js"></script>
 </body>
 </html>

@@ -11,8 +11,8 @@ function trocarCenario(direcao){
     const setaCima = document.querySelector('.seta-cima');
     const setaBaixo = document.querySelector('.seta-baixo');
 
-    const idParedeAtual = estadoJogo.paredes[indiceParedeAtual];
-    document.getElementById(idParedeAtual).classList.remove('Ativa');
+    const idParedeAtual = estadoJogo.paredes[estadoJogo.indiceParedeAtual];
+    document.getElementById(idParedeAtual).classList.remove('ativa');
 
     if (direcao === 'esq'){
         estadoJogo.indiceParedeAtual = (estadoJogo.indiceParedeAtual + 3) % 4; //faz um loop --> 2+3=5 -> %4 = 1 *voltou pro 1
@@ -30,5 +30,5 @@ function trocarCenario(direcao){
         estadoJogo.olhandoParaOTeto = false;
     }
 
-    document.getElementById(estadoJogo.paredes[estadoJogo.indiceParedeAtual]).classList.add('Ativa');
+    document.getElementById(estadoJogo.paredes[estadoJogo.indiceParedeAtual]).classList.add('ativa');
 }

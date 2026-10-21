@@ -83,7 +83,15 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
-.seta:hover { color: white; transform: scale(1.2); } /*setinha fica mais clara com o mouse encima, hover é "se mouse estiver encima" */
+.seta-esq:hover, .seta-dir:hover { 
+    color: white; 
+    transform: translateY(-50%) scale(1.2); 
+}
+.seta-cima:hover, .seta-baixo:hover { 
+    color: white; 
+    transform: translateX(-50%) scale(1.2); 
+}
+/*setinha fica mais clara com o mouse encima, hover é "se mouse estiver encima" */
 
 .seta-esq { left: 5%; top: 50%; transform: translateY(-50%); } /*translateY ==> põe a seta metade do seu tamanho mais pra cima*/
 .seta-dir { right: 5%; top: 50%; transform: translateY(-50%); }
