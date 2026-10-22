@@ -1,11 +1,11 @@
 const estadoJogo = {
-    paredes: ['parede-norte', 'parede-leste', 'parede-sul', 'parede-oeste'], //0 a 3
+    paredes: ['parede-norte', 'parede-leste', 'parede-sul', 'parede-oeste', 'teto'], //0 a 4
     indiceParedeAtual: 0,
     olhandoParaOTeto: false
 };
 
+let parede_anterior = 0
 function trocarCenario(direcao){
-    const teto = document.getElementById('teto');
     const setaEsq = document.querySelector('.seta-esq');
     const setaDir = document.querySelector('.seta-dir');
     const setaCima = document.querySelector('.seta-cima');
@@ -24,10 +24,23 @@ function trocarCenario(direcao){
 
     if (direcao === 'cima'){
         estadoJogo.olhandoParaOTeto = true;
+        parede_anterior = estadoJogo.indiceParedeAtual
+        estadoJogo.indiceParedeAtual = 4
+        
+        setaBaixo.classList.remove('escondida');
+        setaDir.classList.add('escondida')
+        setaEsq.classList.add('escondida')
+        setaCima.classList.add('escondida')
     }
 
     if (direcao === 'baixo'){
         estadoJogo.olhandoParaOTeto = false;
+        estadoJogo.indiceParedeAtual = parede_anterior
+
+        setaBaixo.classList.add('escondida')
+        setaDir.classList.remove('escondida')
+        setaEsq.classList.remove('escondida')
+        setaCima.classList.remove('escondida')
     }
 
     document.getElementById(estadoJogo.paredes[estadoJogo.indiceParedeAtual]).classList.add('ativa');
