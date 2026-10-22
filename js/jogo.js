@@ -2,8 +2,17 @@ const estadoJogo = {
     paredes: ['parede-norte', 'parede-leste', 'parede-sul', 'parede-oeste', 'teto'], //0 a 4
     indiceParedeAtual: 0,
     olhandoParaOTeto: false,
-    inventario: []
+    inventario: [],
+    itemSelecionado: null
 };
+
+function marcarSlot(slot){
+    if (estadoJogo.itemSelecionado !== null){
+        document.getElementById(estadoJogo.itemSelecionado).classList.remove('slotSelecionado')
+    }
+    estadoJogo.itemSelecionado = slot.id;
+    slot.classList.add('slotSelecionado');
+}
 
 function coletarItem(elemento){
     estadoJogo.inventario.push(elemento.id);

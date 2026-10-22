@@ -113,3 +113,6 @@ body {
     background-color: #222;
     border: 1px solid #555;
 }
+.slotSelecionado{
+    border: 1px solid #184357;
+}
