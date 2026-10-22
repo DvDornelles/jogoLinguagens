@@ -1,8 +1,18 @@
 const estadoJogo = {
     paredes: ['parede-norte', 'parede-leste', 'parede-sul', 'parede-oeste', 'teto'], //0 a 4
     indiceParedeAtual: 0,
-    olhandoParaOTeto: false
+    olhandoParaOTeto: false,
+    inventario: []
 };
+
+function coletarItem(elemento){
+    estadoJogo.inventario.push(elemento.id);
+    elemento.classList.add('escondida');
+
+    const slotLivre = document.querySelector('.slot.vazio');
+    slotLivre.innerHTML = `<p>${elemento.id}</p>`;
+    slotLivre.classList.remove('vazio');
+}
 
 let parede_anterior = 0
 function trocarCenario(direcao){

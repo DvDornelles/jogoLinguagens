@@ -13,20 +13,20 @@
     </header>
     <main id="game-container">
         <section id="parede-norte" class="cenario ativa">
-            <div class="elemento-interativo porta-blindada">porta blindada</div>
-            <div class="elemento-interativo mesa-blueprint">Blueprint</div>
+            <div class="elemento-interativo porta-blindada" id="portaBlindada">porta blindada</div>
+            <div class="elemento-interativo mesa-blueprint" onclick="coletarItem(this)" id="bluePrint">Blueprint</div>
         </section>
         <section id="parede-leste" class="cenario">
-            <div class="elemento-interativo quadro-forca">Quadro de Força</div>
+            <div class="elemento-interativo quadro-forca" id="quadroDeForca">Quadro de Força</div>
         </section>
         <section id="parede-oeste" class="cenario">
-            <div class="elemento-interativo estante">Estante de Livros</div>
+            <div class="elemento-interativo estante" id="estante">Estante de Livros</div>
         </section>
         <section id="parede-sul" class="cenario">
-            <div class="elemento-interativo maquina">Máquina Estranha</div>
+            <div class="elemento-interativo maquina" id="maquina">Máquina Estranha</div>
         </section>
         <section id="teto" class="cenario">
-            <div class="elemento-interativo duto">Duto de Ventilação</div>
+            <div class="elemento-interativo duto" id="duto">Duto de Ventilação</div>
         </section>
 
         <div id="navegacao">
