@@ -6,6 +6,47 @@ const estadoJogo = {
     itemSelecionado: null
 };
 
+function retornarMensagem(elemento){
+    switch (elemento.id){
+        case 'portaBlindada':
+            /*if(estadoJogo.itemSelecionado === bomba){} else*/
+            if (estadoJogo.itemSelecionado === null){
+                document.getElementById('retorno').innerHTML = `
+                    <p>"A porta está trancada por uma fechadura pesada..."</p>
+                `
+            }
+        break;
+        case 'quadroDeForca':
+            if (estadoJogo.itemSelecionado === null){
+                document.getElementById('retorno').innerHTML = `
+                    <p>"A sala está sem energia..."</p>
+                `
+            }
+        break;
+        case 'estante':
+            if (estadoJogo.itemSelecionado === null){
+                document.getElementById('retorno').innerHTML = `
+                    <p>"Muitos livros velhos, mas falta um espaço vazio..."</p>
+                `
+            }
+        break;
+        case 'maquina':
+            if (estadoJogo.itemSelecionado === null){
+                document.getElementById('retorno').innerHTML = `
+                    <p>"A máquina está sem energia..."</p>
+                `
+            }
+        break;
+        case 'duto':
+            if (estadoJogo.itemSelecionado === null){
+                document.getElementById('retorno').innerHTML = `
+                    <p>"A grade está presa por 4 parafusos enferrujados..."</p>
+                `
+            }
+        break;
+    }
+}
+
 function marcarSlot(slot){
     if (estadoJogo.itemSelecionado !== null){
         document.getElementById(estadoJogo.itemSelecionado).classList.remove('slotSelecionado')
