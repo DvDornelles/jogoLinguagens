@@ -14,7 +14,13 @@
     <main id="game-container">
         <section id="parede-norte" class="cenario ativa">
             <div class="elemento-interativo porta-blindada" id="portaBlindada" onclick="retornarMensagem(this)">porta blindada</div>
+            <div class="elemento-interativo painel-porta-pequeno" id="painelPorta" onclick="retornarMensagem(this)">painel porta</div>
             <div class="elemento-interativo mesa-blueprint" onclick="coletarItem(this)" id="bluePrint">Blueprint</div>
+            <div class="escondida pop-up" id="painelPortaPopUp">
+                <div class="elemento-interativo" id="compartimentoPorta" onclick="retornarMensagem(this)"></div>
+                <div class="elemento-interativo" id="terminalJS" onclick="retornarMensagem(this)"></div>
+                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaPainel">X</div>
+            </div>
         </section>
         <section id="parede-leste" class="cenario">
             <div class="elemento-interativo quadro-forca" id="quadroDeForca" onclick="retornarMensagem(this)">Quadro de Força</div>

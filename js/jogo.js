@@ -3,8 +3,16 @@ const estadoJogo = {
     indiceParedeAtual: 0,
     olhandoParaOTeto: false,
     inventario: [],
-    itemSelecionado: null
+    itemSelecionado: null,
+    emPopUp: false
 };
+
+function abrirPainelPorta(){
+    document.getElementById('painelPortaPopUp').classList.remove('escondida');
+}
+function fecharPainelPorta(){
+    document.getElementById('painelPortaPopUp').classList.add('escondida');
+}
 
 function retornarMensagem(elemento){
     switch (elemento.id){
@@ -13,6 +21,19 @@ function retornarMensagem(elemento){
             if (estadoJogo.itemSelecionado === null){
                 document.getElementById('retorno').innerHTML = `
                     <p>"A porta está trancada por uma fechadura pesada..."</p>
+                `
+            }
+        break;
+        case 'painelPorta':
+            abrirPainelPorta();
+        break;
+        case 'fechaPainel':
+            fecharPainelPorta();
+        break;
+        case 'compartimentoPorta':
+            if (estadoJogo.itemSelecionado === null){
+                document.getElementById('retorno').innerHTML = `
+                    <p>"Esse seria um ótimo lugar para colocar uma bomba. Iria arrebentar a tranca."</p>
                 `
             }
         break;
