@@ -6,11 +6,9 @@ const estadoJogo = {
     slotSelecionado: null,
     itemSelecionado: null,
     emPopUp: false,
-    parafusosDuto: false
+    parafusosDuto: false,
+    paredeAnterior: 0
 };
-const slot = {
-    itemRespectivo: null
-}
 
 function abrirPainelPorta(){
     document.getElementById('painelPortaPopUp').classList.remove('escondida');
@@ -96,7 +94,6 @@ function coletarItem(elemento){
     slotLivre.classList.remove('vazio');
 }
 
-let parede_anterior = 0
 function trocarCenario(direcao){
     const setaEsq = document.querySelector('.seta-esq');
     const setaDir = document.querySelector('.seta-dir');
@@ -116,7 +113,7 @@ function trocarCenario(direcao){
 
     if (direcao === 'cima'){
         estadoJogo.olhandoParaOTeto = true;
-        parede_anterior = estadoJogo.indiceParedeAtual
+        estadoJogo.paredeAnterior = estadoJogo.indiceParedeAtual
         estadoJogo.indiceParedeAtual = 4
         
         setaBaixo.classList.remove('escondida');
@@ -127,7 +124,7 @@ function trocarCenario(direcao){
 
     if (direcao === 'baixo'){
         estadoJogo.olhandoParaOTeto = false;
-        estadoJogo.indiceParedeAtual = parede_anterior
+        estadoJogo.indiceParedeAtual = estadoJogo.paredeAnterior
 
         setaBaixo.classList.add('escondida')
         setaDir.classList.remove('escondida')
