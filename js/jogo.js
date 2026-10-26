@@ -83,6 +83,7 @@ function marcarSlot(slot){
         document.getElementById(estadoJogo.slotSelecionado).classList.remove('slotSelecionado')
     }
     estadoJogo.slotSelecionado = slot.id;
+    estadoJogo.itemSelecionado = slot.innerText;
     slot.classList.add('slotSelecionado');
 }
 
