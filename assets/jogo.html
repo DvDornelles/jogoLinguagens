@@ -27,14 +27,16 @@
         </section>
         <section id="parede-oeste" class="cenario">
             <div class="elemento-interativo estante" id="estante" onclick="retornarMensagem(this)">Estante de Livros</div>
+            <div class="elemento-interativo" id="chaveDeFenda" onclick="coletarItem(this)"></div>
         </section>
         <section id="parede-sul" class="cenario">
             <div class="elemento-interativo maquina" id="maquina" onclick="retornarMensagem(this)">Máquina Estranha</div>
         </section>
         <section id="teto" class="cenario">
-            <div class="elemento-interativo duto" id="duto" onclick="retornarMensagem(this)">Duto de Ventilação</div>
+            <div class="elemento-interativo duto" id="duto" onclick="retornarMensagem(this)">Duto de Ventilação<div class="elemento-interativo" id="parafusos">P</div></div>
+            
         </section>
-
+        
         <div id="navegacao">
             <button class="seta seta-esq" onclick="trocarCenario('esq')">&#9664;</button>
             <button class="seta seta-dir" onclick="trocarCenario('dir')">&#9654;</button>

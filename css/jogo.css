@@ -150,3 +150,16 @@ body {
     border: 1px dashed #ccc;
     padding: 10px;
 }
+
+#chaveDeFenda{
+    position: absolute;
+    top: 60%; left: 55%; height: 100px;
+}
+#estante{
+    position: absolute;
+    top: 20%; left: 50%; transform: translateX(-50%); height: 60%; width: 20%;
+}
+#parafusos{
+    position: absolute;
+    top: 50%; left: 100%;
+}

@@ -3,9 +3,14 @@ const estadoJogo = {
     indiceParedeAtual: 0,
     olhandoParaOTeto: false,
     inventario: [],
+    slotSelecionado: null,
     itemSelecionado: null,
-    emPopUp: false
+    emPopUp: false,
+    parafusosDuto: false
 };
+const slot = {
+    itemRespectivo: null
+}
 
 function abrirPainelPorta(){
     document.getElementById('painelPortaPopUp').classList.remove('escondida');
@@ -14,6 +19,7 @@ function fecharPainelPorta(){
     document.getElementById('painelPortaPopUp').classList.add('escondida');
 }
 
+//mudar todos esses === null!!!!!!  !!!!!!!!!!!!!!!
 function retornarMensagem(elemento){
     switch (elemento.id){
         case 'portaBlindada':
@@ -59,20 +65,24 @@ function retornarMensagem(elemento){
             }
         break;
         case 'duto':
-            if (estadoJogo.itemSelecionado === null){
+            if (estadoJogo.itemSelecionado !== 'chaveDeFenda'){
                 document.getElementById('retorno').innerHTML = `
                     <p>"A grade está presa por 4 parafusos enferrujados..."</p>
                 `
+            }
+            else{
+                estadoJogo.parafusosDuto = true
+                coletarItem(document.querySelector('#parafusos'))
             }
         break;
     }
 }
 
 function marcarSlot(slot){
-    if (estadoJogo.itemSelecionado !== null){
-        document.getElementById(estadoJogo.itemSelecionado).classList.remove('slotSelecionado')
+    if (estadoJogo.slotSelecionado !== null){
+        document.getElementById(estadoJogo.slotSelecionado).classList.remove('slotSelecionado')
     }
-    estadoJogo.itemSelecionado = slot.id;
+    estadoJogo.slotSelecionado = slot.id;
     slot.classList.add('slotSelecionado');
 }
 
