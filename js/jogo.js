@@ -83,6 +83,12 @@ function retornarMensagem(elemento){
                     <p>"A máquina está sem energia..."</p>
                 `
             }
+            else{
+                abrirPainel('painelMaquina');
+            }
+        break;
+        case 'fechaMaquina':
+            fecharPainel('painelMaquina');
         break;
         //fim maquina
 
@@ -100,6 +106,10 @@ function retornarMensagem(elemento){
         break;
         //fim duto
     }
+}
+
+function puzzleMaquina() {
+    
 }
 
 function puzzleQuadroForca(fio){
