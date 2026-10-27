@@ -62,7 +62,7 @@ function retornarMensagem(elemento){
 
         //estante
         case 'estante':
-            if (estadoJogo.itemSelecionado === null){
+            if (estadoJogo.itemSelecionado !== 'livro'){
                 document.getElementById('retorno').innerHTML = `
                     <p>"Muitos livros velhos, mas falta um espaço vazio..."</p>
                 `
@@ -78,7 +78,7 @@ function retornarMensagem(elemento){
 
         //maquina
         case 'maquina':
-            if (estadoJogo.itemSelecionado === null){
+            if (estadoJogo.energiaAcionada === false){
                 document.getElementById('retorno').innerHTML = `
                     <p>"A máquina está sem energia..."</p>
                 `
