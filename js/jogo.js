@@ -106,12 +106,13 @@ function puzzleQuadroForca(fio){
     if(estadoJogo.itemSelecionado !== 'fita' && estadoJogo.energiaAcionada === false){
         document.getElementById('retorno').innerHTML = `<p>"Preciso de algo para prender um fio a outro."</p>`
     }
-    else{
+    else if(fio.classList !== 'consertado'){
         fio.classList.remove('quebrado');
         fio.classList.add('consertado');
         estadoJogo.fiosConsertados++;
         if(estadoJogo.fiosConsertados === 3){
             estadoJogo.energiaAcionada = true;
+            document.getElementById('retorno').innerHTML = `<p>"A energia foi restaurada!"</p>`
         }
     }
 }
