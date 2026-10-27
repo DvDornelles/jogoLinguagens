@@ -2,52 +2,65 @@ const estadoJogo = {
     paredes: ['parede-norte', 'parede-leste', 'parede-sul', 'parede-oeste', 'teto'], //0 a 4
     indiceParedeAtual: 0,
     olhandoParaOTeto: false,
+    paredeAnterior: 0,
+
     inventario: [],
     slotSelecionado: null,
     itemSelecionado: null,
+
     emPopUp: false,
     parafusosDuto: false,
-    paredeAnterior: 0
+
+    energiaAcionada: false,
+    fiosConsertados: 0
 };
 
-function abrirPainelPorta(){
-    document.getElementById('painelPortaPopUp').classList.remove('escondida');
+function abrirPainel(id){
+    document.getElementById(id).classList.remove('escondida');
 }
-function fecharPainelPorta(){
-    document.getElementById('painelPortaPopUp').classList.add('escondida');
+function fecharPainel(id){
+    document.getElementById(id).classList.add('escondida');
 }
 
 //mudar todos esses === null!!!!!!  !!!!!!!!!!!!!!!
 function retornarMensagem(elemento){
     switch (elemento.id){
+        //porta blindada
         case 'portaBlindada':
-            /*if(estadoJogo.itemSelecionado === bomba){} else*/
-            if (estadoJogo.itemSelecionado === null){
                 document.getElementById('retorno').innerHTML = `
                     <p>"A porta está trancada por uma fechadura pesada..."</p>
                 `
-            }
         break;
         case 'painelPorta':
-            abrirPainelPorta();
+            abrirPainel('painelPortaPopUp');
         break;
-        case 'fechaPainel':
-            fecharPainelPorta();
+        case 'fechaPainelPorta':
+            fecharPainel('painelPortaPopUp');
         break;
         case 'compartimentoPorta':
-            if (estadoJogo.itemSelecionado === null){
+            if (estadoJogo.itemSelecionado !== 'bomba'){
                 document.getElementById('retorno').innerHTML = `
                     <p>"Esse seria um ótimo lugar para colocar uma bomba. Iria arrebentar a tranca."</p>
                 `
             }
         break;
+        //fim porta blindada
+
+        //quadro de energia
         case 'quadroDeForca':
-            if (estadoJogo.itemSelecionado === null){
+            if (!estadoJogo.energiaAcionada){
                 document.getElementById('retorno').innerHTML = `
                     <p>"A sala está sem energia..."</p>
                 `
             }
+            abrirPainel('painelQuadroEnergiaPopUp');
         break;
+        case 'fechaQuadro':
+            fecharPainel('painelQuadroEnergiaPopUp');
+        break;
+        //fim quadro de energia
+
+        //estante
         case 'estante':
             if (estadoJogo.itemSelecionado === null){
                 document.getElementById('retorno').innerHTML = `
@@ -55,6 +68,15 @@ function retornarMensagem(elemento){
                 `
             }
         break;
+        case 'gaveta':
+            abrirPainel('painelGaveta');
+        break;
+        case 'fechaGaveta':
+            fecharPainel('painelGaveta');
+        break;
+        //fim estante
+
+        //maquina
         case 'maquina':
             if (estadoJogo.itemSelecionado === null){
                 document.getElementById('retorno').innerHTML = `
@@ -62,17 +84,35 @@ function retornarMensagem(elemento){
                 `
             }
         break;
+        //fim maquina
+
+        //duto
         case 'duto':
-            if (estadoJogo.itemSelecionado !== 'chaveDeFenda'){
+            if (estadoJogo.itemSelecionado !== 'chaveDeFenda' && estadoJogo.parafusosDuto === false){
                 document.getElementById('retorno').innerHTML = `
                     <p>"A grade está presa por 4 parafusos enferrujados..."</p>
                 `
             }
-            else{
+            else if(estadoJogo.parafusosDuto === false){
                 estadoJogo.parafusosDuto = true
                 coletarItem(document.querySelector('#parafusos'))
             }
         break;
+        //fim duto
+    }
+}
+
+function puzzleQuadroForca(fio){
+    if(estadoJogo.itemSelecionado !== 'fita' && estadoJogo.energiaAcionada === false){
+        document.getElementById('retorno').innerHTML = `<p>"Preciso de algo para prender um fio a outro."</p>`
+    }
+    else{
+        fio.classList.remove('quebrado');
+        fio.classList.add('consertado');
+        estadoJogo.fiosConsertados++;
+        if(estadoJogo.fiosConsertados === 3){
+            estadoJogo.energiaAcionada = true;
+        }
     }
 }
 
@@ -81,7 +121,7 @@ function marcarSlot(slot){
         document.getElementById(estadoJogo.slotSelecionado).classList.remove('slotSelecionado')
     }
     estadoJogo.slotSelecionado = slot.id;
-    estadoJogo.itemSelecionado = slot.innerText;
+    estadoJogo.itemSelecionado = slot.innerText.trim(); //trim() limpa espaços em branco e caracteres invisíveis
     slot.classList.add('slotSelecionado');
 }
 

@@ -151,7 +151,7 @@ body {
 
 #chaveDeFenda{
     position: absolute;
-    top: 60%; left: 55%; height: 100px;
+    top: 30%; left: 60%; height: 100px; width: 10px;
 }
 #estante{
     position: absolute;
@@ -160,4 +160,31 @@ body {
 #parafusos{
     position: absolute;
     top: 50%; left: 100%;
+}
+
+#gaveta{
+    position: absolute;
+    top: 80%; width: 90px;
+}
+
+#vermelho{
+    position: absolute;
+    top: 20%; left: 10%;
+}
+
+#azul{
+    position: absolute;
+    top: 45%; left: 10%;
+}
+
+#verde{
+    position: absolute;
+    top: 70%; left: 10%;
+}
+
+.quebrado{
+    background-color: #e74c3c;
+}
+.consertado{
+    background-color: rgb(0, 255, 0);
 }

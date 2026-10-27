@@ -12,6 +12,7 @@
         <!--colocar o botão de diário de pistas-->
     </header>
     <main id="game-container">
+        <!--porta-->
         <section id="parede-norte" class="cenario ativa">
             <div class="elemento-interativo porta-blindada" id="portaBlindada" onclick="retornarMensagem(this)">porta blindada</div>
             <div class="elemento-interativo painel-porta-pequeno" id="painelPorta" onclick="retornarMensagem(this)">painel porta</div>
@@ -19,22 +20,38 @@
             <div class="escondida pop-up" id="painelPortaPopUp">
                 <div class="elemento-interativo" id="compartimentoPorta" onclick="retornarMensagem(this)"></div>
                 <div class="elemento-interativo" id="terminalJS" onclick="retornarMensagem(this)"></div>
-                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaPainel">X</div>
+                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaPainelPorta">X</div>
             </div>
         </section>
+        <!--quadro de energia-->
         <section id="parede-leste" class="cenario">
             <div class="elemento-interativo quadro-forca" id="quadroDeForca" onclick="retornarMensagem(this)">Quadro de Força</div>
+            <div class="pop-up escondida" id="painelQuadroEnergiaPopUp">
+                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaQuadro">X</div>
+                <div class="quebrado elemento-interativo" onclick="puzzleQuadroForca(this)" id="vermelho"></div>
+                <div class="quebrado elemento-interativo" onclick="puzzleQuadroForca(this)" id="azul"></div>
+                <div class="quebrado elemento-interativo" onclick="puzzleQuadroForca(this)" id="verde"></div>
+            </div>
         </section>
+        <!--estante-->
         <section id="parede-oeste" class="cenario">
-            <div class="elemento-interativo estante" id="estante" onclick="retornarMensagem(this)">Estante de Livros</div>
-            <div class="elemento-interativo" id="chaveDeFenda" onclick="coletarItem(this)"></div>
+            <div class="elemento-interativo estante" id="estante" onclick="retornarMensagem(this)">
+                Estante de Livros
+                <div class="elemento-interativo" id="chaveDeFenda" onclick="coletarItem(this)">Chave de Fenda</div>
+                <div class="elemento-interativo" id="gaveta" onclick="retornarMensagem(this)">Gaveta</div>
+                <div class="pop-up escondida" id="painelGaveta">
+                    <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaGaveta">X</div>
+                    <div class="elemento-interativo" id="fita" onclick="coletarItem(this)">Rolo de fita</div>
+                </div>
+            </div>
         </section>
+        <!--maquina-->
         <section id="parede-sul" class="cenario">
             <div class="elemento-interativo maquina" id="maquina" onclick="retornarMensagem(this)">Máquina Estranha</div>
         </section>
+        <!--teto-->
         <section id="teto" class="cenario">
             <div class="elemento-interativo duto" id="duto" onclick="retornarMensagem(this)">Duto de Ventilação<div class="elemento-interativo" id="parafusos">P</div></div>
-            
         </section>
         
         <div id="navegacao">
