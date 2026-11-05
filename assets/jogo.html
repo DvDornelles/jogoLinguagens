@@ -51,19 +51,22 @@
             <div class="pop-up escondida" id="painelMaquina">
                 <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaMaquina">X</div>
                 <div class="puzzle-area" id="areaPuzzleMaquina">
-                    <div class="" id="iniciarPuzzleMaquina" onclick="puzzleMaquina()"></div>
-                    <div class="puzzle" id="ordemNumerica">
-                        <div class="elemento-interativo" id="b1"></div>
-                        <div class="elemento-interativo" id="b2"></div>
-                        <div class="elemento-interativo" id="b3"></div>
-                        <div class="elemento-interativo" id="b4"></div>
-                        <div class="elemento-interativo" id="b5"></div>
-                        <div class="elemento-interativo" id="b6"></div>
-                        <div class="elemento-interativo" id="b7"></div>
-                        <div class="elemento-interativo" id="b8"></div>
-                        <div class="elemento-interativo" id="b9"></div>
-                        <div class="elemento-interativo" id="b10"></div>
+                    <div class="iniciarMaquina elemento-interativo" id="iniciarPuzzleMaquina" onclick="puzzleMaquina(this)">|></div>
+                    <div class="puzzle escondida" id="ordemNumerica">
+                        <div class="elemento-interativo blocoMaquina" id="b1" onclick="puzzleMaquina(this)"><p>1</p></div>
+                        <div class="elemento-interativo blocoMaquina" id="b2" onclick="puzzleMaquina(this)"><p>2³</p></div>
+                        <div class="elemento-interativo blocoMaquina" id="b3" onclick="puzzleMaquina(this)"><p>4+5</p></div>
+                        <div class="elemento-interativo blocoMaquina" id="b4" onclick="puzzleMaquina(this)"><p>10</p></div>
+                        <div class="elemento-interativo blocoMaquina" id="b5" onclick="puzzleMaquina(this)"><p>5</p></div>
+                        <div class="elemento-interativo blocoMaquina" id="b6" onclick="puzzleMaquina(this)"><p>6</p></div>
+                        <div class="elemento-interativo blocoMaquina" id="b7" onclick="puzzleMaquina(this)"><p>7</p></div>
+                        <div class="elemento-interativo blocoMaquina" id="b8" onclick="puzzleMaquina(this)"><p>8</p></div>
+                        <div class="elemento-interativo blocoMaquina" id="b9" onclick="puzzleMaquina(this)"><p>9</p></div>
                     </div>
+                </div>
+                <div class="cofre" id="cofreMaquina">
+                    <div id="bateria" class="escondida elemento-interativo" onclick="retornarMensagem(this)">Bateria</div>
+                    <div id="cabos" class="escondida elemento-interativo" onclick="retornarMensagem(this)">Cabos</div>
                 </div>
             </div>
         </section>

@@ -3,16 +3,27 @@ const estadoJogo = {
     indiceParedeAtual: 0,
     olhandoParaOTeto: false,
     paredeAnterior: 0,
+    emPopUp: false,
 
     inventario: [],
     slotSelecionado: null,
     itemSelecionado: null,
 
-    emPopUp: false,
+   
     parafusosDuto: false,
+    bateria: false,
+    cabos: false,
 
     energiaAcionada: false,
+};
+
+const estadoPuzzleLuz = {
     fiosConsertados: 0
+}
+
+const estadoPuzzleMaquina = {
+    numeroAtual: 0,
+    iniciado: false,
 };
 
 function abrirPainel(id){
@@ -90,6 +101,12 @@ function retornarMensagem(elemento){
         case 'fechaMaquina':
             fecharPainel('painelMaquina');
         break;
+        case 'bateria':
+            coletarItem(document.getElementById('bateria'))
+        break;
+        case 'cabos':
+            coletarItem(document.getElementById('cabos'))
+        break;
         //fim maquina
 
         //duto
@@ -108,8 +125,35 @@ function retornarMensagem(elemento){
     }
 }
 
-function puzzleMaquina() {
-    
+// Puzzle Maquina
+function puzzleMaquina(bloco) {
+    if (bloco.id === 'iniciarPuzzleMaquina') {
+        estadoPuzzleMaquina.iniciado = true;
+        document.getElementById('ordemNumerica').classList.remove('escondida');
+        bloco.classList.add('escondida');
+    } else {
+        // Pega apenas o número do ID (ex: de 'b1' vira 1)
+        const botaoClicado = parseInt(bloco.id.replace('b', ''));
+
+        if (botaoClicado === estadoPuzzleMaquina.numeroAtual + 1) {
+            estadoPuzzleMaquina.numeroAtual++;
+            bloco.classList.add('escondida');
+            if (estadoPuzzleMaquina.numeroAtual === 9) {
+                document.getElementById('retorno').innerHTML = `<p>"A máquina destravou e liberou a Bateria e Cabos!"</p>`;
+                document.getElementById('bateria').classList.remove('escondida')
+                document.getElementById('cabos').classList.remove('escondida')
+            }
+        } else {
+            estadoPuzzleMaquina.numeroAtual = 0;
+            estadoPuzzleMaquina.iniciado = false;
+            document.getElementById('ordemNumerica').classList.add('escondida');
+            document.getElementById('iniciarPuzzleMaquina').classList.remove('escondida');
+            document.getElementById('retorno').innerHTML = `<p>"Sequência incorreta!"</p>`;
+            for(i=1; i<10; i++){
+                document.getElementById('b' + i).classList.remove('escondida')
+            }
+        }
+    }
 }
 
 function puzzleQuadroForca(fio){
@@ -119,10 +163,10 @@ function puzzleQuadroForca(fio){
     else if(fio.classList !== 'consertado'){
         fio.classList.remove('quebrado');
         fio.classList.add('consertado');
-        estadoJogo.fiosConsertados++;
-        if(estadoJogo.fiosConsertados === 3){
+        estadoPuzzleLuz.fiosConsertados++;
+        if(estadoPuzzleLuz.fiosConsertados === 3){
             estadoJogo.energiaAcionada = true;
-            document.getElementById('retorno').innerHTML = `<p>"A energia foi restaurada!"</p>`
+            document.getElementById('retorno').innerHTML = `<p>"A energia foi restaurada!"</p>`        
         }
     }
 }
