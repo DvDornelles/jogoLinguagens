@@ -57,6 +57,15 @@ function retornarMensagem(elemento){
         break;
         //fim porta blindada
 
+        //começo blueprint
+        case 'bluePrint':
+            abrirPainel('painelBluePrint');
+        break;
+        case 'fechaBluePrint':
+            fecharPainel('painelBluePrint')
+        break;
+        //fim blueprint
+
         //quadro de energia
         case 'quadroDeForca':
             if (!estadoJogo.energiaAcionada){
