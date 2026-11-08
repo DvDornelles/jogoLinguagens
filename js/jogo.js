@@ -9,6 +9,7 @@ const estadoJogo = {
     slotSelecionado: null,
     itemSelecionado: null,
 
+    bluePrint: false,
    
     parafusosDuto: false,
     bateria: false,
@@ -16,6 +17,15 @@ const estadoJogo = {
 
     energiaAcionada: false,
 };
+
+const bluePrint = {
+    cabos: false,
+    bateria: false,
+    fita: false,
+    parafusos: false,
+    dinamite: false,
+    relogio: false,
+}
 
 const estadoPuzzleLuz = {
     fiosConsertados: 0
@@ -60,6 +70,7 @@ function retornarMensagem(elemento){
         //começo blueprint
         case 'bluePrint':
             abrirPainel('painelBluePrint');
+            estadoJogo.bluePrint = true
         break;
         case 'fechaBluePrint':
             fecharPainel('painelBluePrint')
@@ -187,6 +198,10 @@ function marcarSlot(slot){
     estadoJogo.slotSelecionado = slot.id;
     estadoJogo.itemSelecionado = slot.innerText.trim(); //trim() limpa espaços em branco e caracteres invisíveis
     slot.classList.add('slotSelecionado');
+}
+
+function adicionarBlueprint(material){
+
 }
 
 function coletarItem(elemento){
