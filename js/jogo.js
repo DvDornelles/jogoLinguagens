@@ -186,7 +186,10 @@ function puzzleQuadroForca(fio){
         estadoPuzzleLuz.fiosConsertados++;
         if(estadoPuzzleLuz.fiosConsertados === 3){
             estadoJogo.energiaAcionada = true;
-            document.getElementById('retorno').innerHTML = `<p>"A energia foi restaurada!"</p>`        
+            document.getElementById('retorno').innerHTML = `<p>"A energia foi restaurada!"</p>`
+            if(estadoJogo.bluePrint === true){
+                adicionarBlueprint('fita');
+            } 
         }
     }
 }
@@ -201,16 +204,50 @@ function marcarSlot(slot){
 }
 
 function adicionarBlueprint(material){
-
+    switch (material){
+        case 'fita':
+            bluePrint.fita = true
+        break;
+    }
+    
 }
 
 function coletarItem(elemento){
     estadoJogo.inventario.push(elemento.id);
     elemento.classList.add('escondida');
 
-    const slotLivre = document.querySelector('.slot.vazio');
-    slotLivre.innerHTML = `<p>${elemento.id}</p>`;
-    slotLivre.classList.remove('vazio');
+    if(estadoJogo.bluePrint === false){
+        const slotLivre = document.querySelector('.slot.vazio');
+        slotLivre.innerHTML = `<p>${elemento.id}</p>`;
+        slotLivre.classList.remove('vazio');
+    }
+    else{
+        if(elemento.id === 'bateria'){
+            bluePrint.bateria = true
+            document.getElementById('retorno').innerHTML = `<p>"A bateria foi adicionada ao projeto de bomba."</p>`
+        }
+        else if(elemento.id === 'cabos'){
+            bluePrint.caboas = true
+            document.getElementById('retorno').innerHTML = `<p>"Os caboas foram adicionados ao projeto de bomba."</p>`
+        }
+        else if(elemento.id === 'relogio'){
+            bluePrint.relogio = true
+            document.getElementById('retorno').innerHTML = `<p>"O relógio de bolso foi adicionado ao projeto de bomba."</p>`
+        }
+        else if(elemento.id === 'parafusos'){
+            bluePrint.parafusos = true
+            document.getElementById('retorno').innerHTML = `<p>"Os parafusos foram adicionados ao projeto de bomba."</p>`
+        }
+        else if(elemento.id === 'dinamite'){
+            bluePrint.dinamite = true
+            document.getElementById('retorno').innerHTML = `<p>"A dinamite foi adicionada ao projeto de bomba."</p>`
+        }
+        else{
+            const slotLivre = document.querySelector('.slot.vazio');
+            slotLivre.innerHTML = `<p>${elemento.id}</p>`;
+            slotLivre.classList.remove('vazio');
+        }
+    }
 }
 
 function trocarCenario(direcao){
