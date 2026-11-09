@@ -311,3 +311,22 @@ function trocarCenario(direcao){
 
     document.getElementById(estadoJogo.paredes[estadoJogo.indiceParedeAtual]).classList.add('ativa');
 }
+
+document.addEventListener('keydown', (event) =>{
+    switch (event.key){
+        case 'ArrowUp':
+            if(estadoJogo.paredes[estadoJogo.indiceParedeAtual] !== 'teto'){
+                trocarCenario('cima')
+            }
+        break;
+        case 'ArrowDown':
+            trocarCenario('baixo')
+        break;
+        case 'ArrowRight':
+            trocarCenario('dir')
+        break;
+        case 'ArrowLeft':
+            trocarCenario('esq')
+        break;
+    }
+})
