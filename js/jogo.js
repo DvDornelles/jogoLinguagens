@@ -315,12 +315,14 @@ function trocarCenario(direcao){
 document.addEventListener('keydown', (event) =>{
     switch (event.key){
         case 'ArrowUp':
-            if(estadoJogo.paredes[estadoJogo.indiceParedeAtual] !== 'teto'){
+            if(!estadoJogo.olhandoParaOTeto){
                 trocarCenario('cima')
             }
         break;
         case 'ArrowDown':
-            trocarCenario('baixo')
+            if(estadoJogo.olhandoParaOTeto){
+                trocarCenario('baixo')
+            }
         break;
         case 'ArrowRight':
             trocarCenario('dir')
