@@ -71,7 +71,6 @@ function retornarMensagem(elemento){
         case 'bluePrint':
             abrirPainel('painelBluePrint');
             estadoJogo.bluePrint = true
-            
         break;
         case 'fechaBluePrint':
             fecharPainel('painelBluePrint')
@@ -231,42 +230,48 @@ function adicionarBlueprint(material){
 }
 
 function coletarItem(elemento){
-    estadoJogo.inventario.push(elemento.id);
-    elemento.classList.add('escondida');
+    const slotLivre = document.querySelector('.slot.vazio');
 
-    if(estadoJogo.bluePrint === false){
-        const slotLivre = document.querySelector('.slot.vazio');
-        slotLivre.innerHTML = `<p>${elemento.id}</p>`;
-        slotLivre.classList.remove('vazio');
-    }
-    else{
-        switch (elemento.id){
-            case 'bateria':
-                bluePrint.bateria = true
-                document.getElementById('retorno').innerHTML = `<p>"A bateria foi adicionada ao projeto de bomba."</p>`
-            break;
-            case 'cabos':
-                bluePrint.caboas = true
-                document.getElementById('retorno').innerHTML = `<p>"Os caboas foram adicionados ao projeto de bomba."</p>`
-            break;
-            case 'relogio':
-                bluePrint.relogio = true
-                document.getElementById('retorno').innerHTML = `<p>"O relógio de bolso foi adicionado ao projeto de bomba."</p>`
-            break;
-            case 'parafusos':
-                bluePrint.parafusos = true
-                document.getElementById('retorno').innerHTML = `<p>"Os parafusos foram adicionados ao projeto de bomba."</p>`
-            break;
-            case 'dinamite':
-                bluePrint.dinamite = true
-                document.getElementById('retorno').innerHTML = `<p>"A dinamite foi adicionada ao projeto de bomba."</p>`
-            break;
-            default:
-                const slotLivre = document.querySelector('.slot.vazio');
-                slotLivre.innerHTML = `<p>${elemento.id}</p>`;
-                slotLivre.classList.remove('vazio');    
-            break;
+    if (slotLivre){
+        estadoJogo.inventario.push(elemento.id);
+        elemento.classList.add('escondida');
+
+        if(estadoJogo.bluePrint === false){
+            const slotLivre = document.querySelector('.slot.vazio');
+            slotLivre.innerHTML = `<p>${elemento.id}</p>`;
+            slotLivre.classList.remove('vazio');
         }
+        else{
+            switch (elemento.id){
+                case 'bateria':
+                    bluePrint.bateria = true
+                    document.getElementById('retorno').innerHTML = `<p>"A bateria foi adicionada ao projeto de bomba."</p>`
+                break;
+                case 'cabos':
+                    bluePrint.caboas = true
+                    document.getElementById('retorno').innerHTML = `<p>"Os caboas foram adicionados ao projeto de bomba."</p>`
+                break;
+                case 'relogio':
+                    bluePrint.relogio = true
+                    document.getElementById('retorno').innerHTML = `<p>"O relógio de bolso foi adicionado ao projeto de bomba."</p>`
+                break;
+                case 'parafusos':
+                    bluePrint.parafusos = true
+                    document.getElementById('retorno').innerHTML = `<p>"Os parafusos foram adicionados ao projeto de bomba."</p>`
+                break;
+                case 'dinamite':
+                    bluePrint.dinamite = true
+                    document.getElementById('retorno').innerHTML = `<p>"A dinamite foi adicionada ao projeto de bomba."</p>`
+                break;
+                default:
+                    const slotLivre = document.querySelector('.slot.vazio');
+                    slotLivre.innerHTML = `<p>${elemento.id}</p>`;
+                    slotLivre.classList.remove('vazio');    
+                break;
+            }
+        }
+    } else{
+        document.getElementById('retorno').innerHTML = `<p>"Seu inventário está cheio."</p>`
     }
 }
 
