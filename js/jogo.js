@@ -71,6 +71,7 @@ function retornarMensagem(elemento){
         case 'bluePrint':
             abrirPainel('painelBluePrint');
             estadoJogo.bluePrint = true
+            
         break;
         case 'fechaBluePrint':
             fecharPainel('painelBluePrint')
@@ -221,14 +222,12 @@ function adicionarBlueprint(material){
     estadoJogo.slotSelecionado = null
 
     if (indice !== -1) {
-  // Substitui o ID por null. O slot agora está vazio!
-  estadoJogo.inventario[indice] = null;
-  console.log("✅ Item removido! O slot agora está vazio.");
-} else {
-  console.log("⚠️ Item não encontrado.");
-}
-
-console.log(estadoJogo.inventario);     
+        estadoJogo.inventario[indice] = null;
+        console.log("✅ Item removido! O slot agora está vazio.");
+    } else {
+        console.log("⚠️ Item não encontrado.");
+    }
+    console.log(estadoJogo.inventario);     
 }
 
 function coletarItem(elemento){
