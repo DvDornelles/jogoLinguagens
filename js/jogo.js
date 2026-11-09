@@ -70,10 +70,10 @@ function retornarMensagem(elemento){
         //começo blueprint
         case 'bluePrint':
             abrirPainel('painelBluePrint');
-            estadoJogo.bluePrint = true
+            estadoJogo.bluePrint = true;
         break;
         case 'fechaBluePrint':
-            fecharPainel('painelBluePrint')
+            fecharPainel('painelBluePrint');
         break;
         //fim blueprint
 
@@ -227,6 +227,37 @@ function adicionarBlueprint(material){
         console.log("⚠️ Item não encontrado.");
     }
     console.log(estadoJogo.inventario);     
+}
+
+function transferirBluePrint(){
+    const itensValidos = ['fita', 'relogio', 'cabos', 'parafusos', 'bateria', 'dinamite'];
+    for (let i=0; i<5; i++){
+        if (itensValidos.includes(estadoJogo.inventario[i])){
+            const elemento = estadoJogo.inventario[i]
+            
+            if(estadoJogo.energiaAcionada){
+                bluePrint.elemento = true
+            
+                estadoJogo.inventario[i] = ''
+                const j = i+1;
+                document.getElementById('slot' + j).innerHTML = ``
+                estadoJogo.itemSelecionado = ''
+                estadoJogo.slotSelecionado = ''
+                document.getElementById('bp' + estadoJogo.inventario[i]).classList.remove('escondida')
+            }else{
+                if(estadoJogo.inventario[i] !== 'fita'){
+                    bluePrint.elemento = true
+            
+                    estadoJogo.inventario[i] = ''
+                    const j = i+1;
+                    document.getElementById('slot' + j).innerHTML = ``
+                    estadoJogo.itemSelecionado = ''
+                    estadoJogo.slotSelecionado = ''
+                    document.getElementById('bp' + estadoJogo.inventario[i]).classList.remove('escondida')
+                }
+            }
+        }
+    }
 }
 
 function coletarItem(elemento){
