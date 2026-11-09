@@ -365,5 +365,20 @@ document.addEventListener('keydown', (event) =>{
         case 'ArrowLeft':
             trocarCenario('esq')
         break;
+        case '1':
+            marcarSlot(document.getElementById('slot'+1))
+        break;
+        case '2':
+            marcarSlot(document.getElementById('slot'+2))
+        break;
+        case '3':
+            marcarSlot(document.getElementById('slot'+3))
+        break;
+        case '4':
+            marcarSlot(document.getElementById('slot'+4))
+        break;
+        case '5':
+            marcarSlot(document.getElementById('slot'+5))
+        break;
     }
 })
