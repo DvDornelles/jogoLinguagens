@@ -267,7 +267,7 @@ function transferirBluePrint(){
                     document.getElementById('slot' + j).innerHTML = ``
                     estadoJogo.itemSelecionado = ''
                     estadoJogo.slotSelecionado = ''
-                    document.getElementById('bp' + estadoJogo.inventario[i]).classList.remove('escondida')
+                    document.getElementById('bp' + elemento).classList.remove('escondida')
                 }
             }
         }
