@@ -245,10 +245,10 @@ function transferirBluePrint(){
                 document.getElementById('slot' + j).innerHTML = ``
                 estadoJogo.itemSelecionado = ''
                 estadoJogo.slotSelecionado = ''
-                document.getElementById('bp' + estadoJogo.inventario[i]).classList.remove('escondida')
+                document.getElementById('bp' + elemento).classList.remove('escondida')
             }else{
                 if(estadoJogo.inventario[i] !== 'fita'){
-                    bluePrint.elemento = true
+                    bluePrint[elemento] = true
             
                     estadoJogo.inventario[i] = ''
                     const j = i+1;
@@ -281,7 +281,7 @@ function coletarItem(elemento){
                     document.getElementById('retorno').innerHTML = `<p>"A bateria foi adicionada ao projeto de bomba."</p>`
                 break;
                 case 'cabos':
-                    bluePrint.caboas = true
+                    bluePrint.cabos = true
                     document.getElementById('retorno').innerHTML = `<p>"Os caboas foram adicionados ao projeto de bomba."</p>`
                 break;
                 case 'relogio':
@@ -396,6 +396,28 @@ document.addEventListener('keydown', (event) =>{
 })
 
 function submeterCod() {
-    const codigo = document.getElementById('input_terminal').value
-    console.log(codigo)
+    const codigo = document.getElementById('input_terminal').value;
+    let retornoCod = 'erro'
+    console.log(codigo);
+    try {
+        retornoCod = eval(codigo); //executa o texto como se fosse código js
+    } catch (erro){
+    }
+    aprovarSenha(retornoCod)
+}
+
+function gerarSenha() {
+    const senha = 'senhaForte';
+    return senha;
+}
+
+function aprovarSenha(senha) {
+    if (senha === 'senhaForte'){
+        console.log('acertou')
+        return true;
+    }
+    else{
+        console.log('errou')
+        return false;
+    }
 }
