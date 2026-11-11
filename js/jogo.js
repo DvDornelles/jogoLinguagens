@@ -394,3 +394,8 @@ document.addEventListener('keydown', (event) =>{
         }
     }
 })
+
+function submeterCod() {
+    const codigo = document.getElementById('input_terminal').value
+    console.log(codigo)
+}
