@@ -38,9 +38,11 @@ const estadoPuzzleMaquina = {
 
 function abrirPainel(id){
     document.getElementById(id).classList.remove('escondida');
+    estadoJogo.emPopUp = true
 }
 function fecharPainel(id){
     document.getElementById(id).classList.add('escondida');
+    estadoJogo.emPopUp = false
 }
 
 //mudar todos esses === null!!!!!!  !!!!!!!!!!!!!!!
