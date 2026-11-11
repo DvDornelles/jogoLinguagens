@@ -421,3 +421,18 @@ function aprovarSenha(senha) {
         return false;
     }
 }
+
+const campoCodigo = document.getElementById('input_terminal')
+campoCodigo.addEventListener('keydown', function(event){
+    if(event.key === 'Tab'){
+        event.preventDefault(); //evita passar para o próximo elemento do navegador
+
+        const cursor = this.selectionStart; //posição do cursor OU começo da seleção
+        const fim = this.selectionEnd; //fim da seleção
+
+        this.value = this.value.substring(0, cursor) + "\t" + this.value.substring(fim); //substring pega do 0 até a posição do cursor ou a metade da direita
+
+        this.selectionStart = cursor + 1;
+        this.selectionEnd = cursor + 1; //coloca o cursor após o tab
+    }
+});
