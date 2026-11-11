@@ -98,6 +98,11 @@ function retornarMensagem(elemento){
             document.getElementById('retorno').innerHTML = `
             <p>"Uma mobília velha com algumas anotações..."</p>
             `
+            abrirPainel('painelMobilia')
+        break;
+        case 'fechaMobilia':
+            fecharPainel('painelMobilia')
+        break;
         //fim mobília
 
         //estante
