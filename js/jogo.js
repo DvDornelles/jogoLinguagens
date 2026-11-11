@@ -93,6 +93,13 @@ function retornarMensagem(elemento){
         break;
         //fim quadro de energia
 
+        //começo mobília
+        case 'mobilia':
+            document.getElementById('retorno').innerHTML = `
+            <p>"Uma mobília velha com algumas anotações..."</p>
+            `
+        //fim mobília
+
         //estante
         case 'estante':
             if (estadoJogo.itemSelecionado !== 'livro'){
