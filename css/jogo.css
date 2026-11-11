@@ -234,3 +234,20 @@ body {
 #areaPuzzleMaquina{
     height: 35%; width: 60%;
 }
+
+#terminalJS{
+    background-color: black;
+    color: lime;
+    border: green 1px solid;
+    width: 80%; height: 50%;
+}
+
+#input-terminal{
+    background-color: black;
+    color: lime;
+    width: 100%; height: 100%;
+}
+
+#form-terminal{
+    width: 100%; height: 100%;
+}
