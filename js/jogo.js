@@ -366,11 +366,15 @@ document.addEventListener('keydown', (event) =>{
             break;
             case 'ArrowRight':
             case 'd':
-                trocarCenario('dir')
+                if(!estadoJogo.olhandoParaOTeto){
+                    trocarCenario('dir')
+                }
             break;
             case 'ArrowLeft':
             case 'a':
-                trocarCenario('esq')
+                if(!estadoJogo.olhandoParaOTeto){
+                    trocarCenario('esq')
+                }
             break;
             case '1':
                 marcarSlot(document.getElementById('slot'+1))
