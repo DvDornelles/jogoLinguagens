@@ -405,14 +405,14 @@ function submeterCod() {
     }
     aprovarSenha(retornoCod)
 }
-
+//senha deve ser 6767*52+27/3
 function gerarSenha() {
-    const senha = 'senhaForte';
+    const senha = 6767;
     return senha;
 }
 
 function aprovarSenha(senha) {
-    if (senha === 'senhaForte'){
+    if (senha === 351893){
         console.log('acertou')
         return true;
     }
