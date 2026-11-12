@@ -53,9 +53,28 @@
 }
 
 
-.item-fundo{
+.item-fundo-fita{
     background-image: url("../img/fita.png");
 }
+/*.item-fundo-bateria{
+    background-image: url("../img/bateria.png");
+}*/
+.item-fundo-cabos{
+    background-image: url("../img/cabos.png");
+}
+/*.item-fundo-relogio{
+    background-image: url("../img/relogio.png");
+}
+.item-fundo-dinamite{
+    background-image: url("../img/dinamite.png");
+}*/
+.item-fundo-chaveDeFenda{
+    background-image: url("../img/chave.fenda.png");
+}
+.item-fundo-parafusosNoDuto{
+    background-image: url("../img/parafusos.item.png");
+}
+
 
 
 #bpfita{

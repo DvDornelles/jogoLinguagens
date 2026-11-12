@@ -255,10 +255,11 @@ function transferirBluePrint(){
             
             if(estadoJogo.energiaAcionada){
                 bluePrint.elemento = true
-            
-                estadoJogo.inventario[i] = ''
+                estadoJogo.inventario[i] = null
                 const j = i+1;
-                document.getElementById('slot' + j).innerHTML = ``
+                document.getElementById('slot' + j).classList.remove('item-fundo-'+elemento)
+                document.getElementById('slot' + j).classList.add('vazio')
+                document.getElementById('slot' + j).classList.remove('slotSelecionado')
                 estadoJogo.itemSelecionado = null
                 estadoJogo.slotSelecionado = null
                 document.getElementById('bp' + elemento).classList.remove('escondida')
@@ -266,9 +267,11 @@ function transferirBluePrint(){
                 if(estadoJogo.inventario[i] !== 'fita'){
                     bluePrint[elemento] = true
             
-                    estadoJogo.inventario[i] = ''
+                    estadoJogo.inventario[i] = null
                     const j = i+1;
-                    document.getElementById('slot' + j).innerHTML = ``
+                    document.getElementById('slot' + j).classList.remove('item-fundo-'+elemento)
+                    document.getElementById('slot' + j).classList.add('vazio')
+                    document.getElementById('slot' + j).classList.remove('slotSelecionado')
                     estadoJogo.itemSelecionado = null
                     estadoJogo.slotSelecionado = null
                     document.getElementById('bp' + elemento).classList.remove('escondida')
@@ -287,7 +290,7 @@ function coletarItem(elemento){
 
         if(estadoJogo.bluePrint === false){
             const slotLivre = document.querySelector('.slot.vazio');
-            slotLivre.classList.add('item-fundo');
+            slotLivre.classList.add('item-fundo-' + elemento.id);
             slotLivre.classList.remove('vazio');
         }
         else{
