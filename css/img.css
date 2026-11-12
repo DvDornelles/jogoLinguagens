@@ -6,6 +6,32 @@
     image-rendering: pixelated;
     border: none;
 }
+#parede-oeste{
+    background-image: url("../img/parede.oeste.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+#parede-norte{
+    background-image: url("../img/parede.norte.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+#parede-sul{
+    background-image: url("../img/parede.sul.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+
+
 #portaBlindada{
     background-image: url("../img/porta.png");
     background-size: contain;
