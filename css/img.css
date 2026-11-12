@@ -41,6 +41,7 @@
 }
 #maquina{
     background-image: url("../img/maquina.png");
+    background-size: cover !important;
 }
 #estante{   
     background-image: url("../img/estante.png");

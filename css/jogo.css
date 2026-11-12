@@ -71,7 +71,7 @@ body {
 
 /*Posicionamento de position: absolute*/
 .porta-blindada { top: 110px; left: 265px; width: 135px; height: 290px; }
-.mesa-blueprint { bottom: 30px; right: 80px; width: 200px; height: 200px; }
+.mesa-blueprint { bottom: 50px; right: 80px; width: 200px; height: 160px; }
 .duto { top: 29px; left: 147px; width: 90px; height: 70px; }
 .painel-porta-pequeno { top: 185px; left: 40px; width: 55px; height: 85px;}
 .pop-up {
@@ -261,4 +261,9 @@ body {
 #quadroDeForca{
     top: 135px; left: 40px;
     height: 70px; width: 55px;
+}
+
+#maquina{
+    top: 135px; left: 50%; transform: translateX(-50%);
+    height: 250px; width: 200px;
 }
