@@ -4,6 +4,7 @@ const estadoJogo = {
     olhandoParaOTeto: false,
     paredeAnterior: 0,
     emPopUp: false,
+    emTerminal: false,
 
     inventario: [],
     slotSelecionado: null,
@@ -56,9 +57,11 @@ function retornarMensagem(elemento){
         break;
         case 'painelPorta':
             abrirPainel('painelPortaPopUp');
+            estadoJogo.emTerminal = true;
         break;
         case 'fechaPainelPorta':
             fecharPainel('painelPortaPopUp');
+            estadoJogo.emTerminal = false;
         break;
         case 'compartimentoPorta':
             if (estadoJogo.itemSelecionado !== 'bomba'){
@@ -362,7 +365,7 @@ function trocarCenario(direcao){
 }
 
 document.addEventListener('keydown', (event) =>{
-    if (!estadoJogo.emPopUp){
+    if (!estadoJogo.emTerminal){
         switch (event.key){
             case 'ArrowUp':
             case 'w':
