@@ -48,6 +48,15 @@
     image-rendering: pixelated;
     border: none;
 }
+
+#bluePrint{
+    background-image: url("../img/blueprint.desfocado.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
 #painelBluePrint{
     background-image: url("../img/blueprint.png");
     background-size: contain;

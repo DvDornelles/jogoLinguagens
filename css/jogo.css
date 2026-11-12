@@ -71,7 +71,7 @@ body {
 
 /*Posicionamento de position: absolute*/
 .porta-blindada { top: 110px; left: 265px; width: 135px; height: 290px; }
-.mesa-blueprint { bottom: 10%; right: 10%; width: 20%; height: 20%; }
+.mesa-blueprint { bottom: 30px; right: 80px; width: 200px; height: 200px; }
 .teto-duto { top: 40%; left: 40%; width: 20%; height: 20%; }
 .painel-porta-pequeno { top: 185px; left: 40px; width: 55px; height: 85px;}
 .pop-up {
