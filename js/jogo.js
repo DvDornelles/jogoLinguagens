@@ -155,7 +155,7 @@ function retornarMensagem(elemento){
             }
             else if(estadoJogo.parafusosDuto === false){
                 estadoJogo.parafusosDuto = true
-                coletarItem(document.querySelector('#parafusos'))
+                coletarItem(document.querySelector('#parafusosNoDuto'))
             }
         break;
         //fim duto
@@ -216,7 +216,8 @@ function marcarSlot(slot){
         document.getElementById(estadoJogo.slotSelecionado).classList.remove('slotSelecionado')
     }
     estadoJogo.slotSelecionado = slot.id;
-    estadoJogo.itemSelecionado = slot.innerText.trim(); //trim() limpa espaços em branco e caracteres invisíveis
+    const numeroSlot = Number(slot.dataset.n) - 1;
+    estadoJogo.itemSelecionado = estadoJogo.inventario[numeroSlot];
     slot.classList.add('slotSelecionado');
 }
 
@@ -247,7 +248,7 @@ function adicionarBlueprint(material){
 }
 
 function transferirBluePrint(){
-    const itensValidos = ['fita', 'relogio', 'cabos', 'parafusos', 'bateria', 'dinamite'];
+    const itensValidos = ['fita', 'relogio', 'cabos', 'parafusosNoDuto', 'bateria', 'dinamite'];
     for (let i=0; i<5; i++){
         if (itensValidos.includes(estadoJogo.inventario[i])){
             const elemento = estadoJogo.inventario[i]
@@ -258,8 +259,8 @@ function transferirBluePrint(){
                 estadoJogo.inventario[i] = ''
                 const j = i+1;
                 document.getElementById('slot' + j).innerHTML = ``
-                estadoJogo.itemSelecionado = ''
-                estadoJogo.slotSelecionado = ''
+                estadoJogo.itemSelecionado = null
+                estadoJogo.slotSelecionado = null
                 document.getElementById('bp' + elemento).classList.remove('escondida')
             }else{
                 if(estadoJogo.inventario[i] !== 'fita'){
@@ -268,8 +269,8 @@ function transferirBluePrint(){
                     estadoJogo.inventario[i] = ''
                     const j = i+1;
                     document.getElementById('slot' + j).innerHTML = ``
-                    estadoJogo.itemSelecionado = ''
-                    estadoJogo.slotSelecionado = ''
+                    estadoJogo.itemSelecionado = null
+                    estadoJogo.slotSelecionado = null
                     document.getElementById('bp' + elemento).classList.remove('escondida')
                 }
             }
@@ -286,7 +287,7 @@ function coletarItem(elemento){
 
         if(estadoJogo.bluePrint === false){
             const slotLivre = document.querySelector('.slot.vazio');
-            slotLivre.innerHTML = `<p>${elemento.id}</p>`;
+            slotLivre.classList.add('item-fundo');
             slotLivre.classList.remove('vazio');
         }
         else{
@@ -303,7 +304,7 @@ function coletarItem(elemento){
                     bluePrint.relogio = true
                     document.getElementById('retorno').innerHTML = `<p>"O relógio de bolso foi adicionado ao projeto de bomba."</p>`
                 break;
-                case 'parafusos':
+                case 'parafusosNoDuto':
                     bluePrint.parafusos = true
                     document.getElementById('retorno').innerHTML = `<p>"Os parafusos foram adicionados ao projeto de bomba."</p>`
                 break;

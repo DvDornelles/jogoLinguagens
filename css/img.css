@@ -53,22 +53,27 @@
 }
 
 
+.item-fundo{
+    background-image: url("../img/fita.png");
+}
+
+
 #bpfita{
     background-image: url("../img/fita.png");
 }
 #bpparafusos{
     background-image: url("../img/parafusos.item.png");
 }
-#bpbateria{
+/*#bpbateria{
     background-image: url("../img/bateria.png");
-}
+}*/
 #bpcabos{
     background-image: url("../img/cabos.png");
 }
 #bprelogio{
     background-image: url("../img/relogio.png");
 }
-#bpdinamite{
+/*#bpdinamite{
     background-image: url("../img/dinamite.png");
-}
+}*/
     
