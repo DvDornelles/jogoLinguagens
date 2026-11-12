@@ -72,7 +72,7 @@ body {
 /*Posicionamento de position: absolute*/
 .porta-blindada { top: 110px; left: 265px; width: 135px; height: 290px; }
 .mesa-blueprint { bottom: 30px; right: 80px; width: 200px; height: 200px; }
-.teto-duto { top: 40%; left: 40%; width: 20%; height: 20%; }
+.duto { top: 29px; left: 147px; width: 90px; height: 70px; }
 .painel-porta-pequeno { top: 185px; left: 40px; width: 55px; height: 85px;}
 .pop-up {
     top: 10%; left: 25%; width: 500px; height: 400px;
@@ -151,20 +151,18 @@ body {
 
 #chaveDeFenda{
     position: absolute;
-    top: 30%; left: 60%; height: 100px; width: 10px;
+    top: 140px; left: 100px; height: 40px; width: 5px;
 }
 #estante{
     position: absolute;
-    top: 20%; left: 50%; transform: translateX(-50%); height: 60%; width: 20%;
-}
-#parafusos{
-    position: absolute;
-    top: 50%; left: 100%;
+    top: 85px; left: 50%; transform: translateX(-50%);
+    height: 320px; width: 170px;
 }
 
 #gaveta{
     position: absolute;
-    top: 80%; width: 90px;
+    top: 275px; left: 50%; transform: translateX(-50%);
+    height: 10px; width: 70px;
 }
 
 #vermelho{
