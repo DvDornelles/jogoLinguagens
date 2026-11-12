@@ -1,0 +1,58 @@
+#parede-leste{
+    background-image: url("../img/parede.leste.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+#portaBlindada{
+    background-image: url("../img/porta.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+#teto{
+    background-image: url("../img/teto.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+#painelBluePrint{
+    background-image: url("../img/blueprint.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+#painelQuadroEnergiaPopUp{
+    background-image: url("../img/quadro.forca.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+#painelMaquina{
+    background-image: url("../img/maquina.png   ");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+#estante{   
+    background-image: url("../img/estante.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    border: none;
+}
+
+    
