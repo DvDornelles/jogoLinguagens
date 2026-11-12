@@ -60,8 +60,8 @@ body {
 
 .elemento-interativo { /* elemento clicável */
     position: absolute; /*flutua*/
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px dashed #ccc;
+    /*background: rgba(255, 255, 255, 0.1);*/
+    /*border: 1px dashed #ccc;*/
     cursor: pointer; /*mãozinha*/
     padding: 10px;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 /*Posicionamento de position: absolute*/
-.porta-blindada { top: 20%; left: 35%; width: 20%; height: 60%; }
+.porta-blindada { top: 40px; left: 35%; width: 200px; height: 400px; }
 .mesa-blueprint { bottom: 10%; right: 10%; width: 20%; height: 20%; }
 .teto-duto { top: 40%; left: 40%; width: 20%; height: 20%; }
 .painel-porta-pequeno { top: 30%; left: 40%; width: 10%; height: 15%;}
@@ -258,4 +258,9 @@ body {
 #transferenciaBP{
     top: 118px; left: 420px;
     height: 70px; width: 37px;
+}
+
+#quadroDeForca{
+    top: 135px; left: 40px;
+    height: 70px; width: 55px;
 }
