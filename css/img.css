@@ -1,93 +1,74 @@
+*{
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    image-rendering: pixelated !important;
+    border: none;
+}
+
 #parede-leste{
     background-image: url("../img/parede.leste.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 #parede-oeste{
     background-image: url("../img/parede.oeste.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 #parede-norte{
     background-image: url("../img/parede.norte.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 #parede-sul{
     background-image: url("../img/parede.sul.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 
 
 #portaBlindada{
     background-image: url("../img/porta.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 #teto{
     background-image: url("../img/teto.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 
 #bluePrint{
     background-image: url("../img/blueprint.desfocado.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 #painelBluePrint{
     background-image: url("../img/blueprint.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 #painelQuadroEnergiaPopUp{
     background-image: url("../img/quadro.forca.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
 }
 #painelMaquina{
     background-image: url("../img/maquina.png   ");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
+}
+#maquina{
+    background-image: url("../img/maquina.png");
 }
 #estante{   
     background-image: url("../img/estante.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    border: none;
+}
+#chaveDeFenda{
+    background-image: url("../img/chave.fenda.png");
+}
+#fita{
+    background-image: url("../img/fita.png");
 }
 
+
+#bpfita{
+    background-image: url("../img/fita.png");
+}
+#bpparafusos{
+    background-image: url("../img/parafusos.item.png");
+}
+#bpbateria{
+    background-image: url("../img/bateria.png");
+}
+#bpcabos{
+    background-image: url("../img/cabos.png");
+}
+#bprelogio{
+    background-image: url("../img/relogio.png");
+}
+#bpdinamite{
+    background-image: url("../img/dinamite.png");
+}
     
