@@ -61,7 +61,7 @@ body {
 .elemento-interativo { /* elemento clicável */
     position: absolute; /*flutua*/
     /*background: rgba(255, 255, 255, 0.1);*/
-    /*border: 1px dashed #ccc;*/
+    border: 1px dashed #ccc;
     cursor: pointer; /*mãozinha*/
     padding: 10px;
 }
@@ -70,10 +70,10 @@ body {
 }
 
 /*Posicionamento de position: absolute*/
-.porta-blindada { top: 40px; left: 35%; width: 200px; height: 400px; }
+.porta-blindada { top: 110px; left: 265px; width: 135px; height: 290px; }
 .mesa-blueprint { bottom: 10%; right: 10%; width: 20%; height: 20%; }
 .teto-duto { top: 40%; left: 40%; width: 20%; height: 20%; }
-.painel-porta-pequeno { top: 30%; left: 40%; width: 10%; height: 15%;}
+.painel-porta-pequeno { top: 185px; left: 40px; width: 55px; height: 85px;}
 .pop-up {
     top: 10%; left: 25%; width: 500px; height: 400px;
     background-color: #1a1a1a;
