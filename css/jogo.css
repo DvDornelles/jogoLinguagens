@@ -47,8 +47,8 @@ body {
 
 .cenario { /*As paredes que o usuário não está olhando*/
     display: none;
-    width: 80%;
-    height: 80%;
+    width: 900px;
+    height: 500px;
     /*background-color: var(--cor-parede);*/
     border: 2px solid #555;
     position: relative;
@@ -75,7 +75,7 @@ body {
 .teto-duto { top: 40%; left: 40%; width: 20%; height: 20%; }
 .painel-porta-pequeno { top: 30%; left: 40%; width: 10%; height: 15%;}
 .pop-up {
-    top: 10%; left: 25%; width: 50%; height: 80%;
+    top: 10%; left: 25%; width: 350px; height: 250px;
     background-color: #1a1a1a;
 }
 .fechar {
@@ -256,6 +256,6 @@ body {
 }
 
 #transferenciaBP{
-    top: 35%; left: 82%;
-    height: 33px; width: 15px;
+    top: 75px; left: 300px;
+    height: 33px; width: 20px;
 }
