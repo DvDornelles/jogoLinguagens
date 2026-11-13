@@ -39,6 +39,9 @@
 #painelMaquina{
     background-image: url("../img/maquina.png   ");
 }
+#painelPortaPopUp{
+    background-image: url("../img/terminal.png");
+}
 #maquina{
     background-image: url("../img/maquina.png");
     background-size: cover !important;
