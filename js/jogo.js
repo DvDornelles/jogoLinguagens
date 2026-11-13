@@ -66,7 +66,7 @@ function retornarMensagem(elemento){
         case 'compartimentoPorta':
             if (estadoJogo.itemSelecionado !== 'bomba'){
                 document.getElementById('retorno').innerHTML = `
-                    <p>"Esse seria um ótimo lugar para colocar uma bomba. Iria arrebentar a tranca."</p>
+                    <p>"Esse seria um ótimo lugar para colocar uma bomba, iria arrebentar a tranca. Mas antes preciso abri-lo com esse terminal..."</p>
                 `
             }
         break;
@@ -112,7 +112,7 @@ function retornarMensagem(elemento){
         case 'estante':
             if (estadoJogo.itemSelecionado !== 'livro'){
                 document.getElementById('retorno').innerHTML = `
-                    <p>"Muitos livros velhos, mas falta um espaço vazio..."</p>
+                    <p>"Muitos livros velhos, mas talvez eu encontre algo útil..."</p>
                 `
             }
         break;
