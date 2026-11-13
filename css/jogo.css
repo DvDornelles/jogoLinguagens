@@ -100,12 +100,24 @@ body {
     border-radius: 100px;
 }
 #input_terminal{
-    background-color: black;
-    color: lime;
+    background-color: transparent;
+    color: #33ff77; text-shadow: 0 0 5px rgba(51,255,229,0.5); caret-color: #33ff77;
     width: 100%; height: 100%;
     outline: none; resize: none;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 10px;
+}
+#enviaCodigoJS{
+    top: 133px; left: 315px;
+    width: 62px; height: 30px;
+}
+#consoleTerminal{
+    position: absolute;
+    top: 0px; left: 322px;
+    width: 70px; height: 102px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px white dashed; /*provisória*/
 }
 
 .seta { /*seta para olhar pro lado*/
