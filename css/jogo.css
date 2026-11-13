@@ -75,7 +75,7 @@ body {
 .duto { top: 29px; left: 147px; width: 90px; height: 70px; }
 .painel-porta-pequeno { top: 185px; left: 40px; width: 55px; height: 85px;}
 .pop-up {
-    top: 10%; left: 25%; width: 500px; height: 400px;
+    top: 10%; left: 50%; width: 500px; height: 400px; transform: translateX(-50%);
     background-color: #1a1a1a;
 }
 .fechar {
@@ -89,15 +89,23 @@ body {
     padding: 10px;
 }
 #compartimentoPorta {
-    width: 50%; height: 30%;
-    position: relative;
-    justify-self: center;
+    width: 450px; height: 140px;
+    top: 10px; left: 50%; transform: translateX(-50%);
     margin-bottom: 40px;
 }
 #terminalJS {
-    width: 50%; height: 30%;
-    position: relative;
-    justify-self: center;
+    width: 240px; height: 140px;
+    top: 230px; left: 115px;
+    position: absolute;
+    border-radius: 100px;
+}
+#input_terminal{
+    background-color: black;
+    color: lime;
+    width: 100%; height: 100%;
+    outline: none; resize: none;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
 }
 
 .seta { /*seta para olhar pro lado*/
@@ -238,20 +246,6 @@ body {
     height: 35%; width: 60%;
 }
 
-#terminalJS{
-    background-color: black;
-    color: lime;
-    border: green 1px solid;
-    width: 80%; height: 50%;
-}
-
-#input_terminal{
-    background-color: black;
-    color: lime;
-    width: 100%; height: 100%;
-    border: none; outline: none; resize: none;
-    font-family: 'Courier New', Courier, monospace;
-}
 
 #mobilia{
     top: 65%; left: 75%;
@@ -271,4 +265,8 @@ body {
 #maquina{
     top: 135px; left: 50%; transform: translateX(-50%);
     height: 250px; width: 200px;
+}
+
+#painelPortaPopUp{
+    width: 600px; height: 450px;
 }
