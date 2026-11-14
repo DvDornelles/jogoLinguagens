@@ -17,6 +17,7 @@ const estadoJogo = {
     cabos: false,
 
     energiaAcionada: false,
+    terminalHackeado: false,
 };
 
 const bluePrint = {
@@ -435,13 +436,13 @@ function aprovarSenha(senha) {
         document.getElementById('consoleTerminal').innerHTML = `
         <p>Sucess<br>Senha correta!</p>
         `
-        return true;
+        estadoJogo.terminalHackeado = true;
+        document.getElementById('painelPortaPopUp').classList.add('painel-porta-aberto');
     }
     else{
         document.getElementById('consoleTerminal').innerHTML = `
         <p>Error<br>Senha incorreta!</p>
         `
-        return false;
     }
 }
 
