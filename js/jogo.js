@@ -432,11 +432,15 @@ function gerarSenha() {
 
 function aprovarSenha(senha) {
     if (senha === 351893){
-        console.log('acertou')
+        document.getElementById('consoleTerminal').innerHTML = `
+        <p>Sucess<br>Senha correta!</p>
+        `
         return true;
     }
     else{
-        console.log('errou')
+        document.getElementById('consoleTerminal').innerHTML = `
+        <p>Error<br>Senha incorreta!</p>
+        `
         return false;
     }
 }
