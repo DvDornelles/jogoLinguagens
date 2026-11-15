@@ -44,27 +44,25 @@
         <!--quadro de energia-->
         <section id="parede-leste" class="cenario">
             <div class="elemento-interativo quadro-forca" id="quadroDeForca" onclick="retornarMensagem(this)"></div>
+            <div id="mobilia" class="elemento-interativo" onclick="retornarMensagem(this)"></div>
+            <div class="pop-up escondida" id="painelMobilia">
+                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaMobilia">X</div>
+            </div>
             <div class="pop-up escondida" id="painelQuadroEnergiaPopUp">
                 <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaQuadro">X</div>
                 <div class="quebrado elemento-interativo" onclick="puzzleQuadroForca(this)" id="vermelho"></div>
                 <div class="quebrado elemento-interativo" onclick="puzzleQuadroForca(this)" id="azul"></div>
                 <div class="quebrado elemento-interativo" onclick="puzzleQuadroForca(this)" id="verde"></div>
             </div>
-            <div id="mobilia" class="elemento-interativo" onclick="retornarMensagem(this)"></div>
-            <div class="pop-up escondida" id="painelMobilia">
-                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaMobilia">X</div>
-            </div>
         </section>
         <!--estante-->
         <section id="parede-oeste" class="cenario">
-            <div class="elemento-interativo estante" id="estante" onclick="retornarMensagem(this)">
-                
-                <div class="elemento-interativo" id="chaveDeFenda" onclick="coletarItem(this)"></div>
-                <div class="elemento-interativo" id="gaveta" onclick="retornarMensagem(this)"></div>
-                <div class="pop-up escondida" id="painelGaveta">
-                    <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaGaveta">X</div>
-                    <div class="elemento-interativo" id="fita" onclick="coletarItem(this)"></div>
-                </div>
+            <div class="elemento-interativo estante" id="estante" onclick="retornarMensagem(this)"></div>
+            <div class="elemento-interativo" id="chaveDeFenda" onclick="coletarItem(this)"></div>
+            <div class="elemento-interativo" id="gaveta" onclick="retornarMensagem(this)"></div>
+            <div class="pop-up escondida" id="painelGaveta">
+                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaGaveta">X</div>
+                <div class="elemento-interativo" id="fita" onclick="coletarItem(this)"></div>
             </div>
         </section>
         <!--maquina-->
