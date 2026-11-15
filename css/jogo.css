@@ -87,6 +87,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border: 1px dashed #ccc;
     padding: 10px;
+    border-radius: 10px;
 }
 #compartimentoPorta {
     width: 450px; height: 140px;
@@ -176,6 +177,7 @@ body {
 .pop-up{
     position: absolute;
     border: 1px dashed #ccc;
+    border-radius: 10px;
     padding: 10px;
 }
 
@@ -270,8 +272,11 @@ body {
 
 
 #mobilia{
-    top: 65%; left: 75%;
-    height: 100px; width: 200px;
+    top: 270px; left: 450px;
+    height: 200px; width: 300px;
+}
+#painelMobilia{
+    height: 370px;
 }
 
 #transferenciaBP{

@@ -59,6 +59,13 @@
     background-image: url("../img/fita.png");
 }
 
+#mobilia{
+    background-image: url("../img/mobilia.png");
+}
+#painelMobilia{
+    background-image: url("../img/mobilia.painel.png");
+}
+
 
 .item-fundo-fita{
     background-image: url("../img/fita.png");
