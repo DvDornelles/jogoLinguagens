@@ -176,7 +176,7 @@ body {
 
 .pop-up{
     position: absolute;
-    border: 1px dashed #ccc;
+    /*border: 1px dashed #ccc;*/
     border-radius: 10px;
     padding: 10px;
 }
