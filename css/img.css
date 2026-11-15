@@ -33,8 +33,11 @@
 #painelBluePrint{
     background-image: url("../img/blueprint.png");
 }
-#painelQuadroEnergiaPopUp{
+.quadro-fechado{
     background-image: url("../img/quadro.forca.png");
+}
+.quadro-aberto{
+    background-image: url("../img/quadro.forca.aberto.png");
 }
 #painelMaquina{
     background-image: url("../img/maquina.png   ");

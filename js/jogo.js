@@ -30,7 +30,8 @@ const bluePrint = {
 }
 
 const estadoPuzzleLuz = {
-    fiosConsertados: 0
+    fiosConsertados: 0,
+    quadroAberto: false,
 }
 
 const estadoPuzzleMaquina = {
@@ -94,6 +95,24 @@ function retornarMensagem(elemento){
         break;
         case 'fechaQuadro':
             fecharPainel('painelQuadroEnergiaPopUp');
+        break;
+        case 'painelQuadroEnergiaPopUp':
+            if(!estadoPuzzleLuz.quadroAberto){
+                estadoPuzzleLuz.quadroAberto = true
+                document.getElementById('vermelho').classList.remove('escondida');
+                document.getElementById('verde').classList.remove('escondida');
+                document.getElementById('azul').classList.remove('escondida');
+                document.getElementById('painelQuadroEnergiaPopUp').classList.add('quadro-aberto');
+                document.getElementById('painelQuadroEnergiaPopUp').classList.removed('quadro-fechado');
+            }
+            else{
+                estadoPuzzleLuz.quadroAberto = false
+                document.getElementById('painelQuadroEnergiaPopUp').classList.add('quadro-fechado');
+                document.getElementById('painelQuadroEnergiaPopUp').classList.remove('quadro-aberto');
+                document.getElementById('vermelho').classList.add('escondida');
+                document.getElementById('verde').classList.add('escondida');
+                document.getElementById('azul').classList.add('escondida');
+            }
         break;
         //fim quadro de energia
 
