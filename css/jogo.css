@@ -202,6 +202,11 @@ body {
     width: 80%; height: 80%;
 }
 
+#relogio{
+    top: 50%; left: 70%; transform: translate(-50%, -50%);
+    height: 100px; width: 100px;
+}
+
 #vermelho{
     position: absolute;
     top: 215px; left: 370px;

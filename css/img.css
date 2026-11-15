@@ -61,6 +61,9 @@
 #fita{
     background-image: url("../img/fita.png");
 }
+#relogio{
+    background-image: url("../img/relogio.png");
+}
 
 #mobilia{
     background-image: url("../img/mobilia.png");
@@ -79,10 +82,10 @@
 .item-fundo-cabos{
     background-image: url("../img/cabos.png");
 }
-/*.item-fundo-relogio{
+.item-fundo-relogio{
     background-image: url("../img/relogio.png");
 }
-.item-fundo-dinamite{
+/*.item-fundo-dinamite{
     background-image: url("../img/dinamite.png");
 }*/
 .item-fundo-chaveDeFenda{
