@@ -284,6 +284,9 @@ body {
     top: 135px; left: 40px;
     height: 70px; width: 55px;
 }
+#painelQuadroEnergiaPopUp{
+    width: 300px;
+}
 
 #maquina{
     top: 135px; left: 50%; transform: translateX(-50%);
