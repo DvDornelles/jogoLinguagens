@@ -193,7 +193,7 @@ body {
 
 #gaveta{
     position: absolute;
-    top: 290px; left: 50%; transform: translateX(-50%);
+    top: 377px; left: 50%; transform: translateX(-50%);
     height: 10px; width: 75px;
 }
 #fita{
