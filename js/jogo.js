@@ -257,14 +257,6 @@ function adicionarBlueprint(material){
     slotMarcado.classList.remove('slotSelecionado')
     estadoJogo.itemSelecionado = null
     estadoJogo.slotSelecionado = null
-
-    if (indice !== -1) {
-        estadoJogo.inventario[indice] = null;
-        console.log("✅ Item removido! O slot agora está vazio.");
-    } else {
-        console.log("⚠️ Item não encontrado.");
-    }
-    console.log(estadoJogo.inventario);     
 }
 
 function transferirBluePrint(){
@@ -305,41 +297,44 @@ function coletarItem(elemento){
     const slotLivre = document.querySelector('.slot.vazio');
 
     if (slotLivre){
-        estadoJogo.inventario.push(elemento.id);
         elemento.classList.add('escondida');
-
         if(estadoJogo.bluePrint === false){
-            const slotLivre = document.querySelector('.slot.vazio');
             slotLivre.classList.add('item-fundo-' + elemento.id);
             slotLivre.classList.remove('vazio');
+            estadoJogo.inventario.push(elemento.id);
         }
-        else{
-            switch (elemento.id){
+        else {
+            switch (elemento.id) {
                 case 'bateria':
-                    bluePrint.bateria = true
-                    document.getElementById('retorno').innerHTML = `<p>"A bateria foi adicionada ao projeto de bomba."</p>`
-                break;
+                    bluePrint.bateria = true;
+                    document.getElementById('retorno').innerHTML = `<p>"A bateria foi adicionada ao projeto de bomba."</p>`;
+                    document.getElementById('bp' + elemento.id).classList.remove('escondida');
+                    break;
                 case 'cabos':
-                    bluePrint.cabos = true
-                    document.getElementById('retorno').innerHTML = `<p>"Os caboas foram adicionados ao projeto de bomba."</p>`
-                break;
+                    bluePrint.cabos = true;
+                    document.getElementById('retorno').innerHTML = `<p>"Os cabos foram adicionados ao projeto de bomba."</p>`;
+                    document.getElementById('bp' + elemento.id).classList.remove('escondida');
+                    break;
                 case 'relogio':
-                    bluePrint.relogio = true
-                    document.getElementById('retorno').innerHTML = `<p>"O relógio de bolso foi adicionado ao projeto de bomba."</p>`
-                break;
+                    bluePrint.relogio = true;
+                    document.getElementById('retorno').innerHTML = `<p>"O relógio de bolso foi adicionado ao projeto de bomba."</p>`;
+                    document.getElementById('bp' + elemento.id).classList.remove('escondida');
+                    break;
                 case 'parafusosNoDuto':
-                    bluePrint.parafusos = true
-                    document.getElementById('retorno').innerHTML = `<p>"Os parafusos foram adicionados ao projeto de bomba."</p>`
-                break;
+                    bluePrint.parafusos = true;
+                    document.getElementById('retorno').innerHTML = `<p>"Os parafusos foram adicionados ao projeto de bomba."</p>`;
+                    document.getElementById('bp' + elemento.id).classList.remove('escondida');
+                    break;
                 case 'dinamite':
-                    bluePrint.dinamite = true
-                    document.getElementById('retorno').innerHTML = `<p>"A dinamite foi adicionada ao projeto de bomba."</p>`
-                break;
+                    bluePrint.dinamite = true;
+                    document.getElementById('retorno').innerHTML = `<p>"A dinamite foi adicionada ao projeto de bomba."</p>`;
+                    document.getElementById('bp' + elemento.id).classList.remove('escondida');
+                    break;
                 default:
-                    const slotLivre = document.querySelector('.slot.vazio');
                     slotLivre.classList.add('item-fundo-' + elemento.id);
-                    slotLivre.classList.remove('vazio');   
-                break;
+                    slotLivre.classList.remove('vazio');
+                    estadoJogo.inventario.push(elemento.id);
+                    break;
             }
         }
     } else{
