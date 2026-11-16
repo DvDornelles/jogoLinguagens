@@ -188,6 +188,7 @@ function puzzleMaquina(bloco) {
         estadoPuzzleMaquina.iniciado = true;
         document.getElementById('ordemNumerica').classList.remove('escondida');
         bloco.classList.add('escondida');
+        document.getElementById('cofreMaquina').classList.add('escondida')
     } else {
         // Pega apenas o número do ID (ex: de 'b1' vira 1)
         const botaoClicado = parseInt(bloco.id.replace('b', ''));
@@ -199,12 +200,15 @@ function puzzleMaquina(bloco) {
                 document.getElementById('retorno').innerHTML = `<p>"A máquina destravou e liberou a Bateria e Cabos!"</p>`;
                 document.getElementById('bateria').classList.remove('escondida')
                 document.getElementById('cabos').classList.remove('escondida')
+                document.getElementById('ordemNumerica').classList.add('escondida')
+                document.getElementById('cofreMaquina').classList.remove('escondida');
             }
         } else {
             estadoPuzzleMaquina.numeroAtual = 0;
             estadoPuzzleMaquina.iniciado = false;
             document.getElementById('ordemNumerica').classList.add('escondida');
             document.getElementById('iniciarPuzzleMaquina').classList.remove('escondida');
+            document.getElementById('cofreMaquina').classList.remove('escondida');
             document.getElementById('retorno').innerHTML = `<p>"Sequência incorreta!"</p>`;
             for(i=1; i<10; i++){
                 document.getElementById('b' + i).classList.remove('escondida')
