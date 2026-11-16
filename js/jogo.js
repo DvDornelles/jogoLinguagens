@@ -418,6 +418,52 @@ function aprovarSenha(senha) {
     }
 }
 
+document.onkeydown = function(event){
+    if (!estadoJogo.emTerminal){
+        switch (event.key){
+            case 'ArrowUp':
+            case 'w':
+                if(!estadoJogo.olhandoParaOTeto){
+                    trocarCenario('cima')
+                }
+            break;
+            case 'ArrowDown':
+            case 's':
+                if(estadoJogo.olhandoParaOTeto){
+                    trocarCenario('baixo')
+                }
+            break;
+            case 'ArrowRight':
+            case 'd':
+                if(!estadoJogo.olhandoParaOTeto){
+                    trocarCenario('dir')
+                }
+            break;
+            case 'ArrowLeft':
+            case 'a':
+                if(!estadoJogo.olhandoParaOTeto){
+                    trocarCenario('esq')
+                }
+            break;
+            case '1':
+                marcarSlot(document.getElementById('slot'+1))
+            break;
+            case '2':
+                marcarSlot(document.getElementById('slot'+2))
+            break;
+            case '3':
+                marcarSlot(document.getElementById('slot'+3))
+            break;
+            case '4':
+                marcarSlot(document.getElementById('slot'+4))
+            break;
+            case '5':
+                marcarSlot(document.getElementById('slot'+5))
+            break;
+        }
+    }
+}
+
 /*const campoCodigo = document.getElementById('input_terminal')
 campoCodigo.addEventListener('keydown', function(event){
     if(event.key === 'Tab'){
