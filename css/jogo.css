@@ -61,7 +61,7 @@ body {
 .elemento-interativo { /* elemento clicável */
     position: absolute; /*flutua*/
     /*background: rgba(255, 255, 255, 0.1);*/
-    border: 1px dashed #ccc;
+    /*border: 1px dashed #ccc;*/
     cursor: pointer; /*mãozinha*/
     padding: 10px;
 }
