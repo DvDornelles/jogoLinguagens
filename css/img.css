@@ -64,6 +64,9 @@
 #cabos{
     background-image: url("../img/cabos.png");
 }
+#bateria{
+    background-image: url("../img/bateria.png");
+}
 #relogio{
     background-image: url("../img/relogio.png");
 }
@@ -79,9 +82,9 @@
 .item-fundo-fita{
     background-image: url("../img/fita.png");
 }
-/*.item-fundo-bateria{
+.item-fundo-bateria{
     background-image: url("../img/bateria.png");
-}*/
+}
 .item-fundo-cabos{
     background-image: url("../img/cabos.png");
 }
@@ -106,9 +109,9 @@
 #bpparafusosNoDuto{
     background-image: url("../img/parafusos.item.png");
 }
-/*#bpbateria{
+#bpbateria{
     background-image: url("../img/bateria.png");
-}*/
+}
 #bpcabos{
     background-image: url("../img/cabos.png");
 }
