@@ -24,7 +24,7 @@ const bluePrint = {
     cabos: false,
     bateria: false,
     fita: false,
-    parafusos: false,
+    parafusosNoDuto: false,
     dinamite: false,
     relogio: false,
 }
@@ -214,19 +214,22 @@ function puzzleMaquina(bloco) {
 }
 
 function puzzleQuadroForca(fio){
-    if(estadoJogo.itemSelecionado !== 'fita' && estadoJogo.energiaAcionada === false){
-        document.getElementById('retorno').innerHTML = `<p>"Preciso de algo para prender um fio a outro."</p>`
+    if (estadoJogo.itemSelecionado !== 'fita') {
+        document.getElementById('retorno').innerHTML = `<p>"Preciso de algo para prender um fio a outro."</p>`;
+        return;
     }
-    else if(fio.classList !== 'consertado'){
+
+    if (!fio.classList.contains('consertado')) {
         fio.classList.remove('quebrado');
         fio.classList.add('consertado');
         estadoPuzzleLuz.fiosConsertados++;
-        if(estadoPuzzleLuz.fiosConsertados === 3){
+
+        if (estadoPuzzleLuz.fiosConsertados === 3) {
             estadoJogo.energiaAcionada = true;
-            document.getElementById('retorno').innerHTML = `<p>"A energia foi restaurada!"</p>`
-            if(estadoJogo.bluePrint === true){
+            document.getElementById('retorno').innerHTML = `<p>"A energia foi restaurada!"</p>`;
+            if (estadoJogo.bluePrint === true) {
                 adicionarBlueprint('fita');
-            } 
+            }
         }
     }
 }
@@ -247,12 +250,13 @@ function adicionarBlueprint(material){
             bluePrint.fita = true
             document.getElementById('retorno').innerHTML = document.getElementById('retorno').innerHTML + `<p> "A fita foi adicionada ao projeto de bomba."</p>`
             document.getElementById(estadoJogo.slotSelecionado).classList.remove('item-fundo-fita')
+            document.getElementById('bpfita').classList.remove('escondida')
         break;
     }
     const indice = estadoJogo.inventario.indexOf(material);
 
     var slotMarcado = document.getElementById(estadoJogo.slotSelecionado)
-    slotMarcado.innerHTML = `<p></p>`
+    estadoJogo.inventario[indice] = null
     slotMarcado.classList.add('vazio')
     slotMarcado.classList.remove('slotSelecionado')
     estadoJogo.itemSelecionado = null
@@ -266,7 +270,7 @@ function transferirBluePrint(){
             const elemento = estadoJogo.inventario[i]
             
             if(estadoJogo.energiaAcionada){
-                bluePrint.elemento = true
+                bluePrint[elemento] = true
                 estadoJogo.inventario[i] = null
                 const j = i+1;
                 document.getElementById('slot' + j).classList.remove('item-fundo-'+elemento)
@@ -321,7 +325,7 @@ function coletarItem(elemento){
                     document.getElementById('bp' + elemento.id).classList.remove('escondida');
                     break;
                 case 'parafusosNoDuto':
-                    bluePrint.parafusos = true;
+                    bluePrint.parafusosNoDuto = true;
                     document.getElementById('retorno').innerHTML = `<p>"Os parafusos foram adicionados ao projeto de bomba."</p>`;
                     document.getElementById('bp' + elemento.id).classList.remove('escondida');
                     break;
