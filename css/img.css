@@ -77,7 +77,10 @@
 #painelMobilia{
     background-image: url("../img/mobilia.painel.png");
 }
-
+#ordemNumerica{
+    background-image: url("../img/botoes.maquina.jpg");
+    background-size: cover !important;
+}
 
 .item-fundo-fita{
     background-image: url("../img/fita.png");

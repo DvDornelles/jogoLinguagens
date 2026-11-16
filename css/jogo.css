@@ -226,10 +226,36 @@ body {
 }
 
 .blocoMaquina {
-    position: relative;
-    display: flex; justify-content: center; align-items: center;
-    width: 50px; height: 50px;
-    margin-top: 10px;
+    width: 85px; height: 85px;
+    color: #000;
+    border-radius: 10px;
+}
+#b1{
+    bottom: 44px; left: 50%; transform: translateX(-50%);
+}
+#b2{
+    top: 44px; left: 94px;
+}
+#b6{
+    top: 44px; left: 50%; transform: translateX(-50%);
+}
+#b8{
+    top: 44px; right: 94px;
+}
+#b5{
+    top: 50%; left: 94px; transform: translateY(-50%);
+}
+#b4{
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+#b9{
+    top: 50%; right: 94px; transform: translateY(-50%);
+}
+#b3{
+    bottom:44px; left: 94px;
+}
+#b7{
+    bottom: 44px; right: 94px;
 }
 
 #iniciarPuzzleMaquina{
@@ -239,11 +265,9 @@ body {
 }
 
 #ordemNumerica {
-    gap: 5%; width: 100%; height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-items: center;
+    width: 390px; height: 390px;
+    border: white 1px dashed;
+    border-radius: 10px;
 }
 
 #cofreMaquina{
