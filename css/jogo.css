@@ -301,3 +301,12 @@ body {
 #painelPortaPopUp{
     width: 600px; height: 450px;
 }
+
+.item-bp{
+    position: relative;
+    width: 60px; height: 60px;
+}
+
+#itensNaBancada{
+    display: flex;
+}
