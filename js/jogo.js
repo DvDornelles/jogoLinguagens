@@ -346,6 +346,47 @@ function coletarItem(elemento){
     }
 }
 
+function trocarCenario(direcao){
+    const setaEsq = document.querySelector('.seta-esq');
+    const setaDir = document.querySelector('.seta-dir');
+    const setaCima = document.querySelector('.seta-cima');
+    const setaBaixo = document.querySelector('.seta-baixo');
+
+    const idParedeAtual = estadoJogo.paredes[estadoJogo.indiceParedeAtual];
+    document.getElementById(idParedeAtual).classList.remove('ativa');
+
+    if (direcao === 'esq'){
+        estadoJogo.indiceParedeAtual = (estadoJogo.indiceParedeAtual + 3) % 4; //faz um loop --> 2+3=5 -> %4 = 1 *voltou pro 1
+    }
+
+    if (direcao === 'dir'){
+        estadoJogo.indiceParedeAtual = (estadoJogo.indiceParedeAtual + 1) % 4; //se for 5
+    }
+
+    if (direcao === 'cima'){
+        estadoJogo.olhandoParaOTeto = true;
+        estadoJogo.paredeAnterior = estadoJogo.indiceParedeAtual
+        estadoJogo.indiceParedeAtual = 4
+        
+        setaBaixo.classList.remove('escondida');
+        setaDir.classList.add('escondida')
+        setaEsq.classList.add('escondida')
+        setaCima.classList.add('escondida')
+    }
+
+    if (direcao === 'baixo'){
+        estadoJogo.olhandoParaOTeto = false;
+        estadoJogo.indiceParedeAtual = estadoJogo.paredeAnterior
+
+        setaBaixo.classList.add('escondida')
+        setaDir.classList.remove('escondida')
+        setaEsq.classList.remove('escondida')
+        setaCima.classList.remove('escondida')
+    }
+
+    document.getElementById(estadoJogo.paredes[estadoJogo.indiceParedeAtual]).classList.add('ativa');
+}
+
 function submeterCod() {
     const codigo = document.getElementById('input_terminal').value;
     let retornoCod = 'erro'
@@ -377,7 +418,7 @@ function aprovarSenha(senha) {
     }
 }
 
-const campoCodigo = document.getElementById('input_terminal')
+/*const campoCodigo = document.getElementById('input_terminal')
 campoCodigo.addEventListener('keydown', function(event){
     if(event.key === 'Tab'){
         event.preventDefault(); //evita passar para o próximo elemento do navegador
@@ -390,7 +431,7 @@ campoCodigo.addEventListener('keydown', function(event){
         this.selectionStart = cursor + 1;
         this.selectionEnd = cursor + 1; //coloca o cursor após o tab
     }
-});
+});*/
 
 
 /*document.addEventListener('keydown', (event) =>{
@@ -437,44 +478,4 @@ campoCodigo.addEventListener('keydown', function(event){
             break;
         }
     }
-})
-function trocarCenario(direcao){
-    const setaEsq = document.querySelector('.seta-esq');
-    const setaDir = document.querySelector('.seta-dir');
-    const setaCima = document.querySelector('.seta-cima');
-    const setaBaixo = document.querySelector('.seta-baixo');
-
-    const idParedeAtual = estadoJogo.paredes[estadoJogo.indiceParedeAtual];
-    document.getElementById(idParedeAtual).classList.remove('ativa');
-
-    if (direcao === 'esq'){
-        estadoJogo.indiceParedeAtual = (estadoJogo.indiceParedeAtual + 3) % 4; //faz um loop --> 2+3=5 -> %4 = 1 *voltou pro 1
-    }
-
-    if (direcao === 'dir'){
-        estadoJogo.indiceParedeAtual = (estadoJogo.indiceParedeAtual + 1) % 4; //se for 5
-    }
-
-    if (direcao === 'cima'){
-        estadoJogo.olhandoParaOTeto = true;
-        estadoJogo.paredeAnterior = estadoJogo.indiceParedeAtual
-        estadoJogo.indiceParedeAtual = 4
-        
-        setaBaixo.classList.remove('escondida');
-        setaDir.classList.add('escondida')
-        setaEsq.classList.add('escondida')
-        setaCima.classList.add('escondida')
-    }
-
-    if (direcao === 'baixo'){
-        estadoJogo.olhandoParaOTeto = false;
-        estadoJogo.indiceParedeAtual = estadoJogo.paredeAnterior
-
-        setaBaixo.classList.add('escondida')
-        setaDir.classList.remove('escondida')
-        setaEsq.classList.remove('escondida')
-        setaCima.classList.remove('escondida')
-    }
-
-    document.getElementById(estadoJogo.paredes[estadoJogo.indiceParedeAtual]).classList.add('ativa');
-}*/
+})*/
