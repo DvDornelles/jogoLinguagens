@@ -446,23 +446,38 @@ document.onkeydown = function(event){
                 }
             break;
             case '1':
-                marcarSlot(document.getElementById('slot'+1))
+                marcarSlot(document.getElementById('slot1'))
             break;
             case '2':
-                marcarSlot(document.getElementById('slot'+2))
+                marcarSlot(document.getElementById('slot2'))
             break;
             case '3':
-                marcarSlot(document.getElementById('slot'+3))
+                marcarSlot(document.getElementById('slot3'))
             break;
             case '4':
-                marcarSlot(document.getElementById('slot'+4))
+                marcarSlot(document.getElementById('slot4'))
             break;
             case '5':
-                marcarSlot(document.getElementById('slot'+5))
+                marcarSlot(document.getElementById('slot5'))
             break;
         }
     }
-}
+};
+
+const campoCodigo = document.getElementById('input_terminal')
+campoCodigo.onkeydown = function(event){
+    if(event.key === 'Tab'){
+        event.preventDefault(); //evita passar para o próximo elemento do navegador
+
+        const cursor = this.selectionStart; //posição do cursor OU começo da seleção
+        const fim = this.selectionEnd; //fim da seleção
+
+        this.value = this.value.substring(0, cursor) + "\t" + this.value.substring(fim); //substring pega do 0 até a posição do cursor ou a metade da direita
+
+        this.selectionStart = cursor + 1;
+        this.selectionEnd = cursor + 1; //coloca o cursor após o tab
+    }
+};
 
 /*const campoCodigo = document.getElementById('input_terminal')
 campoCodigo.addEventListener('keydown', function(event){
