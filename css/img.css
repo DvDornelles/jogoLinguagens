@@ -39,8 +39,9 @@
 .quadro-aberto{
     background-image: url("../img/quadro.forca.aberto.png");
 }
-#painelMaquina{
-    background-image: url("../img/maquina.png   ");
+#maquina{
+    background-image: url("../img/maquina.png");
+    background-size: cover !important;
 }
 .painel-porta-fechado{
     background-image: url("../img/terminal.png");
@@ -48,10 +49,15 @@
 .painel-porta-aberto{
     background-image: url("../img/terminal.aberto.png");
 }
-#maquina{
+.maquina-fechada{
     background-image: url("../img/maquina.png");
     background-size: cover !important;
 }
+.maquina-aberta{
+    background-image: url("../img/maquina.aberta.png");
+    background-size: cover !important;
+}
+
 #estante{   
     background-image: url("../img/estante.png");
 }

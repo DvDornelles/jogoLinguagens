@@ -69,7 +69,7 @@
         <!--maquina-->
         <section id="parede-sul" class="cenario">
             <div class="elemento-interativo maquina" id="maquina" onclick="retornarMensagem(this)"></div>
-            <div class="pop-up escondida" id="painelMaquina">
+            <div class="pop-up escondida maquina-fechada" id="painelMaquina">
                 <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaMaquina">X</div>
                     <div class="iniciarMaquina elemento-interativo" id="iniciarPuzzleMaquina" onclick="puzzleMaquina(this)">|></div>
                     <div class="puzzle escondida" id="ordemNumerica">
@@ -84,8 +84,8 @@
                         <div class="elemento-interativo blocoMaquina" id="b7" onclick="puzzleMaquina(this)"><p></p></div>
                 </div>
                 <div class="cofre" id="cofreMaquina">
-                    <div id="bateria" class="escondida elemento-interativo" onclick="retornarMensagem(this)">Bateria</div>
-                    <div id="cabos" class="escondida elemento-interativo" onclick="retornarMensagem(this)">Cabos</div>
+                    <div id="bateria" class="escondida elemento-interativo" onclick="retornarMensagem(this)"></div>
+                    <div id="cabos" class="escondida elemento-interativo" onclick="retornarMensagem(this)"></div>
                 </div>
             </div>
         </section>

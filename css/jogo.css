@@ -281,8 +281,13 @@ body {
 }
 
 #bateria, #cabos{
-    position: relative;
-    width: 30%; height: 30%;
+    width: 40px; height: 40px;
+}
+#bateria{
+    top: 50px; left: -10px;
+}
+#cabos{
+    top: 60px; right: -10px;
 }
 
 #painelMaquina{

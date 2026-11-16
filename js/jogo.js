@@ -202,6 +202,8 @@ function puzzleMaquina(bloco) {
                 document.getElementById('cabos').classList.remove('escondida')
                 document.getElementById('ordemNumerica').classList.add('escondida')
                 document.getElementById('cofreMaquina').classList.remove('escondida');
+                document.getElementById('painelMaquina').classList.add('maquina-aberta');
+                document.getElementById('painelMaquina').classList.remove('maquina-fechada');
             }
         } else {
             estadoPuzzleMaquina.numeroAtual = 0;
