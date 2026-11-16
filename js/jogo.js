@@ -246,7 +246,7 @@ function adicionarBlueprint(material){
         case 'fita':
             bluePrint.fita = true
             document.getElementById('retorno').innerHTML = document.getElementById('retorno').innerHTML + `<p> "A fita foi adicionada ao projeto de bomba."</p>`
-            
+            document.getElementById(estadoJogo.slotSelecionado).classList.remove('item-fundo-fita')
         break;
     }
     const indice = estadoJogo.inventario.indexOf(material);
@@ -337,8 +337,8 @@ function coletarItem(elemento){
                 break;
                 default:
                     const slotLivre = document.querySelector('.slot.vazio');
-                    slotLivre.innerHTML = `<p>${elemento.id}</p>`;
-                    slotLivre.classList.remove('vazio');    
+                    slotLivre.classList.add('item-fundo-' + elemento.id);
+                    slotLivre.classList.remove('vazio');   
                 break;
             }
         }
