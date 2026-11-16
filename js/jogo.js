@@ -103,7 +103,7 @@ function retornarMensagem(elemento){
                 document.getElementById('verde').classList.remove('escondida');
                 document.getElementById('azul').classList.remove('escondida');
                 document.getElementById('painelQuadroEnergiaPopUp').classList.add('quadro-aberto');
-                document.getElementById('painelQuadroEnergiaPopUp').classList.removed('quadro-fechado');
+                document.getElementById('painelQuadroEnergiaPopUp').classList.remove('quadro-fechado');
             }
             else{
                 estadoPuzzleLuz.quadroAberto = false
