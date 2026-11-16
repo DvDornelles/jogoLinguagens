@@ -308,5 +308,10 @@ body {
 }
 
 #itensNaBancada{
+    position: absolute;
     display: flex;
+    gap: 10px;
+    border: 1px white dashed;
+    top: 110px; left: 120px;
+    width: 290px; height: 130px;
 }
