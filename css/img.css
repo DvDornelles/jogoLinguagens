@@ -58,6 +58,12 @@
     background-size: cover !important;
 }
 
+.duto-aberto{
+    background-image: url("../img/duto.aberto.png");
+    /*background-size: cover !important;*/
+    background-position: start !important;
+}
+
 #estante{   
     background-image: url("../img/estante.png");
 }

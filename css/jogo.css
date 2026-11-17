@@ -65,8 +65,11 @@ body {
     cursor: pointer; /*mãozinha*/
     padding: 10px;
 }
-.elemento-interativo:hover {
-   background: rgba(255, 255, 255, 0.014);
+
+.duto-aberto{
+    /*border: dashed 1px white;*/
+    height: 110px !important; width: 130px !important;
+    top: 15px !important;
 }
 
 /*Posicionamento de position: absolute*/

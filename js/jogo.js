@@ -175,7 +175,8 @@ function retornarMensagem(elemento){
             }
             else if(estadoJogo.parafusosDuto === false){
                 estadoJogo.parafusosDuto = true
-                coletarItem(document.querySelector('#parafusosNoDuto'))
+                coletarItem(document.querySelector('#parafusosNoDuto'));
+                document.getElementById('duto').classList.add('duto-aberto');
             }
         break;
         //fim duto
