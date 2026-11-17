@@ -66,7 +66,7 @@ function retornarMensagem(elemento){
             estadoJogo.emTerminal = false;
         break;
         case 'compartimentoPorta':
-            if (estadoJogo.itemSelecionado !== 'bomba'){
+            if (estadoJogo.itemSelecionado !== 'bomba' && bluePrint.dinamite === false){
                 document.getElementById('retorno').innerHTML = `
                     <p>"Esse seria um ótimo lugar para colocar uma bomba, iria arrebentar a tranca. Mas antes preciso abri-lo com esse terminal..."</p>
                 `
