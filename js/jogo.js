@@ -416,6 +416,7 @@ function aprovarSenha(senha) {
         `
         estadoJogo.terminalHackeado = true;
         document.getElementById('painelPortaPopUp').classList.add('painel-porta-aberto');
+        document.getElementById('dinamite').classList.remove('escondida');
     }
     else{
         document.getElementById('consoleTerminal').innerHTML = `

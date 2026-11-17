@@ -106,9 +106,9 @@
 .item-fundo-relogio{
     background-image: url("../img/relogio.png");
 }
-/*.item-fundo-dinamite{
+.item-fundo-dinamite{
     background-image: url("../img/dinamite.png");
-}*/
+}
 .item-fundo-chaveDeFenda{
     background-image: url("../img/chave.fenda.png");
 }
@@ -136,11 +136,15 @@
 #bprelogio{
     background-image: url("../img/relogio.png");
 }
-/*#bpdinamite{
+#bpdinamite{
     background-image: url("../img/dinamite.png");
-}*/
+}
 
 .respondido{
     background-image: url("../img/botao.desligado.jpg");
+}
+
+#dinamite{
+    background-image: url(../img/dinamite.png);
 }
     

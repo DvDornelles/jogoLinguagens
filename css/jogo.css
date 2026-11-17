@@ -346,3 +346,8 @@ body {
     top: 110px; left: 120px;
     width: 290px; height: 130px;
 }
+
+#dinamite{
+    width: 200px; height: 150px;
+    top: 50px; left: 50%; transform: translateX(-50%);
+}
