@@ -385,5 +385,26 @@ body {
 
 #conteudoPostitDuto{
     font-size: xx-large;
-    font-family: "Playwrite FR Moderne", cursive;;
+    font-family: "Playwrite FR Moderne", cursive;
+}
+
+#postitTerminal{
+    position: absolute;
+    top: 290px; right: 360px;
+    width: 250px; height: 250px;
+    font-family: "Playwrite FR Moderne", cursive;
+    font-size: 11px;
+    padding: 35px 38px;
+    box-sizing: border-box;
+}
+
+#conteudoPostitTerminal{
+    width: 100% !important;
+    max-width: 174px;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
 }
