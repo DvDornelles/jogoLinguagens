@@ -142,6 +142,12 @@ function retornarMensagem(elemento){
         case 'fechaGaveta':
             fecharPainel('painelGaveta');
         break;
+        case 'abrePostitEstante':
+            abrirPainel('painelPostitEstante');
+        break;
+        case 'fechaPostitEstante':
+            fecharPainel('painelPostitEstante');
+        break;
         //fim estante
 
         //maquina
@@ -177,7 +183,14 @@ function retornarMensagem(elemento){
                 estadoJogo.parafusosDuto = true
                 coletarItem(document.querySelector('#parafusosNoDuto'));
                 document.getElementById('duto').classList.add('duto-aberto');
+                document.getElementById('abrePostitDuto').classList.remove('escondida');
             }
+        break;
+        case 'abrePostitDuto':
+            abrirPainel('painelPostitDuto');
+        break;
+        case 'fechaPostitDuto':
+            fecharPainel('painelPostitDuto');
         break;
         //fim duto
     }
@@ -407,6 +420,17 @@ function submeterCod() {
 const chaveDaSenha1 = Math.floor(Math.random()*10)+1;
 const chaveDaSenha2 = Math.floor(Math.random()*10)+1;
 const chaveDaSenha3 = Math.floor(Math.random()*10)+1;
+
+document.getElementById('postitMobilia').innerHTML = `
+    <p>*${chaveDaSenha1}</p>
+`
+document.getElementById('conteudoPostitEstante').innerHTML = `
+    <p>+${chaveDaSenha2}</p>
+`
+document.getElementById('conteudoPostitDuto').innerHTML = `
+    <p>*${chaveDaSenha3}</p>
+`
+
 
 console.log(chaveDaSenha1)
 console.log(chaveDaSenha2)

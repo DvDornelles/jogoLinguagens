@@ -50,6 +50,7 @@
             <div class="pop-up escondida" id="painelMobilia">
                 <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaMobilia">X</div>
                 <div class="elemento-interativo" id="relogio" onclick="coletarItem(this)"></div>
+                <div class="post-it" id="postitMobilia"></div>
             </div>
             <div class="pop-up escondida quadro-fechado" id="painelQuadroEnergiaPopUp" onclick="retornarMensagem(this)">
                 <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaQuadro">X</div>
@@ -62,10 +63,15 @@
         <section id="parede-oeste" class="cenario">
             <div class="elemento-interativo estante" id="estante" onclick="retornarMensagem(this)"></div>
             <div class="elemento-interativo" id="chaveDeFenda" onclick="coletarItem(this)"></div>
+            <div class="elemento-interativo post-it" onclick="retornarMensagem(this)" id="abrePostitEstante"></div>
             <div class="elemento-interativo" id="gaveta" onclick="retornarMensagem(this)"></div>
             <div class="pop-up escondida" id="painelGaveta">
                 <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaGaveta">X</div>
                 <div class="elemento-interativo" id="fita" onclick="coletarItem(this)"></div>
+            </div>
+            <div class="pop-up escondida post-it" id="painelPostitEstante">
+                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaPostitEstante">X</div>
+                <div id="conteudoPostitEstante"></div>
             </div>
         </section>
         <!--maquina-->
@@ -94,6 +100,11 @@
         <!--teto-->
         <section id="teto" class="cenario">
             <div class="elemento-interativo duto" id="duto" onclick="retornarMensagem(this)"><div class="escondida" id="parafusosNoDuto"></div></div>
+            <div class="elemento-interativo escondida post-it" id="abrePostitDuto" onclick="retornarMensagem(this)"></div>
+            <div class="pop-up escondida post-it" id="painelPostitDuto">
+                <div class="fechar elemento-interativo" onclick="retornarMensagem(this)" id="fechaPostitDuto">X</div>
+                <div id="conteudoPostitDuto"></div>
+            </div>
         </section>
         
         <nav id="navegacao">
