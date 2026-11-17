@@ -196,7 +196,7 @@ function puzzleMaquina(bloco) {
 
         if (botaoClicado === estadoPuzzleMaquina.numeroAtual + 1) {
             estadoPuzzleMaquina.numeroAtual++;
-            bloco.classList.add('escondida');
+            bloco.classList.add('respondido');
             if (estadoPuzzleMaquina.numeroAtual === 9) {
                 document.getElementById('retorno').innerHTML = `<p>"A máquina destravou e liberou a Bateria e Cabos!"</p>`;
                 document.getElementById('bateria').classList.remove('escondida')
@@ -214,7 +214,7 @@ function puzzleMaquina(bloco) {
             document.getElementById('cofreMaquina').classList.remove('escondida');
             document.getElementById('retorno').innerHTML = `<p>"Sequência incorreta!"</p>`;
             for(i=1; i<10; i++){
-                document.getElementById('b' + i).classList.remove('escondida')
+                document.getElementById('b' + i).classList.remove('respondido')
             }
         }
     }
