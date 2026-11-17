@@ -227,7 +227,6 @@ function puzzleQuadroForca(fio){
     }
 
     if (!fio.classList.contains('consertado')) {
-        fio.classList.remove('quebrado');
         fio.classList.add('consertado');
         estadoPuzzleLuz.fiosConsertados++;
 

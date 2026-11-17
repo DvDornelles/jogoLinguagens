@@ -116,7 +116,10 @@
     background-image: url("../img/parafusos.item.png");
 }
 
-
+.consertado{
+    background-image: url("../img/fita.cabos.png");
+    background-size: cover !important;
+}
 
 #bpfita{
     background-image: url("../img/fita.png");

@@ -293,6 +293,10 @@ body {
     top: 60px; right: -10px;
 }
 
+.consertado{
+    height: 40px !important; top: 200px !important;
+}
+
 #painelMaquina{
     display: flex; flex-direction: column;
     justify-content: center;
