@@ -358,10 +358,12 @@ body {
     position: absolute;
     width: 100px; height: 100px;
     top: 200px; left: 80px;
+    font-family: "Playwrite FR Moderne", cursive;;
 }
 
 #conteudoPostitEstante{
     font-size: xx-large;
+    font-family: "Playwrite FR Moderne", cursive;;
 }
 
 #abrePostitEstante{
@@ -383,4 +385,5 @@ body {
 
 #conteudoPostitDuto{
     font-size: xx-large;
+    font-family: "Playwrite FR Moderne", cursive;;
 }
