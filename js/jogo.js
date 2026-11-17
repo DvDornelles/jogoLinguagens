@@ -403,14 +403,22 @@ function submeterCod() {
     }
     aprovarSenha(retornoCod)
 }
-//senha deve ser 6767*52+27/3
+
+const chaveDaSenha1 = Math.floor(Math.random()*10)+1;
+const chaveDaSenha2 = Math.floor(Math.random()*10)+1;
+const chaveDaSenha3 = Math.floor(Math.random()*10)+1;
+
+console.log(chaveDaSenha1)
+console.log(chaveDaSenha2)
+console.log(chaveDaSenha3)
+
 function gerarSenha() {
     const senha = 6767;
     return senha;
 }
 
 function aprovarSenha(senha) {
-    if (senha === 351893){
+    if (senha === 6767*chaveDaSenha1+chaveDaSenha2/chaveDaSenha3){
         document.getElementById('consoleTerminal').innerHTML = `
         <p>Sucess<br>Senha correta!</p>
         `
