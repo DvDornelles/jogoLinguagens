@@ -349,7 +349,7 @@ body {
     width: 290px; height: 130px;
 }
 
-#dinamite{
+#dinamite, #bombaNoCompartimento{
     width: 200px; height: 150px;
     top: 50px; left: 50%; transform: translateX(-50%);
 }

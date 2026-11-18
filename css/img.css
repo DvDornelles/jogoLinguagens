@@ -155,7 +155,7 @@
     background-size: cover !important;
 }
 
-#bomba, .item-fundo-bomba{
+#bomba, .item-fundo-bomba, #bombaNoCompartimento{
     background-image: url(../img/bomba.png);
 }
     

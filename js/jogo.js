@@ -72,16 +72,41 @@ function retornarMensagem(elemento){
             estadoJogo.emTerminal = false;
         break;
         case 'compartimentoPorta':
-            if (estadoJogo.itemSelecionado !== 'bomba' && estadoJogo.terminalHackeado !== false){
+            if (!estadoJogo.terminalHackeado) {
                 document.getElementById('retorno').innerHTML = `
                     <p>"Esse seria um ótimo lugar para colocar uma bomba, iria arrebentar a tranca. Mas antes preciso abri-lo com esse terminal..."</p>
-                `
-                if(document.getElementById('painelPortaPopUp').classList.contains('painel-porta-fechado')){
-                    document.getElementById('painelPortaPopUp').classList.remove('painel-porta-fechado');
-                    document.getElementById('painelPortaPopUp').classList.add('painel-porta-aberto');
-                } else{
-                    document.getElementById('painelPortaPopUp').classList.remove('painel-porta-aberto');
-                    document.getElementById('painelPortaPopUp').classList.add('painel-porta-fechado');
+                `;
+            } else {
+                if (estadoJogo.itemSelecionado !== 'bomba') {
+                    if (document.getElementById('painelPortaPopUp').classList.contains('painel-porta-fechado')) {
+                        document.getElementById('painelPortaPopUp').classList.remove('painel-porta-fechado');
+                        document.getElementById('painelPortaPopUp').classList.add('painel-porta-aberto');
+                        document.getElementById('retorno').innerHTML = `<p>"O compartimento se abriu."</p>`;
+                    } else {
+                        document.getElementById('painelPortaPopUp').classList.remove('painel-porta-aberto');
+                        document.getElementById('painelPortaPopUp').classList.add('painel-porta-fechado');
+                        document.getElementById('retorno').innerHTML = `<p>"O compartimento foi fechado."</p>`;
+                    }
+                } else if (estadoJogo.itemSelecionado === 'bomba') {
+                    if (document.getElementById('painelPortaPopUp').classList.contains('painel-porta-aberto')) {
+                        document.getElementById('bombaNoCompartimento').classList.remove('escondida');
+                        
+                        for (let i = 0; i < 5; i++) {
+                            if (estadoJogo.inventario[i] === 'bomba') {
+                                estadoJogo.inventario[i] = null;
+                                const j = i + 1;
+                                document.getElementById('slot' + j).classList.remove('item-fundo-bomba');
+                                document.getElementById('slot' + j).classList.add('vazio');
+                                document.getElementById('slot' + j).classList.remove('slotSelecionado');
+                                estadoJogo.itemSelecionado = null;
+                                estadoJogo.slotSelecionado = null;
+                            }
+                        }
+                    } else {
+                        document.getElementById('retorno').innerHTML = `
+                            <p>"O compartimento está fechado. Preciso abri-lo primeiro para colocar a bomba."</p>
+                        `;
+                    }
                 }
             }
         break;
@@ -450,7 +475,7 @@ document.getElementById('conteudoPostitEstante').innerHTML = `
     <p>+${chaveDaSenha2}</p>
 `
 document.getElementById('conteudoPostitDuto').innerHTML = `
-    <p>*${chaveDaSenha3}</p>
+    <p>/${chaveDaSenha3}</p>
 `
 
 
