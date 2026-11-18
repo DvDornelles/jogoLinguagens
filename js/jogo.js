@@ -18,6 +18,8 @@ const estadoJogo = {
 
     energiaAcionada: false,
     terminalHackeado: false,
+
+    bombaConstruida: false,
 };
 
 const bluePrint = {
@@ -38,6 +40,10 @@ const estadoPuzzleMaquina = {
     numeroAtual: 0,
     iniciado: false,
 };
+
+const estadoPuzzleTerminal = {
+    hackeado: false,
+}
 
 function abrirPainel(id){
     document.getElementById(id).classList.remove('escondida');
@@ -66,10 +72,17 @@ function retornarMensagem(elemento){
             estadoJogo.emTerminal = false;
         break;
         case 'compartimentoPorta':
-            if (estadoJogo.itemSelecionado !== 'bomba' && bluePrint.dinamite === false){
+            if (estadoJogo.itemSelecionado !== 'bomba' && estadoJogo.terminalHackeado !== false){
                 document.getElementById('retorno').innerHTML = `
                     <p>"Esse seria um ótimo lugar para colocar uma bomba, iria arrebentar a tranca. Mas antes preciso abri-lo com esse terminal..."</p>
                 `
+                if(document.getElementById('painelPortaPopUp').classList.contains('painel-porta-fechado')){
+                    document.getElementById('painelPortaPopUp').classList.remove('painel-porta-fechado');
+                    document.getElementById('painelPortaPopUp').classList.add('painel-porta-aberto');
+                } else{
+                    document.getElementById('painelPortaPopUp').classList.remove('painel-porta-aberto');
+                    document.getElementById('painelPortaPopUp').classList.add('painel-porta-fechado');
+                }
             }
         break;
         //fim porta blindada
