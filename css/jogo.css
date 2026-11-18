@@ -162,7 +162,7 @@ body {
 .escondida { display: none !important;}
 
 #inventario {
-    height: 100px;
+    height: 100px; width: 100%;
     background-color: var(--cor-ui);
     padding: 10px;
     display: flex;
@@ -420,4 +420,15 @@ body {
 #bomba{
     top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 200px; height: 200px;
+}
+
+#diario{
+    position: absolute;
+    right: 100px;
+    display: flex;
+}
+
+.p-diario{
+    width: 170px; height: 170px;
+    margin-left: -50px;
 }

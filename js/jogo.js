@@ -162,6 +162,7 @@ function retornarMensagem(elemento){
             <p>"Uma mobília velha com algumas anotações..."</p>
             `
             abrirPainel('painelMobilia')
+            document.getElementById('postitInventario1').classList.remove('escondida');
         break;
         case 'fechaMobilia':
             fecharPainel('painelMobilia')
@@ -184,6 +185,7 @@ function retornarMensagem(elemento){
         break;
         case 'abrePostitEstante':
             abrirPainel('painelPostitEstante');
+            document.getElementById('postitInventario2').classList.remove('escondida')
         break;
         case 'fechaPostitEstante':
             fecharPainel('painelPostitEstante');
@@ -228,6 +230,7 @@ function retornarMensagem(elemento){
         break;
         case 'abrePostitDuto':
             abrirPainel('painelPostitDuto');
+            document.getElementById('postitInventario3').classList.remove('escondida');
         break;
         case 'fechaPostitDuto':
             fecharPainel('painelPostitDuto');
@@ -481,6 +484,16 @@ document.getElementById('conteudoPostitEstante').innerHTML = `
     <p>+${chaveDaSenha2}</p>
 `
 document.getElementById('conteudoPostitDuto').innerHTML = `
+    <p>/${chaveDaSenha3}</p>
+`
+
+document.getElementById('postitInventario1').innerHTML = `
+    <p>*${chaveDaSenha1}</p>
+`
+document.getElementById('postitInventario2').innerHTML = `
+    <p>+${chaveDaSenha2}</p>
+`
+document.getElementById('postitInventario3').innerHTML = `
     <p>/${chaveDaSenha3}</p>
 `
 
