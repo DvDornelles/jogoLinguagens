@@ -701,3 +701,32 @@ campoCodigo.addEventListener('keydown', function(event){
         }
     }
 })*/
+
+let seg=0, min=0;
+const timer = setInterval(function(){
+    seg++
+    if(seg>59){
+        min++
+        seg=0
+    }
+    if(min>9 && seg>9){
+        document.getElementById('timer-universal').innerHTML = `
+        <p>${min}:${seg}</p>
+    `
+    }
+    else if(min>9){
+        document.getElementById('timer-universal').innerHTML = `
+        <p>${min}:0${seg}</p>
+    `
+    }
+    else if(seg>9){
+        document.getElementById('timer-universal').innerHTML = `
+        <p>0${min}:${seg}</p>
+    `
+    }
+    else{
+        document.getElementById('timer-universal').innerHTML = `
+        <p>0${min}:0${seg}</p>
+    `
+    }
+}, 1000)
