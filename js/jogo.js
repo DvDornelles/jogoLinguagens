@@ -283,6 +283,9 @@ function adicionarBlueprint(material){
             document.getElementById('retorno').innerHTML = document.getElementById('retorno').innerHTML + `<p> "A fita foi adicionada ao projeto de bomba."</p>`
             document.getElementById(estadoJogo.slotSelecionado).classList.remove('item-fundo-fita')
             document.getElementById('bpfita').classList.remove('escondida')
+            if(bluePrint.bateria && bluePrint.cabos && bluePrint.dinamite && bluePrint.fita && bluePrint.parafusosNoDuto && bluePrint.relogio){
+                document.getElementById('botaoMontaBomba').classList.remove('escondida');
+            }
         break;
     }
     const indice = estadoJogo.inventario.indexOf(material);
@@ -326,6 +329,9 @@ function transferirBluePrint(){
                 }
             }
         }
+    }
+    if(bluePrint.bateria && bluePrint.cabos && bluePrint.dinamite && bluePrint.fita && bluePrint.parafusosNoDuto && bluePrint.relogio){
+        document.getElementById('botaoMontaBomba').classList.remove('escondida');
     }
 }
 
@@ -371,6 +377,9 @@ function coletarItem(elemento){
                     slotLivre.classList.remove('vazio');
                     estadoJogo.inventario.push(elemento.id);
                     break;
+            }
+            if(bluePrint.bateria && bluePrint.cabos && bluePrint.dinamite && bluePrint.fita && bluePrint.parafusosNoDuto && bluePrint.relogio){
+                document.getElementById('botaoMontaBomba').classList.remove('escondida');
             }
         }
     } else{

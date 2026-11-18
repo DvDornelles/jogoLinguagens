@@ -408,3 +408,11 @@ body {
     text-align: center;
     line-height: 1.4;
 }
+
+#botaoMontaBomba{
+    top: 310px; left: 50%; transform: translateX(-50%);
+    font-size: xx-large;
+    background-color: green;
+    border: #000 10px solid;
+    border-radius: 50px;
+}
