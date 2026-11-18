@@ -20,6 +20,8 @@ const estadoJogo = {
     terminalHackeado: false,
 
     bombaConstruida: false,
+
+    finalizando: false,
 };
 
 const bluePrint = {
@@ -513,6 +515,32 @@ function construirBomba(){
     document.getElementById('itensNaBancada').innerHTML = `
         <div class="elemento-interativo" id="bomba" onclick="coletarItem(this)"><div>
     `
+}
+
+let explosao
+function finalJogo(){
+    let tempo = 5;
+    if(!estadoJogo.finalizando){
+        estadoJogo.finalizando = true
+        explosao = setInterval(function(){
+            document.getElementById('retorno').innerHTML = `
+                <p>${tempo}</p>
+            `
+            tempo--
+            if(tempo < 1){
+                clearInterval(explosao);
+                document.getElementById('retorno').innerHTML = `
+                <p>BOOOOOOOOOOMMMM!!!</p>
+            `
+            }
+        }, 1000)
+    } else{
+        clearInterval(explosao);
+        estadoJogo.finalizando = false
+        document.getElementById('retorno').innerHTML = `
+            <p>Bomba pausada.</p>
+        `
+    }
 }
 
 document.onkeydown = function(event){
