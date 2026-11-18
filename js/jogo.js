@@ -20,6 +20,7 @@ const estadoJogo = {
     terminalHackeado: false,
 
     bombaConstruida: false,
+    bombaNoCompartimento: false,
 
     finalizando: false,
 };
@@ -83,15 +84,20 @@ function retornarMensagem(elemento){
                     if (document.getElementById('painelPortaPopUp').classList.contains('painel-porta-fechado')) {
                         document.getElementById('painelPortaPopUp').classList.remove('painel-porta-fechado');
                         document.getElementById('painelPortaPopUp').classList.add('painel-porta-aberto');
-                        document.getElementById('retorno').innerHTML = `<p>"O compartimento se abriu."</p>`;
-                    } else {
+                        if(estadoJogo.bombaNoCompartimento){
+                            document.getElementById('bombaNoCompartimento').classList.remove('escondida');
+                        }
+                    } else{
                         document.getElementById('painelPortaPopUp').classList.remove('painel-porta-aberto');
                         document.getElementById('painelPortaPopUp').classList.add('painel-porta-fechado');
-                        document.getElementById('retorno').innerHTML = `<p>"O compartimento foi fechado."</p>`;
+                        if(estadoJogo.bombaNoCompartimento){
+                            document.getElementById('bombaNoCompartimento').classList.add('escondida');
+                        }
                     }
                 } else if (estadoJogo.itemSelecionado === 'bomba') {
                     if (document.getElementById('painelPortaPopUp').classList.contains('painel-porta-aberto')) {
                         document.getElementById('bombaNoCompartimento').classList.remove('escondida');
+                        estadoJogo.bombaNoCompartimento = true;
                         
                         for (let i = 0; i < 5; i++) {
                             if (estadoJogo.inventario[i] === 'bomba') {
@@ -548,7 +554,20 @@ function finalJogo(){
                 clearInterval(explosao);
                 document.getElementById('retorno').innerHTML = `
                 <p>BOOOOOOOOOOMMMM!!!</p>
-            `
+                `
+                let textoFinal;
+                if(document.getElementById('painelPortaPopUp').classList.contains('painel-porta-aberto')){
+                    textoFinal = `
+                        <p>Você conseguiu contruir a bomba relógio, a fuga parecia imediata. Porém, você se esqueceu de fechar o compartimento em que a bomba foi colocada, explodindo você e tudo que estava dentro da sala...</p>
+                    `
+                } else{
+                    textoFinal = `
+                        <p>Construindo e explodindo a bomba relógio, você conseguiu arrebentar o circuito que trancava a porta. Dessa forma, você fugiu do prédio velho e úmido, mas nunca irá saber com certeza quem ou o que trancou você ali... </p>
+                    `
+                }
+                document.getElementById('fim').classList.remove('escondida');
+                document.getElementById('qualFinal').innerHTML = textoFinal;
+                /*document.getElementById('tempoFinal').innerHTML = ;*/
             }
         }, 1000)
     } else{
