@@ -378,7 +378,7 @@ function coletarItem(elemento){
                     estadoJogo.inventario.push(elemento.id);
                     break;
             }
-            if(bluePrint.bateria && bluePrint.cabos && bluePrint.dinamite && bluePrint.fita && bluePrint.parafusosNoDuto && bluePrint.relogio){
+            if(bluePrint.bateria && bluePrint.cabos && bluePrint.dinamite && bluePrint.fita && bluePrint.parafusosNoDuto && bluePrint.relogio && !estadoJogo.bombaConstruida){
                 document.getElementById('botaoMontaBomba').classList.remove('escondida');
             }
         }
@@ -477,6 +477,13 @@ function aprovarSenha(senha) {
         <p>Error<br>Senha incorreta!</p>
         `
     }
+}
+
+function construirBomba(){
+    document.getElementById('botaoMontaBomba').classList.add('escondida');
+    document.getElementById('itensNaBancada').innerHTML = `
+        <div class="elemento-interativo" id="bomba" onclick="coletarItem(this)"><div>
+    `
 }
 
 document.onkeydown = function(event){

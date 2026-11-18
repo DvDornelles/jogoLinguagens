@@ -416,3 +416,8 @@ body {
     border: #000 10px solid;
     border-radius: 50px;
 }
+
+#bomba{
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 200px; height: 200px;
+}

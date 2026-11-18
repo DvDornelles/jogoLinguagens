@@ -154,4 +154,8 @@
 #postitTerminal{
     background-size: cover !important;
 }
+
+#bomba, .item-fundo-bomba{
+    background-image: url(../img/bomba.png);
+}
     
