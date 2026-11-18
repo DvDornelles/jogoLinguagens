@@ -555,6 +555,7 @@ function finalJogo(){
                 document.getElementById('retorno').innerHTML = `
                 <p>BOOOOOOOOOOMMMM!!!</p>
                 `
+                clearInterval(timer);
                 let textoFinal;
                 if(document.getElementById('painelPortaPopUp').classList.contains('painel-porta-aberto')){
                     textoFinal = `
@@ -567,7 +568,7 @@ function finalJogo(){
                 }
                 document.getElementById('fim').classList.remove('escondida');
                 document.getElementById('qualFinal').innerHTML = textoFinal;
-                /*document.getElementById('tempoFinal').innerHTML = ;*/
+                document.getElementById('tempoFinal').innerHTML = document.getElementById('timer-universal').innerHTML;
             }
         }, 1000)
     } else{
