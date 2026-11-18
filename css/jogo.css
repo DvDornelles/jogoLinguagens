@@ -176,7 +176,7 @@ body {
     border: 1px solid #555;
 }
 .slotSelecionado{
-    border: 1px solid #184357;
+    border: 3px solid #184357;
 }
 
 .pop-up{
@@ -271,13 +271,11 @@ body {
 
 #ordemNumerica {
     width: 390px; height: 390px;
-    border: white 1px dashed;
     border-radius: 10px;
 }
 
 #cofreMaquina{
     position: absolute;
-    border: 1px dashed #ccc;
     width: 100px; height: 100px;
     display: flex;
     justify-content: center; align-items: center;
@@ -344,7 +342,6 @@ body {
     position: absolute;
     display: flex;
     gap: 10px;
-    border: 1px white dashed;
     top: 110px; left: 120px;
     width: 290px; height: 130px;
 }
