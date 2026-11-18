@@ -6,7 +6,7 @@ const estadoJogo = {
     emPopUp: false,
     emTerminal: false,
 
-    inventario: [],
+    inventario: [null, null, null, null, null],
     slotSelecionado: null,
     itemSelecionado: null,
 
@@ -334,8 +334,11 @@ function transferirBluePrint(){
                 estadoJogo.inventario[i] = null
                 const j = i+1;
                 document.getElementById('slot' + j).classList.remove('item-fundo-'+elemento)
-                document.getElementById('slot' + j).classList.add('vazio')
-                document.getElementById('slot' + j).classList.remove('slotSelecionado')
+                if (estadoJogo.slotSelecionado === 'slot' + j) {
+                    document.getElementById('slot' + j).classList.remove('slotSelecionado');
+                    estadoJogo.itemSelecionado = null;
+                    estadoJogo.slotSelecionado = null;
+                }
                 estadoJogo.itemSelecionado = null
                 estadoJogo.slotSelecionado = null
                 document.getElementById('bp' + elemento).classList.remove('escondida')
@@ -364,11 +367,12 @@ function coletarItem(elemento){
     const slotLivre = document.querySelector('.slot.vazio');
 
     if (slotLivre){
+        const numeroSlot = Number(slotLivre.dataset.n) - 1;
         elemento.classList.add('escondida');
         if(estadoJogo.bluePrint === false){
             slotLivre.classList.add('item-fundo-' + elemento.id);
             slotLivre.classList.remove('vazio');
-            estadoJogo.inventario.push(elemento.id);
+            estadoJogo.inventario[numeroSlot] = elemento.id;
         }
         else {
             switch (elemento.id) {
@@ -400,7 +404,7 @@ function coletarItem(elemento){
                 default:
                     slotLivre.classList.add('item-fundo-' + elemento.id);
                     slotLivre.classList.remove('vazio');
-                    estadoJogo.inventario.push(elemento.id);
+                    estadoJogo.inventario[numeroSlot] = elemento.id;
                     break;
             }
             if(bluePrint.bateria && bluePrint.cabos && bluePrint.dinamite && bluePrint.fita && bluePrint.parafusosNoDuto && bluePrint.relogio && !estadoJogo.bombaConstruida){
