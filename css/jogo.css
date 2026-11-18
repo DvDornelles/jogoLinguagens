@@ -438,7 +438,7 @@ body {
     align-items: center;
     flex-direction: column;
     top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 1000px;
+    width: 1000px; height: 300px;
 }
 
 #dados{
@@ -447,6 +447,9 @@ body {
 }
 
 #qualFinal, #tempoLevado{
-    border: 1px dashed white;
     width: 400px; height: 220px;
+}
+
+#tempoLevado{
+    text-align: center;
 }

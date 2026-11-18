@@ -538,6 +538,7 @@ function construirBomba(){
     document.getElementById('itensNaBancada').innerHTML = `
         <div class="elemento-interativo" id="bomba" onclick="coletarItem(this)"><div>
     `
+    estadoJogo.bombaConstruida = true;
 }
 
 let explosao
@@ -568,7 +569,7 @@ function finalJogo(){
                 }
                 document.getElementById('fim').classList.remove('escondida');
                 document.getElementById('qualFinal').innerHTML = textoFinal;
-                document.getElementById('tempoFinal').innerHTML = document.getElementById('timer-universal').innerHTML;
+                document.getElementById('tempoLevado').innerHTML = 'Tempo preso na sala: ' + document.getElementById('timer-universal').innerHTML;
             }
         }, 1000)
     } else{
