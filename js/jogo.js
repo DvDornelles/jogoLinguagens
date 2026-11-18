@@ -427,6 +427,10 @@ function trocarCenario(direcao){
     const setaCima = document.querySelector('.seta-cima');
     const setaBaixo = document.querySelector('.seta-baixo');
 
+    document.getElementById('retorno').innerHTML = `
+        <p></p>
+    `
+
     const idParedeAtual = estadoJogo.paredes[estadoJogo.indiceParedeAtual];
     document.getElementById(idParedeAtual).classList.remove('ativa');
 
