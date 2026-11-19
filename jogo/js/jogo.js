@@ -335,42 +335,44 @@ function adicionarBlueprint(material){
 }
 
 function transferirBluePrint(){
-    const itensValidos = ['fita', 'relogio', 'cabos', 'parafusosNoDuto', 'bateria', 'dinamite'];
-    for (let i=0; i<5; i++){
-        if (itensValidos.includes(estadoJogo.inventario[i])){
-            const elemento = estadoJogo.inventario[i]
-            
-            if(estadoJogo.energiaAcionada){
-                bluePrint[elemento] = true
-                estadoJogo.inventario[i] = null
-                const j = i+1;
-                document.getElementById('slot' + j).classList.remove('item-fundo-'+elemento)
-                if (estadoJogo.slotSelecionado === 'slot' + j) {
-                    document.getElementById('slot' + j).classList.remove('slotSelecionado');
-                    estadoJogo.itemSelecionado = null;
-                    estadoJogo.slotSelecionado = null;
-                }
-                estadoJogo.itemSelecionado = null
-                estadoJogo.slotSelecionado = null
-                document.getElementById('bp' + elemento).classList.remove('escondida')
-            }else{
-                if(estadoJogo.inventario[i] !== 'fita'){
+    if(!estadoJogo.bombaConstruida){
+        const itensValidos = ['fita', 'relogio', 'cabos', 'parafusosNoDuto', 'bateria', 'dinamite'];
+        for (let i=0; i<5; i++){
+            if (itensValidos.includes(estadoJogo.inventario[i])){
+                const elemento = estadoJogo.inventario[i]
+                
+                if(estadoJogo.energiaAcionada){
                     bluePrint[elemento] = true
-            
                     estadoJogo.inventario[i] = null
                     const j = i+1;
                     document.getElementById('slot' + j).classList.remove('item-fundo-'+elemento)
-                    document.getElementById('slot' + j).classList.add('vazio')
-                    document.getElementById('slot' + j).classList.remove('slotSelecionado')
+                    if (estadoJogo.slotSelecionado === 'slot' + j) {
+                        document.getElementById('slot' + j).classList.remove('slotSelecionado');
+                        estadoJogo.itemSelecionado = null;
+                        estadoJogo.slotSelecionado = null;
+                    }
                     estadoJogo.itemSelecionado = null
                     estadoJogo.slotSelecionado = null
                     document.getElementById('bp' + elemento).classList.remove('escondida')
+                }else{
+                    if(estadoJogo.inventario[i] !== 'fita'){
+                        bluePrint[elemento] = true
+                
+                        estadoJogo.inventario[i] = null
+                        const j = i+1;
+                        document.getElementById('slot' + j).classList.remove('item-fundo-'+elemento)
+                        document.getElementById('slot' + j).classList.add('vazio')
+                        document.getElementById('slot' + j).classList.remove('slotSelecionado')
+                        estadoJogo.itemSelecionado = null
+                        estadoJogo.slotSelecionado = null
+                        document.getElementById('bp' + elemento).classList.remove('escondida')
+                    }
                 }
             }
         }
-    }
-    if(bluePrint.bateria && bluePrint.cabos && bluePrint.dinamite && bluePrint.fita && bluePrint.parafusosNoDuto && bluePrint.relogio){
-        document.getElementById('botaoMontaBomba').classList.remove('escondida');
+        if(bluePrint.bateria && bluePrint.cabos && bluePrint.dinamite && bluePrint.fita && bluePrint.parafusosNoDuto && bluePrint.relogio){
+            document.getElementById('botaoMontaBomba').classList.remove('escondida');
+        }
     }
 }
 
