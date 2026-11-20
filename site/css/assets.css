@@ -1,0 +1,31 @@
+.quadro{
+    width: 80%; height: auto;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; padding: 50px;
+    border-radius: 20px;
+}
+
+.img-quadro{
+    width: 100%; min-height: 345px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px dashed white;
+    background-position: center;
+}
+
+#img1{ background-image: url("../../jogo/img/parede.norte.png"); }
+
+#img2{ background-image: url("../../jogo/img/parede.leste.png"); }
+
+#img3{ background-image: url("../../jogo/img/parede.sul.png"); }
+
+#img4{ background-image: url("../../jogo/img/parede.oeste.png"); }
+
+#img5{ background-image: url("../../jogo/img/teto.png"); }
+
+main{
+    gap: 40px;
+}
+
