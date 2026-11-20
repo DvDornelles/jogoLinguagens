@@ -5,10 +5,29 @@
     flex-wrap: wrap;
     gap: 40px; padding: 50px;
     border-radius: 20px;
+    justify-content: center;
+}
+
+.img-cenario{
+    width: 100%; min-height: 345px;
+}
+
+#quadroItens{ gap: 30px;}
+.img-item{
+    width: 100px; height: 100px;
+    object-fit: contain;
+}
+
+#quadroPopUps{
+    justify-content: space-around;
+}
+.img-pop-up{
+    min-width: 150px; max-width: 200px;
+    min-height: 150px; max-height: 200px;
+    object-fit: contain;
 }
 
 .img-quadro{
-    width: 100%; min-height: 345px;
     background-size: contain;
     background-repeat: no-repeat;
     border: 1px dashed white;
