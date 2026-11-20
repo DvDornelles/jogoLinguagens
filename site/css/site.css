@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Sekuya", system-ui;
 }
 
 header{
@@ -31,6 +32,7 @@ header{
         display: flex;
         align-items: center;
         color: white;
+        font-size: 12px;
     }
     #logo{
         width: 70px;
@@ -61,5 +63,10 @@ header{
     }
     p{
         width: 30%;
+    }
+
+    h1{
+        color: lime;
+        font-size: 50px;
     }
 }
