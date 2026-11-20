@@ -15,16 +15,6 @@
     background-position: center;
 }
 
-#img1{ background-image: url("../../jogo/img/parede.norte.png"); }
-
-#img2{ background-image: url("../../jogo/img/parede.leste.png"); }
-
-#img3{ background-image: url("../../jogo/img/parede.sul.png"); }
-
-#img4{ background-image: url("../../jogo/img/parede.oeste.png"); }
-
-#img5{ background-image: url("../../jogo/img/teto.png"); }
-
 main{
     gap: 40px;
 }
