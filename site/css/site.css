@@ -12,7 +12,11 @@ header{
 
 @media (min-width: 768px){
     body{
-        height: 100%;
+        height: 100vh; width: 100%;
+        background-image: url("/jogo/img/parede.leste.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center
     }
     #cabecalhoDireita, #cabecalhoEsquerda{
         display: flex;
@@ -38,10 +42,9 @@ header{
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-image: url("/jogo/img/parede.leste.png");
     }
 
     #imagemEliotMuskito{
-        width: 800px; height: 450px;
+        height: 300px; width: 500px;
     }
 }
