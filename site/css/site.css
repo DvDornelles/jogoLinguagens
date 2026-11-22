@@ -609,6 +609,67 @@ footer {
 }
 
 /* =========================================
+   PÁGINA INICIAL / JOGAR
+========================================= */
+#main-jogar {
+    justify-content: center;
+    min-height: 60vh;
+}
+
+#secao-jogar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 60px;
+}
+
+#secao-jogar p {
+    max-width: 600px;
+}
+
+#btn-iniciar-partida {
+    font-size: 22px;
+    padding: 20px 50px;
+}
+
+.texto-tutorial {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.link-tutorial {
+    color: var(--cor-neon);
+    text-decoration: underline;
+}
+
+.linha-divisoria {
+    border: 1px dashed var(--cor-borda);
+    width: 100%;
+    margin: 30px 0 15px 0;
+}
+
+.texto-alerta {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-perigo {
+    background-color: #e74c3c;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
+    margin-top: 10px;
+}
+
+.btn-perigo:hover {
+    background-color: #c0392b;
+    color: #fff;
+    border-color: #c0392b;
+    box-shadow: 0 0 20px rgba(192, 57, 43, 0.6);
+}
+
+/* =========================================
    MEDIA QUERIES (DESKTOP)
 ========================================= */
 @media (min-width: 768px) {
