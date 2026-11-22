@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo linguagens</title>
-    <link rel="stylesheet" href="/site/css/site.css">
+    <title>Fale Conosco - LAVI</title>
+    <link rel="stylesheet" href="../css/site.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,19 +38,64 @@
             </div>
         </section>
     </header>
+    
+    <main id="main-contato">
+        <section class="secao-texto" id="secao-formulario">
+            <h1>Transmissão de Dados</h1>
+            <p>Encontrou algum bug no sistema, não consegue resolver um enigma ou quer reportar uma anomalia na sala? Preencha o formulário abaixo para acionar os desenvolvedores.</p>
+            
+            <form action="#" method="POST" class="formulario-fake">
+                <fieldset>
+                    <legend>Identificação do Jogador</legend>
+                    
+                    <div class="grupo-input">
+                        <label for="nomeJogador">Nome Completo:</label>
+                        <input type="text" id="nomeJogador" name="nomeJogador" placeholder="Digite seu nome..." required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="emailJogador">E-mail de Contato:</label>
+                        <input type="email" id="emailJogador" name="emailJogador" placeholder="jogador@email.com" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalhes do Reporte</legend>
+
+                    <div class="grupo-input">
+                        <label for="assunto">Assunto da Mensagem:</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="bug">Reportar um Bug</option>
+                            <option value="dica">Pedir uma dica para um Enigma</option>
+                            <option value="feedback">Feedback sobre o Jogo</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="mensagem">Sua Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva a situação em detalhes..." required></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-principal" id="btn-enviar">Enviar Transmissão</button>
+            </form>
+        </section>
+    </main>
+
     <footer>
-        <!-- Esta div só vai aparecer no celular -->
         <div id="links-rodape">
-            <div class="botao-rodape" onclick="window.location.href='/site/assets/sobrenos.html'">
+            <div class="botao-rodape" onclick="window.location.href='sobrenos.html'">
                 Sobre nós &#128101
             </div>
-            <div class="botao-rodape" onclick="window.location.href='/site/assets/contato.html'">
+            <div class="botao-rodape" onclick="window.location.href='contato.html'">
                 Fale Conosco &#128222
             </div>
         </div>
 
         <div class="footer-conteudo">
-            <p>&copy; 2026 Empresa LAVI. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Equipe LAVI - IFRS Campus Canoas. Todos os direitos reservados.</p>
             <p>Um jogo de escape room virtual criado para testar seus limites.</p>
         </div>
     </footer>
