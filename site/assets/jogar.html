@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo linguagens</title>
-    <link rel="stylesheet" href="/site/css/site.css">
+    <title>Jogar - Sobreviva ao Cubo</title>
+    <link rel="stylesheet" href="../css/site.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,14 +38,25 @@
             </div>
         </section>
     </header>
-    <a href="../../jogo/assets/jogo.html">jogar</a>
+    
+    <main style="justify-content: center; min-height: 60vh;">
+        <section class="secao-texto" style="display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 60px;">
+            <h2>SISTEMA ONLINE. ACESSO LIBERADO.</h2>
+            <p style="max-width: 600px;">Eliot Muskito está aguardando. Você está prestes a entrar na simulação principal. Use a lógica, hackeie os terminais e tente escapar antes que seus dados sejam corrompidos.</p>
+            
+            <button class="btn-principal" style="font-size: 22px; padding: 20px 50px;" onclick="window.location.href='../../jogo/assets/jogo.html'">
+                &#9654; INICIAR PARTIDA
+            </button>
+        </section>
+    </main>
+
     <footer>
         <!-- Esta div só vai aparecer no celular -->
         <div id="links-rodape">
-            <div class="botao-rodape" onclick="window.location.href='/site/assets/sobrenos.html'">
+            <div class="botao-rodape" onclick="window.location.href='sobrenos.html'">
                 Sobre nós &#128101
             </div>
-            <div class="botao-rodape" onclick="window.location.href='/site/assets/contato.html'">
+            <div class="botao-rodape" onclick="window.location.href='contato.html'">
                 Fale Conosco &#128222
             </div>
         </div>
