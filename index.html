@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo linguagens</title>
+    <title>Sobreviva ao Cubo - LAVI</title>
     <link rel="stylesheet" href="/site/css/site.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,12 +38,47 @@
             </div>
         </section>
     </header>
+    
     <main>
-        <div id="fraseDeImpacto">
-            <h1>Sobreviva ao Cubo</h1>
-            <h2>Eliot Muskito quer brincar com você</h2>
-        </div>
-        <div id="divImagemEliotMuskito"><img src="/site/img/eliot.muskito.jpg" alt="Eliot Muskito" id="imagemEliotMuskito"></div>
+        <section id="hero-section">
+            <div id="fraseDeImpacto">
+                <h1>Sobreviva ao Cubo</h1>
+                <h2>Eliot Muskito quer brincar com você</h2>
+                <button id="btnJogarAgora" class="btn-principal" onclick="window.location.href='site/assets/jogar.html'">
+                    JOGAR AGORA
+                </button>
+            </div>
+            <div id="divImagemEliotMuskito">
+                <img src="/site/img/eliot.muskito.jpg" alt="Eliot Muskito" id="imagemEliotMuskito">
+            </div>
+        </section>
+
+        <section id="sobre-o-jogo" class="secao-texto">
+            <h2>Bem-vindo à Prisão Digital</h2>
+            <p>Você foi capturado e arremessado em uma dimensão virtual inexpugnável controlada pela mente de Eliot Muskito. Sua única chance de escapar? Usar a lógica e o código a seu favor antes que ele drene todos os seus dados.</p>
+        </section>
+
+        <section id="features-jogo">
+            <div class="card-feature">
+                <h3>🧩 Resolva Enigmas</h3>
+                <p>Explore o cenário, encontre ferramentas ocultas e conserte painéis elétricos para abrir novas rotas.</p>
+            </div>
+            <div class="card-feature">
+                <h3>💻 Hackeie o Sistema</h3>
+                <p>Domine linguagens de programação e lógica para desbloquear os terminais de segurança máximos.</p>
+            </div>
+            <div class="card-feature">
+                <h3>⏳ Sobreviva</h3>
+                <p>O zumbido cibernético está cada vez mais alto. Desarme as armadilhas de Eliot antes do tempo esgotar.</p>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <p>&copy; 2026 Empresa LAVI. Todos os direitos reservados.</p>
+            <p>Um jogo de escape room virtual criado para testar seus limites.</p>
+        </div>
+    </footer>
 </body>
 </html>
