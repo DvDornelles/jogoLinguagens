@@ -1,3 +1,9 @@
+:root {
+    --cor-neon: #33ff77;
+    --cor-fundo-escuro: rgba(26, 26, 26, 0.95);
+    --cor-borda: #34495e;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +27,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #1a1a1a;
-    border-bottom: 2px solid #33ff77;
+    border-bottom: 2px solid var(--cor-neon);
     padding: 10px 20px;
     flex-wrap: wrap;
     min-height: 80px;
@@ -55,7 +61,7 @@ header {
 
 .botao-cabecalho:hover {
     cursor: pointer;
-    color: #33ff77;
+    color: var(--cor-neon);
 }
 
 main {
@@ -71,8 +77,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(26, 26, 26, 0.95);
-    border: 1px solid #33ff77;
+    background-color: var(--cor-fundo-escuro);
+    border: 1px solid var(--cor-neon);
     border-radius: 20px;
     padding: 30px 20px;
     width: 100%;
@@ -91,7 +97,7 @@ main {
 }
 
 #fraseDeImpacto h1 {
-    color: #33ff77;
+    color: var(--cor-neon);
     font-size: 32px;
     line-height: 1.2;
 }
@@ -107,12 +113,12 @@ main {
     max-width: 350px;
     height: auto;
     border-radius: 15px;
-    border: 2px dashed #33ff77;
+    border: 2px dashed var(--cor-neon);
     object-fit: cover;
 }
 
 .btn-principal {
-    background-color: #33ff77;
+    background-color: var(--cor-neon);
     color: #1a1a1a;
     font-weight: 800;
     font-size: 16px;
@@ -130,29 +136,29 @@ main {
 
 .btn-principal:hover {
     background-color: #1a1a1a;
-    color: #33ff77;
-    border: 1px solid #33ff77;
-    box-shadow: 0 0 15px #33ff77;
+    color: var(--cor-neon);
+    border: 1px solid var(--cor-neon);
+    box-shadow: 0 0 15px var(--cor-neon);
 }
 
 #texto h1 {
-    color: #33ff77;
+    color: var(--cor-neon);
     margin-bottom: 20px;
 }
 
 .secao-texto, #texto {
-    background-color: rgba(26, 26, 26, 0.95);
+    background-color: var(--cor-fundo-escuro);
     color: white;
     padding: 30px 20px;
     border-radius: 20px;
     width: 100%;
     max-width: 1000px;
     text-align: center;
-    border: 1px dashed #33ff77;
+    border: 1px dashed var(--cor-neon);
 }
 
 .secao-texto h2 {
-    color: #33ff77;
+    color: var(--cor-neon);
     font-size: 26px;
     margin-bottom: 20px;
 }
@@ -172,8 +178,8 @@ main {
 }
 
 .card-feature {
-    background-color: rgba(26, 26, 26, 0.95);
-    border: 1px solid #34495e;
+    background-color: var(--cor-fundo-escuro);
+    border: 1px solid var(--cor-borda);
     border-radius: 15px;
     padding: 25px 20px;
     width: 100%;
@@ -183,11 +189,11 @@ main {
 }
 
 .card-feature:hover {
-    border-color: #33ff77;
+    border-color: var(--cor-neon);
 }
 
 .card-feature h3 {
-    color: #33ff77;
+    color: var(--cor-neon);
     font-size: 20px;
     margin-bottom: 15px;
 }
@@ -203,23 +209,23 @@ main {
 .quadro {
     width: 100%; 
     max-width: 1000px;
-    background-color: rgba(26, 26, 26, 0.95);
+    background-color: var(--cor-fundo-escuro);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px; 
     padding: 30px 20px;
     border-radius: 20px;
-    border: 1px solid #34495e;
+    border: 1px solid var(--cor-borda);
 }
 
 .quadro h2 {
-    color: #33ff77;
+    color: var(--cor-neon);
     font-size: 24px;
     margin-bottom: 20px;
     width: 100%;
     text-align: center;
-    border-bottom: 1px dashed #34495e;
+    border-bottom: 1px dashed var(--cor-borda);
     padding-bottom: 10px;
 }
 
@@ -232,23 +238,22 @@ main {
 }
 
 .img-quadro {
-    border: 1px dashed #33ff77;
+    border: 1px dashed var(--cor-neon);
     background-color: #1a1a1a;
     padding: 5px;
     border-radius: 10px;
     width: 100%;
     max-width: 300px;
     height: auto;
-    object-fit: contain; /* Impede que a imagem seja esmagada */
-    transition: all 0.3s ease; /* Deixa o crescimento suave */
+    object-fit: contain; 
+    transition: all 0.3s ease; 
 }
 
-/* Efeito de zoom mais evidente para todas as imagens de quadro */
 .img-quadro:hover {
-    transform: scale(1.1); /* Fica um pouquinho maior (10% de zoom) */
+    transform: scale(1.1); 
     box-shadow: 0 0 15px rgba(51, 255, 119, 0.4);
     z-index: 10;
-    position: relative; /* Garante que fique por cima das outras ao crescer */
+    position: relative; 
 }
 
 .img-cenario {
@@ -256,13 +261,139 @@ main {
     height: auto;
 }
 
+/* =========================================
+   PÁGINA SOBRE NÓS
+========================================= */
+#main-sobre {
+    gap: 50px;
+}
+
+#intro-equipe blockquote {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--cor-neon); 
+    border-left: 4px solid var(--cor-neon);
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+abbr {
+    text-decoration: underline dotted var(--cor-neon);
+    cursor: help;
+}
+
+#cards-desenvolvedores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.dev-card {
+    background-color: var(--cor-fundo-escuro);
+    border: 1px solid var(--cor-borda);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.dev-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cor-neon);
+}
+
+.dev-foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px dashed var(--cor-neon);
+    margin-bottom: 10px;
+}
+
+figure figcaption {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.dev-info h3 {
+    color: #cccccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.dev-info p {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.lista-redes {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.lista-redes a {
+    color: var(--cor-neon);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--cor-neon);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.lista-redes a:hover {
+    background-color: var(--cor-neon);
+    color: #1a1a1a;
+}
+
+.tabela-trabalho {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #111;
+}
+
+.tabela-trabalho th, .tabela-trabalho td {
+    border: 1px solid var(--cor-borda);
+    padding: 12px;
+    text-align: center;
+    color: #ccc;
+}
+
+.tabela-trabalho th {
+    background-color: var(--cor-neon);
+    color: #1a1a1a;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabela-trabalho tr:hover {
+    background-color: #222;
+}
+
+
 footer {
     background-color: #111111;
     color: #666;
     text-align: center;
     padding: 20px;
     width: 100%;
-    border-top: 1px solid #33ff77;
+    border-top: 1px solid var(--cor-neon);
 }
 
 #links-rodape {
@@ -284,7 +415,7 @@ footer {
 }
 
 .botao-rodape:hover {
-    color: #33ff77;
+    color: var(--cor-neon);
 }
 
 #main-jogar {
