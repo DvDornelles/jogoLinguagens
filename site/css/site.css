@@ -135,6 +135,11 @@ main {
     box-shadow: 0 0 15px #33ff77;
 }
 
+#texto h1 {
+    color: #33ff77;
+    margin-bottom: 20px;
+}
+
 .secao-texto, #texto {
     background-color: rgba(26, 26, 26, 0.95);
     color: white;
