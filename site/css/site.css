@@ -670,6 +670,75 @@ footer {
 }
 
 /* =========================================
+   MENU HAMBÚRGUER (MOBILE)
+========================================= */
+/* Oculta os links extra no mobile por padrão */
+.links-desktop {
+    display: none; 
+}
+
+/* Estilo do ícone hambúrguer */
+.menu-hamburguer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.traco {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.menu-hamburguer:hover .traco {
+    background-color: var(--cor-neon);
+}
+
+/* Estilo do Menu Dropdown Dropdown oculto por padrão */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 70px; /* Ajuste conforme a altura do seu header */
+    left: 20px;
+    background-color: #111;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+    border: 1px solid var(--cor-neon);
+    border-radius: 8px;
+    z-index: 100;
+    flex-direction: column;
+}
+
+/* Classe ativada via JavaScript */
+.mostrar-menu {
+    display: flex;
+}
+
+.botao-dropdown {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.botao-dropdown:hover {
+    background-color: #222;
+    color: var(--cor-neon);
+}
+
+/* =========================================
    MEDIA QUERIES (DESKTOP)
 ========================================= */
 @media (min-width: 768px) {
@@ -754,5 +823,19 @@ footer {
 
     .img-item {
         width: 120px; 
+    }
+    
+    .menu-hamburguer {
+        display: none; /* Esconde o hambúrguer no PC */
+    }
+
+    .links-desktop {
+        display: flex; /* Mostra os links normais no PC */
+        gap: 30px;
+        align-items: center;
+    }
+
+    .dropdown-content {
+        display: none !important; /* Garante que o dropdown não apareça no PC */
     }
 }

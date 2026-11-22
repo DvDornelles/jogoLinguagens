@@ -22,19 +22,31 @@
             <div id="bJogar" class="botao-cabecalho" onclick="window.location.href='jogar.html'">
                 Jogar
             </div>
-            <div id="bHistoria" class="botao-cabecalho" onclick="window.location.href='historia.html'">
-                História
+            
+            <!-- Links normais para desktop -->
+            <div class="links-desktop">
+                <div id="bHistoria" class="botao-cabecalho" onclick="window.location.href='historia.html'">História</div>
+                <div id="bCenarios" class="botao-cabecalho" onclick="window.location.href='assets_cenarios.html'">Cenários</div>
+                <div id="bItens" class="botao-cabecalho" onclick="window.location.href='assets_itens.html'">Itens</div>
+                <div id="bInteracoes" class="botao-cabecalho" onclick="window.location.href='assets_interacoes.html'">Interações</div>
             </div>
-            <div id="bCenarios" class="botao-cabecalho" onclick="window.location.href='assets_cenarios.html'">
-                Cenários
+
+            <!-- Menu Hambúrguer para mobile -->
+            <div class="menu-hamburguer" onclick="toggleMenu()">
+                <div class="traco"></div>
+                <div class="traco"></div>
+                <div class="traco"></div>
             </div>
-            <div id="bItens" class="botao-cabecalho" onclick="window.location.href='assets_itens.html'">
-                Itens
-            </div>
-            <div id="bInteracoes" class="botao-cabecalho" onclick="window.location.href='assets_interacoes.html'">
-                Interações
+            
+            <!-- Conteúdo do Dropdown (Mobile) -->
+            <div id="menuDropdown" class="dropdown-content">
+                <div class="botao-dropdown" onclick="window.location.href='historia.html'">História</div>
+                <div class="botao-dropdown" onclick="window.location.href='assets_cenarios.html'">Cenários</div>
+                <div class="botao-dropdown" onclick="window.location.href='assets_itens.html'">Itens</div>
+                <div class="botao-dropdown" onclick="window.location.href='assets_interacoes.html'">Interações</div>
             </div>
         </section>
+
         <section id="cabecalhoDireita">
             <div id="bSobreNos" class="botao-cabecalho" onclick="window.location.href='sobrenos.html'">
                 Sobre nós &#128101
@@ -82,5 +94,7 @@
             <p>Um jogo de escape room virtual criado para testar seus limites.</p>
         </div>
     </footer>
+
+    <script src="../js/site.js"></script>
 </body>
 </html>
