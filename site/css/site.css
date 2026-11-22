@@ -197,6 +197,9 @@ main {
     color: #b3b3b3;
 }
 
+/* =========================================
+   GALERIA DE ASSETS
+========================================= */
 .quadro {
     width: 100%; 
     max-width: 1000px;
@@ -210,6 +213,24 @@ main {
     border: 1px solid #34495e;
 }
 
+.quadro h2 {
+    color: #33ff77;
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px dashed #34495e;
+    padding-bottom: 10px;
+}
+
+.galeria-imagens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
 .img-quadro {
     border: 1px dashed #33ff77;
     background-color: #1a1a1a;
@@ -218,6 +239,16 @@ main {
     width: 100%;
     max-width: 300px;
     height: auto;
+    object-fit: contain; /* Impede que a imagem seja esmagada */
+    transition: all 0.3s ease; /* Deixa o crescimento suave */
+}
+
+/* Efeito de zoom mais evidente para todas as imagens de quadro */
+.img-quadro:hover {
+    transform: scale(1.1); /* Fica um pouquinho maior (10% de zoom) */
+    box-shadow: 0 0 15px rgba(51, 255, 119, 0.4);
+    z-index: 10;
+    position: relative; /* Garante que fique por cima das outras ao crescer */
 }
 
 .img-cenario {
@@ -356,10 +387,6 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    .img-quadro:hover {
-        transform: scale(1.05);
     }
 
     .img-item {
