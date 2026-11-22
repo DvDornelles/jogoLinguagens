@@ -468,6 +468,90 @@ figure figcaption {
     margin-top: 10px;
 }
 
+/* =========================================
+   PÁGINA DO TUTORIAL
+========================================= */
+#main-tutorial {
+    justify-content: flex-start;
+}
+
+.spoiler-section {
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #111;
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.spoiler-section summary {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-neon);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 20px;
+    cursor: pointer;
+    list-style: none; /* Remove a seta padrão */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.spoiler-section summary::-webkit-details-marker {
+    display: none; /* Remove a seta no Chrome/Safari */
+}
+
+.spoiler-section summary::after {
+    content: '+';
+    font-size: 24px;
+    color: #ccc;
+}
+
+.spoiler-section[open] summary::after {
+    content: '-';
+    color: var(--cor-neon);
+}
+
+.spoiler-section summary:hover {
+    background-color: #222;
+}
+
+.spoiler-conteudo {
+    padding: 20px;
+    color: #ccc;
+    line-height: 1.6;
+    border-top: 1px dashed var(--cor-borda);
+}
+
+.spoiler-conteudo h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.spoiler-conteudo ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.spoiler-conteudo ul li {
+    margin-bottom: 8px;
+}
+
+.dica-mortal {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-left: 4px solid #e74c3c;
+    padding: 15px;
+    margin-top: 15px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   RODAPÉ
+========================================= */
 footer {
     background-color: #111111;
     color: #666;
@@ -499,6 +583,9 @@ footer {
     color: var(--cor-neon);
 }
 
+/* =========================================
+   PÁGINA INICIAL / JOGAR
+========================================= */
 #main-jogar {
     justify-content: center;
     min-height: 60vh;
@@ -521,6 +608,9 @@ footer {
     padding: 20px 50px;
 }
 
+/* =========================================
+   MEDIA QUERIES (DESKTOP)
+========================================= */
 @media (min-width: 768px) {
     header {
         padding: 0 40px;
