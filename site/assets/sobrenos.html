@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo linguagens</title>
-    <link rel="stylesheet" href="/site/css/site.css">
+    <title>Sobre Nós - LAVI</title>
+    <link rel="stylesheet" href="../css/site.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,19 +38,89 @@
             </div>
         </section>
     </header>
+    
+    <main id="main-sobre">
+        <section class="secao-texto" id="intro-equipe">
+            <h1>A Equipe LAVI</h1>
+            <p>Nós somos estudantes do 2º ano do Ensino Médio Integrado no <abbr title="Instituto Federal do Rio Grande do Sul">IFRS</abbr> - Campus Canoas. Desenvolvemos este Escape Room Virtual como projeto de conclusão para a disciplina de Linguagens para a Internet.</p>
+            <blockquote>"Sobreviver ao Cubo não é apenas um jogo para testar sua mente, é o código que testou a nossa!"</blockquote>
+        </section>
+
+        <section id="cards-desenvolvedores">
+            <article class="dev-card">
+                <figure>
+                    <img src="../img/foto.davi.jpeg" alt="Foto do Desenvolvedor Davi de Oliveira Dornelles" class="dev-foto">
+                    <figcaption>Davi O. Dornelles</figcaption>
+                </figure>
+                <div class="dev-info">
+                    <h3>Desenvolvedor</h3>
+                    <p>Focado em transformar lógica complexa em enigmas divertidos e fazer o código rodar liso (na maior parte do tempo).</p>
+                    <ul class="lista-redes">
+                        <li><a href="https://github.com/DvDornelles" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.instagram.com/dv_dornelles/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="dev-card">
+                <figure>
+                    <img src="../img/foto.larissa.png" alt="Foto da Desenvolvedora Larissa Barbosa do Santos" class="dev-foto">
+                    <figcaption>Larissa B. dos Santos</figcaption>
+                </figure>
+                <div class="dev-info">
+                    <h3>Desenvolvedora</h3>
+                    <p>A mente criativa por trás dos designs, estruturação semântica e da construção desse universo imersivo.</p>
+                    <ul class="lista-redes">
+                        <li><a href="https://github.com/lari3326" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.instagram.com/lari_m3nb3ll/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="secao-texto" id="secao-tabela">
+            <h2>Divisão do Projeto</h2>
+            <table class="tabela-trabalho">
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Tecnologias Envolvidas</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Interface & Estilo</td>
+                        <td>HTML5 Semântico, CSS3, Flexbox, Grid</td>
+                        <td>Concluído &#10004;</td>
+                    </tr>
+                    <tr>
+                        <td>Lógica do Escape Room</td>
+                        <td>JavaScript Vanilla, POO, Manipulação de DOM</td>
+                        <td>Em Andamento &#9881;</td>
+                    </tr>
+                    <tr>
+                        <td>Hospedagem</td>
+                        <td>Git, GitHub, Vercel</td>
+                        <td>Pendente &#9203;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
     <footer>
-        <!-- Esta div só vai aparecer no celular -->
         <div id="links-rodape">
-            <div class="botao-rodape" onclick="window.location.href='/site/assets/sobrenos.html'">
+            <div class="botao-rodape" onclick="window.location.href='sobrenos.html'">
                 Sobre nós &#128101
             </div>
-            <div class="botao-rodape" onclick="window.location.href='/site/assets/contato.html'">
+            <div class="botao-rodape" onclick="window.location.href='contato.html'">
                 Fale Conosco &#128222
             </div>
         </div>
 
         <div class="footer-conteudo">
-            <p>&copy; 2026 Empresa LAVI. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Equipe LAVI - IFRS Campus Canoas. Todos os direitos reservados.</p>
             <p>Um jogo de escape room virtual criado para testar seus limites.</p>
         </div>
     </footer>
