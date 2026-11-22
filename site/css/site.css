@@ -256,6 +256,28 @@ footer {
     color: #33ff77;
 }
 
+#main-jogar {
+    justify-content: center;
+    min-height: 60vh;
+}
+
+#secao-jogar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 60px;
+}
+
+#secao-jogar p {
+    max-width: 600px;
+}
+
+#btn-iniciar-partida {
+    font-size: 22px;
+    padding: 20px 50px;
+}
+
 @media (min-width: 768px) {
     header {
         padding: 0 40px;
