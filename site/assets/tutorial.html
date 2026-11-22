@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Sobrevivência - LAVI</title>
+    <link rel="stylesheet" href="../css/site.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sekuya&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section id="cabecalhoEsquerda">
+            <div id="bLogo" class="botao-cabecalho">
+                <img src="../img/logo.jpg" alt="logo da empresa LAVI" id="logo">
+            </div>
+            <div id="bHome" class="botao-cabecalho" onclick="window.location.href='../../index.html'">
+                Home
+            </div>
+            <div id="bJogar" class="botao-cabecalho" onclick="window.location.href='jogar.html'">
+                Jogar
+            </div>
+            <div id="bHistoria" class="botao-cabecalho" onclick="window.location.href='historia.html'">
+                História
+            </div>
+            <div id="bAssets" class="botao-cabecalho" onclick="window.location.href='assets.html'">
+                Assets
+            </div>
+        </section>
+        <section id="cabecalhoDireita">
+            <div id="bSobreNos" class="botao-cabecalho" onclick="window.location.href='sobrenos.html'">
+                Sobre nós &#128101
+            </div>
+            <div id="bContato" class="botao-cabecalho" onclick="window.location.href='contato.html'">
+                Fale Conosco &#128222
+            </div>
+        </section>
+    </header>
+    
+    <main id="main-tutorial">
+        <section class="secao-texto" id="secao-guia">Arquivo LAVI: Guia de Descriptografia</h1>
+            <p>
+                Este documento contém dados confidenciais sobre a estrutura de segurança de "O Cubo". 
+                Se você é um testador preso no sistema, abra os tópicos abaixo de acordo com a sua necessidade. 
+                Tente resolver por conta própria antes de revelar as soluções.
+            </p>
+
+            <details class="spoiler-section">
+                <summary>Controles Básicos do Sistema</summary>
+                <div class="spoiler-conteudo">
+                    <h3>Movimentação e Interação</h3>
+                    <ul>
+                        <li><strong>Visão:</strong> Use as setas na tela ou as teclas <code>W, A, S, D</code> (ou setas do teclado) para olhar para as 4 paredes e para o teto.</li>
+                        <li><strong>Inventário:</strong> Você possui 5 slots. Clique neles ou use os números de <code>1 a 5</code> no teclado para selecionar um item.</li>
+                        <li><strong>Uso de Itens:</strong> Selecione o item no inventário (ele ficará com uma borda azul) e clique no objeto do cenário com o qual deseja interagir.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="spoiler-section">
+                <summary>Fase 1: Sem Energia e no Escuro</summary>
+                <div class="spoiler-conteudo">
+                    <h3>Objetivo: Restaurar a Caixa de Força</h3>
+                    <p>A sala inicia sem energia, inutilizando os computadores e a máquina. Sua primeira missão é um reparo elétrico improvisado.</p>
+                    <ul>
+                        <li>Vire para a <strong>Parede Oeste</strong>. Ao lado da estante de livros, há uma <strong>Chave de Fenda</strong> pendurada. Clique para coletá-la.</li>
+                        <li>Na mesma estante, clique na gaveta para abri-la e pegue um rolo de <strong>Fita Isolante</strong>.</li>
+                        <li>Olhe para o <strong>Teto</strong>. Selecione a Chave de Fenda no seu inventário e clique na grade do duto de ar. Isso soltará os <strong>Parafusos</strong> (guarde-os).</li>
+                        <li>Vire para a <strong>Parede Leste</strong> e abra o Quadro de Força.</li>
+                        <li>Selecione a <strong>Fita</strong> no inventário e clique nos três fios cortados (vermelho, azul e verde). A energia retornará!</li>
+                    </ul>
+                    <p><em>Nota: Não esqueça de clicar nos post-its amarelos espalhados pela sala (estante, teto e mobília) e anotar os valores matemáticos. Eles vão para o seu Diário.</em></p>
+                </div>
+            </details>
+
+            <details class="spoiler-section">
+                <summary>Fase 2: O Desbloqueio da Máquina</summary>
+                <div class="spoiler-conteudo">
+                    <h3>Objetivo: Acessar os componentes internos</h3>
+                    <p>Com a energia restaurada, a grande máquina na <strong>Parede Sul</strong> está operante, mas seu cofre está trancado por um painel de calibração numérica.</p>
+                    <ul>
+                        <li>Clique na Máquina para dar zoom e pressione o botão lateral <code>|></code> para iniciar o sistema de segurança.</li>
+                        <li>Um painel com 9 botões será revelado. A trava de segurança da LAVI exige que eles sejam acionados em ordem crescente.</li>
+                        <li>Pressione os botões respeitando a sequência estrita de <strong>1 a 9</strong>. Se você errar a ordem, o painel reiniciará.</li>
+                        <li>Ao completar o painel, a gaveta inferior destranca. Colete a pesada <strong>Bateria</strong> e os <strong>Cabos de Conexão</strong>.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="spoiler-section">
+                <summary>Fase 3: Injeção de Código JavaScript (Terminal)</summary>
+                <div class="spoiler-conteudo">
+                    <h3>Objetivo: Hackear a porta para conseguir o explosivo</h3>
+                    <p>Você precisa de algo forte para arrebentar a tranca principal. Há dinamite presa em um cofre na <strong>Parede Norte</strong>, ao lado da porta.</p>
+                    <ul>
+                        <li>Abra o pequeno painel na Parede Norte. Você verá uma interface de terminal de código e um post-it de dica.</li>
+                        <li>No painel da direita (seu Diário), verifique os 3 fragmentos matemáticos que você coletou pela sala (ex: <code>*2</code>, <code>+5</code>, <code>/3</code>). Os valores mudam a cada jogo.</li>
+                        <li>O terminal usa a linguagem nativa do Cubo. Dentro da estrutura <code>function abrirPorta() { }</code>, você deve codificar o retorno da variável principal operada com suas anotações.</li>
+                        <li><strong>Como escrever:</strong> Mantenha a estrutura e adicione o comando <code>return</code> chamando a função <code>gerarSenha()</code>, seguida das suas anotações matemáticas na ordem em que aparecem no seu diário.</li>
+                        <li><strong>Exemplo prático:</strong> <br><code>return gerarSenha() * 2 + 5 / 3</code></li>
+                        <li>Clique em "Enviar". Se o cálculo for processado corretamente pelo servidor local, a trava abrirá revelando a <strong>Dinamite</strong>.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="spoiler-section">
+                <summary>Fase 4: A Engenharia da Fuga (ATENÇÃO!)</summary>
+                <div class="spoiler-conteudo">
+                    <h3>Objetivo: Construir e detonar o dispositivo sem morrer</h3>
+                    <p>Você agora tem 6 componentes: Fita, Parafusos, Relógio, Bateria, Cabos e Dinamite. Chegou a hora de brincar de engenheiro.</p>
+                    <ul>
+                        <li>Volte para a <strong>Parede Norte</strong> e acesse a Mesa de Blueprint (os papéis azuis).</li>
+                        <li>Pressione o botão lateral de transferência para jogar todo o seu inventário na mesa.</li>
+                        <li>Clique no botão "Construir" que aparecerá para fundir as peças em uma <strong>Bomba Relógio</strong>.</li>
+                        <li>Abra novamente o painel do terminal da porta. Selecione a Bomba no seu inventário e instale-a no grande compartimento vazio que está aberto.</li>
+                    </ul>
+                    <div class="dica-mortal">
+                        ALERTA DE SOBREVIVÊNCIA: Nunca acione um explosivo em ambiente confinado sem contenção física!<br><br>
+                        Se você clicar na bomba agora, a explosão matará você. Antes de ativar o timer, SELECIONE UM SLOT VAZIO no seu inventário e clique na borda do painel para FECHAR O COMPARTIMENTO. Apenas quando a tela metálica estiver fechada, clique nela para iniciar a detonação e garantir a sua fuga.
+                    </div>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <div id="links-rodape">
+            <div class="botao-rodape" onclick="window.location.href='sobrenos.html'">
+                Sobre nós &#128101
+            </div>
+            <div class="botao-rodape" onclick="window.location.href='contato.html'">
+                Fale Conosco &#128222
+            </div>
+        </div>
+
+        <div class="footer-conteudo">
+            <p>&copy; 2026 Equipe LAVI - IFRS Campus Canoas. Todos os direitos reservados.</p>
+            <p>Um jogo de escape room virtual criado para testar seus limites.</p>
+        </div>
+    </footer>
+</body>
+</html>
