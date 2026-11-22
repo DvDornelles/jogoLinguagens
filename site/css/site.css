@@ -27,12 +27,16 @@ header {
     min-height: 80px;
 }
 
-#cabecalhoEsquerda, #cabecalhoDireita {
+#cabecalhoEsquerda {
     display: flex;
     gap: 15px;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+#cabecalhoDireita {
+    display: none; 
 }
 
 #logo {
@@ -189,5 +193,149 @@ main {
 }
 
 .quadro {
-    width: 1
+    width: 100%; 
+    max-width: 1000px;
+    background-color: rgba(26, 26, 26, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid #34495e;
+}
+
+.img-quadro {
+    border: 1px dashed #33ff77;
+    background-color: #1a1a1a;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.img-cenario {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #111111;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border-top: 1px solid #33ff77;
+}
+
+#links-rodape {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.botao-rodape {
+    color: #cccccc;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.botao-rodape:hover {
+    color: #33ff77;
+}
+
+@media (min-width: 768px) {
+    header {
+        padding: 0 40px;
+        flex-wrap: nowrap;
+    }
+
+    #cabecalhoEsquerda {
+        gap: 30px;
+    }
+
+    #cabecalhoDireita {
+        display: flex; 
+        gap: 20px;
+        align-items: center;
+    }
+
+    #links-rodape {
+        display: none; 
+    }
+
+    .botao-cabecalho {
+        font-size: 14px;
+    }
+
+    #logo {
+        width: 60px;
+    }
+
+    main {
+        padding: 50px 40px;
+    }
+
+    #hero-section {
+        flex-direction: row;
+        padding: 40px 60px;
+        text-align: left;
+        align-items: center;
+        width: 80%;
+    }
+
+    #fraseDeImpacto {
+        flex: 1;
+        align-items: flex-start;
+        min-width: 300px;
+    }
+
+    #fraseDeImpacto h1 {
+        font-size: 45px;
+    }
+
+    #imagemEliotMuskito {
+        width: 45%;
+        max-width: 450px;
+    }
+
+    .secao-texto, #texto, .quadro {
+        width: 80%;
+        padding: 50px;
+    }
+
+    #features-jogo {
+        flex-direction: row;
+        width: 80%;
+    }
+
+    .card-feature {
+        width: 32%;
+    }
+
+    .card-feature:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .quadro {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .img-quadro:hover {
+        transform: scale(1.05);
+    }
+
+    .img-item {
+        width: 120px; 
+    }
 }
