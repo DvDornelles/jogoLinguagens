@@ -92,7 +92,7 @@ const estadoPuzzleMaquina = {
                 document.getElementById('iniciarPuzzleMaquina').classList.remove('escondida');
                 document.getElementById('cofreMaquina').classList.remove('escondida');
                 document.getElementById('retorno').innerHTML = `<p>"Sequência incorreta!"</p>`;
-                for(i=1; i<10; i++){
+                for(let i=1; i<10; i++){
                     document.getElementById('b' + i).classList.remove('respondido')
                 }
             }
