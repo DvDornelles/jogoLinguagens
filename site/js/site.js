@@ -15,3 +15,8 @@ window.onclick = function(event) {
         }
     }
 }
+
+let musica_muskito = new Audio("/jogo/audio/musica.muskito.mp3");
+function musicaMuskito(){
+    musica_muskito.play();
+}
