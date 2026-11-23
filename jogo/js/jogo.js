@@ -62,6 +62,42 @@ const estadoPuzzleLuz = {
 const estadoPuzzleMaquina = {
     numeroAtual: 0,
     iniciado: false,
+
+    clicarBlocoMaquina: function (bloco) {
+        if (bloco.id === 'iniciarPuzzleMaquina') {
+            this.iniciado = true;
+            document.getElementById('ordemNumerica').classList.remove('escondida');
+            bloco.classList.add('escondida');
+            document.getElementById('cofreMaquina').classList.add('escondida')
+        } else {
+            // Pega apenas o número do ID (ex: de 'b1' vira 1)
+            const botaoClicado = parseInt(bloco.id.replace('b', ''));
+
+            if (botaoClicado === this.numeroAtual + 1) {
+                this.numeroAtual++;
+                bloco.classList.add('respondido');
+                if (this.numeroAtual === 9) {
+                    document.getElementById('retorno').innerHTML = `<p>"A máquina destravou e liberou a Bateria e Cabos!"</p>`;
+                    document.getElementById('bateria').classList.remove('escondida')
+                    document.getElementById('cabos').classList.remove('escondida')
+                    document.getElementById('ordemNumerica').classList.add('escondida')
+                    document.getElementById('cofreMaquina').classList.remove('escondida');
+                    document.getElementById('painelMaquina').classList.add('maquina-aberta');
+                    document.getElementById('painelMaquina').classList.remove('maquina-fechada');
+                }
+            } else {
+                this.numeroAtual = 0;
+                this.iniciado = false;
+                document.getElementById('ordemNumerica').classList.add('escondida');
+                document.getElementById('iniciarPuzzleMaquina').classList.remove('escondida');
+                document.getElementById('cofreMaquina').classList.remove('escondida');
+                document.getElementById('retorno').innerHTML = `<p>"Sequência incorreta!"</p>`;
+                for(i=1; i<10; i++){
+                    document.getElementById('b' + i).classList.remove('respondido')
+                }
+            }
+        }
+    }
 };
 
 const estadoPuzzleTerminal = {
@@ -266,7 +302,7 @@ function retornarMensagem(elemento){
 }
 
 // Puzzle Maquina
-function puzzleMaquina(bloco) {
+/*function puzzleMaquina(bloco) {
     if (bloco.id === 'iniciarPuzzleMaquina') {
         estadoPuzzleMaquina.iniciado = true;
         document.getElementById('ordemNumerica').classList.remove('escondida');
@@ -300,7 +336,7 @@ function puzzleMaquina(bloco) {
             }
         }
     }
-}
+}*/
 
 /*function puzzleQuadroForca(fio){
     if (estadoJogo.itemSelecionado !== 'fita') {
