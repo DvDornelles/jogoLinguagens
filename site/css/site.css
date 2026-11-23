@@ -739,46 +739,21 @@ footer {
 }
 
 /* =========================================
-   MEDIA QUERIES (DESKTOP)
+   MEDIA QUERIES (TABLETS: 768px a 933px)
+   Nesta faixa, cabecalhoDireita continua invisível,
+   os links ficam no rodapé e o conteúdo central começa a expandir.
 ========================================= */
 @media (min-width: 768px) {
-    header {
-        padding: 0 40px;
-        flex-wrap: nowrap;
-    }
-
-    #cabecalhoEsquerda {
-        gap: 30px;
-    }
-
-    #cabecalhoDireita {
-        display: flex; 
-        gap: 20px;
-        align-items: center;
-    }
-
-    #links-rodape {
-        display: none; 
-    }
-
-    .botao-cabecalho {
-        font-size: 14px;
-    }
-
-    #logo {
-        width: 60px;
-    }
-
     main {
-        padding: 50px 40px;
+        padding: 40px 30px;
     }
 
     #hero-section {
         flex-direction: row;
-        padding: 40px 60px;
+        padding: 40px;
         text-align: left;
         align-items: center;
-        width: 80%;
+        width: 90%;
     }
 
     #fraseDeImpacto {
@@ -788,22 +763,22 @@ footer {
     }
 
     #fraseDeImpacto h1 {
-        font-size: 45px;
+        font-size: 38px;
     }
 
     #imagemEliotMuskito {
         width: 45%;
-        max-width: 450px;
+        max-width: 400px;
     }
 
     .secao-texto, #texto, .quadro {
-        width: 80%;
-        padding: 50px;
+        width: 90%;
+        padding: 40px;
     }
 
     #features-jogo {
         flex-direction: row;
-        width: 80%;
+        width: 90%;
     }
 
     .card-feature {
@@ -820,22 +795,115 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
-
-    .img-item {
-        width: 120px; 
+@media (min-width: 768px) {
+    #cabecalhoDireita {
+        display: flex; 
+        gap: 20px;
+        align-items: center;
     }
-    
+
+    #links-rodape {
+        display: none; 
+    }
+
+    main {
+        padding: 40px 30px;
+    }
+
+    #hero-section {
+        flex-direction: row;
+        padding: 40px;
+        text-align: left;
+        align-items: center;
+        width: 90%;
+    }
+
+    #fraseDeImpacto {
+        flex: 1;
+        align-items: flex-start;
+        min-width: 300px;
+    }
+
+    #fraseDeImpacto h1 {
+        font-size: 38px;
+    }
+
+    #imagemEliotMuskito {
+        width: 45%;
+        max-width: 400px;
+    }
+
+    .secao-texto, #texto, .quadro {
+        width: 90%;
+        padding: 40px;
+    }
+
+    #features-jogo {
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .card-feature {
+        width: 32%;
+    }
+
+    .card-feature:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .quadro {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 934px) {
+    header {
+        padding: 0 40px;
+        flex-wrap: nowrap;
+    }
+
+    #cabecalhoEsquerda {
+        gap: 30px;
+    }
+
+    .botao-cabecalho {
+        font-size: 14px;
+    }
+
+    #logo {
+        width: 60px;
+    }
+
     .menu-hamburguer {
-        display: none; /* Esconde o hambúrguer no PC */
+        display: none;
     }
 
     .links-desktop {
-        display: flex; /* Mostra os links normais no PC */
+        display: flex;
         gap: 30px;
         align-items: center;
     }
 
     .dropdown-content {
-        display: none !important; /* Garante que o dropdown não apareça no PC */
+        display: none !important;
+    }
+
+    #hero-section, .secao-texto, #texto, .quadro, #features-jogo {
+        width: 80%;
+    }
+
+    #fraseDeImpacto h1 {
+        font-size: 45px;
+    }
+
+    #imagemEliotMuskito {
+        max-width: 450px;
+    }
+
+    .img-item {
+        width: 120px; 
     }
 }
