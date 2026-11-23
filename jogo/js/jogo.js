@@ -535,12 +535,14 @@ function aprovarSenha(senha) {
     }
 }
 
+let anvil = new Audio("../audio/anvil.mp3");
 function construirBomba(){
     document.getElementById('botaoMontaBomba').classList.add('escondida');
     document.getElementById('itensNaBancada').innerHTML = `
         <div class="elemento-interativo" id="bomba" onclick="coletarItem(this)"><div>
     `
     estadoJogo.bombaConstruida = true;
+    anvil.play();
 }
 
 let explosao
