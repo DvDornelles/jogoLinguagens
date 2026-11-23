@@ -585,6 +585,7 @@ function aprovarSenha(senha) {
         estadoJogo.terminalHackeado = true;
         document.getElementById('painelPortaPopUp').classList.add('painel-porta-aberto');
         document.getElementById('dinamite').classList.remove('escondida');
+        document.getElementById('enviaCodigoJS').classList.add('escondida');
     }
     else if (!estadoJogo.terminalHackeado){
         tentativasErradas++;
