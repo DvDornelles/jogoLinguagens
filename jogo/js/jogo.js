@@ -37,6 +37,26 @@ const bluePrint = {
 const estadoPuzzleLuz = {
     fiosConsertados: 0,
     quadroAberto: false,
+
+    consertarFios: function (fio){
+        if (estadoJogo.itemSelecionado !== 'fita') {
+            document.getElementById('retorno').innerHTML = `<p>"Preciso de algo para prender um fio a outro."</p>`;
+            return;
+        }
+
+        if (!fio.classList.contains('consertado')) {
+            fio.classList.add('consertado');
+            this.fiosConsertados++;
+
+            if (this.fiosConsertados === 3) {
+                    estadoJogo.energiaAcionada = true;
+                    document.getElementById('retorno').innerHTML = `<p>"A energia foi restaurada!"</p>`;
+                    if (estadoJogo.bluePrint === true) {
+                        adicionarBlueprint('fita');
+                    }
+                }
+            }
+        }
 }
 
 const estadoPuzzleMaquina = {
@@ -282,7 +302,7 @@ function puzzleMaquina(bloco) {
     }
 }
 
-function puzzleQuadroForca(fio){
+/*function puzzleQuadroForca(fio){
     if (estadoJogo.itemSelecionado !== 'fita') {
         document.getElementById('retorno').innerHTML = `<p>"Preciso de algo para prender um fio a outro."</p>`;
         return;
@@ -300,7 +320,7 @@ function puzzleQuadroForca(fio){
             }
         }
     }
-}
+}*/
 
 function marcarSlot(slot){
     if (estadoJogo.slotSelecionado !== null){
