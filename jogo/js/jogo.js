@@ -575,6 +575,8 @@ function gerarSenha() {
     return senha;
 }
 
+let tentativasErradas = 0;
+
 function aprovarSenha(senha) {
     if (senha === 6767*chaveDaSenha1+chaveDaSenha2/chaveDaSenha3){
         document.getElementById('consoleTerminal').innerHTML = `
@@ -584,11 +586,27 @@ function aprovarSenha(senha) {
         document.getElementById('painelPortaPopUp').classList.add('painel-porta-aberto');
         document.getElementById('dinamite').classList.remove('escondida');
     }
-    else{
+    else if (!estadoJogo.terminalHackeado){
+        tentativasErradas++;
         document.getElementById('consoleTerminal').innerHTML = `
-        <p>Error<br>Senha incorreta!</p>
+        <p>Error<br>Senha incorreta! (${tentativasErradas}/5)</p>
         `
+        if (tentativasErradas >= 5){
+            finalAlarme();
+        }
     }
+}
+function finalAlarme(){
+    clearInterval(explosao);
+    clearInterval(timer);
+    document.getElementById('retorno').innerHTML = `
+        <p>ALARME! ALARME!</p>
+    `
+    document.getElementById('qualFinal').innerHTML = `
+        <p>Depois de tantas tentativas erradas, o terminal travou e um alarme ensurdecedor tomou conta do prédio. Em poucos minutos, passos pesados se aproximaram da porta. Quem trancou você ali finalmente apareceu...</p>
+    `
+    document.getElementById('tempoLevado').innerHTML = 'Tempo preso na sala: ' + document.getElementById('timer-universal').innerHTML;
+    document.getElementById('fim').classList.remove('escondida');
 }
 
 let anvil = new Audio("../audio/anvil.mp3");
