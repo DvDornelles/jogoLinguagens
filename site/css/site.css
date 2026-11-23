@@ -4,7 +4,7 @@
     --cor-borda: #34495e;
 }
 
-* { /* Corrigido: era um hífen, agora é asterisco */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -491,7 +491,7 @@ figure figcaption {
     font-weight: bold;
     padding: 15px 20px;
     cursor: pointer;
-    list-style: none; /* Remove a seta padrão */
+    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -499,7 +499,7 @@ figure figcaption {
 }
 
 .spoiler-section summary::-webkit-details-marker {
-    display: none; /* Remove a seta no Chrome/Safari */
+    display: none;
 }
 
 .spoiler-section summary::after {
@@ -652,7 +652,6 @@ footer {
     display: none; 
 }
 
-/* Estilo do ícone hambúrguer */
 .menu-hamburguer {
     display: flex;
     flex-direction: column;
@@ -676,11 +675,10 @@ footer {
     background-color: var(--cor-neon);
 }
 
-/* Estilo do Menu Dropdown Dropdown oculto por padrão */
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 70px; /* Ajuste conforme a altura do seu header */
+    top: 70px;
     left: 20px;
     background-color: #111;
     min-width: 160px;
@@ -750,7 +748,6 @@ footer {
     }
 
     #imagemEliotMuskito {
-        width: 45%; /* Mantive 45% para evitar que a imagem estoure e quebre o layout row */
         max-width: 400px;
     }
 
