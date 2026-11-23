@@ -544,6 +544,7 @@ function construirBomba(){
 }
 
 let explosao
+let som_boom = new Audio("../audio/explosao.mp3")
 function finalJogo(){
     let tempo = 5;
     if(!estadoJogo.finalizando){
@@ -553,6 +554,9 @@ function finalJogo(){
                 <p>${tempo}</p>
             `
             tempo--
+            if(tempo === 2){
+                som_boom.play();
+            }
             if(tempo < 1){
                 clearInterval(explosao);
                 document.getElementById('retorno').innerHTML = `
@@ -580,6 +584,8 @@ function finalJogo(){
         document.getElementById('retorno').innerHTML = `
             <p>Bomba pausada.</p>
         `
+        som_boom.pause();
+        som_boom.currentTime = 0;
     }
 }
 
