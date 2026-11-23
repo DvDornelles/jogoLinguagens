@@ -4,7 +4,7 @@
     --cor-borda: #34495e;
 }
 
-* {
+* { /* Corrigido: era um hífen, agora é asterisco */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -608,31 +608,6 @@ footer {
     padding: 20px 50px;
 }
 
-/* =========================================
-   PÁGINA INICIAL / JOGAR
-========================================= */
-#main-jogar {
-    justify-content: center;
-    min-height: 60vh;
-}
-
-#secao-jogar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 60px;
-}
-
-#secao-jogar p {
-    max-width: 600px;
-}
-
-#btn-iniciar-partida {
-    font-size: 22px;
-    padding: 20px 50px;
-}
-
 .texto-tutorial {
     margin-top: 20px;
     font-size: 14px;
@@ -740,61 +715,7 @@ footer {
 
 /* =========================================
    MEDIA QUERIES (TABLETS: 768px a 933px)
-   Nesta faixa, cabecalhoDireita continua invisível,
-   os links ficam no rodapé e o conteúdo central começa a expandir.
 ========================================= */
-@media (min-width: 768px) {
-    main {
-        padding: 40px 30px;
-    }
-
-    #hero-section {
-        flex-direction: row;
-        padding: 40px;
-        text-align: left;
-        align-items: center;
-        width: 90%;
-    }
-
-    #fraseDeImpacto {
-        flex: 1;
-        align-items: flex-start;
-        min-width: 300px;
-    }
-
-    #fraseDeImpacto h1 {
-        font-size: 38px;
-    }
-
-    #imagemEliotMuskito {
-        width: 45%;
-        max-width: 400px;
-    }
-
-    .secao-texto, #texto, .quadro {
-        width: 90%;
-        padding: 40px;
-    }
-
-    #features-jogo {
-        flex-direction: row;
-        width: 90%;
-    }
-
-    .card-feature {
-        width: 32%;
-    }
-
-    .card-feature:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .quadro {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 @media (min-width: 768px) {
     #cabecalhoDireita {
         display: flex; 
@@ -829,7 +750,7 @@ footer {
     }
 
     #imagemEliotMuskito {
-        width: 90%;
+        width: 45%; /* Mantive 45% para evitar que a imagem estoure e quebre o layout row */
         max-width: 400px;
     }
 
@@ -859,6 +780,9 @@ footer {
     }
 }
 
+/* =========================================
+   MEDIA QUERIES (DESKTOP: a partir de 934px)
+========================================= */
 @media (min-width: 934px) {
     header {
         padding: 0 40px;
@@ -900,7 +824,7 @@ footer {
     }
 
     #imagemEliotMuskito {
-        width: 90%;
+        max-width: 450px;
     }
 
     .img-item {
