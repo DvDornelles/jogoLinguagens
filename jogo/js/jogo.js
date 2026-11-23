@@ -816,4 +816,23 @@ const timer = setInterval(function(){
         <p>0${min}:0${seg}</p>
     `
     }
+
+    if(min>=10){
+        finalTempo();
+    }
 }, 1000)
+
+function finalTempo(){
+    clearInterval(timer);
+    clearInterval(explosao);
+    som_boom.pause();
+    estadoJogo.finalizando = false;
+    document.getElementById('retorno').innerHTML = `
+        <p>O ar está acabando...</p>
+    `
+    document.getElementById('qualFinal').innerHTML = `
+        <p>O tempo passou e você ainda não encontrou a saída. O ar da sala velha e úmida foi ficando cada vez mais pesado, e suas forças acabaram antes da porta ceder. Ninguém nunca soube o que aconteceu ali dentro...</p>
+    `
+    document.getElementById('tempoLevado').innerHTML = 'Tempo preso na sala: ' + document.getElementById('timer-universal').innerHTML;
+    document.getElementById('fim').classList.remove('escondida');
+}
